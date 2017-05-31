@@ -1,0 +1,1008 @@
+
+
+font-size显示屏上大小9t是一个比较合适的字体大小在好，没有锯齿
+@https://icoMoon.io免费字体图标
+css sprite例子很多小图放在一个大图上
+	用js计算位置
+  $box.css('backgroun-position','0-'+x+'px')//x为变量或者计算公式
+
+
+.bg_sprite{background-image:url(/整图地址); background-repeat:no-repeat}
+
+引用该类 .. 然后在元素中逐一定义背景坐标 .. 以下为关键属性 ..
+
+#ico1 {width:容器大小;height:容器高度;background-position:X坐标 Y坐标}
+
+#ico2 {width:容器大小;height:容器高度;background-position:X坐标 Y坐标}
+
+#ico3 {width:容器大小;height:容器高度;background-position:X坐标 Y坐标}
+
+.nav {width:容器大小;height:容器高度;background-position:X坐标 Y坐标}
+
+必须要限定容器大小符合背景图元素位置 .. 另外 .. XY轴是相对于整张图片的左上角来算的 .. 所以取值一定要算清楚
+verticel align:
+例如图片，按钮，单复选框，单行/多行文本框等HTML控件，只有这些元素默认情况下会对vertical-align属性起作用。只有一个元素属于inline或是inline-block（table-cell也可以理解为inline-block水平）水平，其身上的vertical-align属性才会起作用
+
+
+ @简单理解就是我要把文本限制在一行（white-space: nowrap;），肯定这一行是有限制的(width)，并且你的溢出的部分要隐藏起来（overflow: hidden；），然后出现省略号（ text-overflow: ellipsis）。
+overflow: hidden;/*注意不要写在最后了*/     
+white-space: nowrap;     
+-webkit-text-overflow: ellipsis;     
+text-overflow: ellipsis; 
+
+
+两行多出隐藏
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+
+$('#id').siblings()   当前元素所有的兄弟节点
+$('#id').prev()       当前元素前一个兄弟节点
+$('#id').prevaAll()   当前元素之前所有的兄弟节点
+$('#id').next()       当前元素之后第一个兄弟节点
+$('#id').nextAll()    当前元素之后所有的兄弟节点
+这三个方法都可以添加选择器，给出选择条件，就能找到你指定的兄弟节点了。
+
+@参数形式有5种： 
+1）new Date("month dd,yyyy hh:mm:ss"); 
+2）new Date("month dd,yyyy"); 
+3）new Date(yyyy,mth,dd,hh,mm,ss); 
+4）new Date(yyyy,mth,dd); 
+5）new Date(ms);
+new Date("January 12,2006 22:19:35"); 
+
+new Date("January 12,2006"); 
+
+new Date(2006,0,12,22,19,35); 
+
+new Date(2006,0,12); 
+
+new Date(1137075575000);
+/new Date("2014-04-11")这个形式苹果手机不怎么友好 
+/new Date("2014/04/11")
+我们将日期对象设置为 5 天后的日期：
+var myDate=new Date()
+myDate.setDate(myDate.getDate()+5)
+注意：如果增加天数会改变月份或者年份，那么日期对象会自动完成这种转换。
+
+@比较日期
+日期对象也可用于比较两个日期。
+下面的代码将当前日期与 2008 年 8 月 9 日做了比较：
+var myDate=new Date();
+myDate.setFullYear(2008,8,9);
+
+var today = new Date();
+
+if (myDate>today)
+{
+alert("Today is before 9th August 2008");
+}
+else
+{
+alert("Today is after 9th August 2008");
+}
+
+@手机端用click会延迟300ms  所以手机端用touchstart
+var box = $('#box'); //缓存DOM对象
+box.on('touchstart', function () {
+    alert('touch');
+}); //建议统一用on来处理事件，PC端上把事件改成click就行了
+
+
+@在js代码中写css
+<script type="text/javascript" >
+            $box=$('.box');
+            $box.css('backgroun-position','0-'+x+'px')//x为变量或者计算公式
+        </script>
+不设置width的元素margin只会影响水平方向的可视box大小,margin为负值时相当于增加了盒子的宽度，但是是隐藏的宽度
+@普通元素的marg百分比in:10%;是按照宽度父元素的百分比计算的，不按照垂直方向的百分比计算
+@带有定位属性的margin:10%;img{
+position:absolute;
+}是按照position：relative/absolute/fixed的父级元素的宽度计算的
+@css  margin重叠
+1、block(不包括float absolute)
+2、不考虑writing-mode,只发生在垂直方向  margin-top margin-bottom
+@margin重叠的三种情况：
+1.相邻的兄弟
+2.父级和第一个/最后一个子元素
+3.空的block元素
+@margin重叠计算
+负负取绝对值最大的
+正正取最大的值
+正负去相加的值
+@margin值重叠的意义
+margin无效的情况：inline水平有效垂直无效（正常书写模式img替换元素除外）
+		：鞭长莫及的margin/
+		：margin重叠
+		：dispaly:table-cell /table-row
+绝对定位的元素非定位方向的margin无效
+内敛元素的margin不可能负到跑出原来内敛元素应该存在的位置
+margin-start/end
+border-start/end 根流的方向相同
+margin-collapse
+
+
+W3C标准盒模型
+外盒尺寸计算（元素空间尺寸）
+element空间高度＝内容高度＋内距＋边框＋外距
+element空间宽度＝内容宽度＋内距＋边框＋外距
+内盒尺寸计算（元素大小）
+element高度＝内容高度＋内距＋边框（height为内容高度）
+element宽度＝内容宽度＋内距＋边框（width为内容宽度）
+2.IE传统下盒模型（IE6以下，不包含IE6版本或”QuirksMode下IE5.5+”）
+外盒尺寸计算（元素空间尺寸）
+element空间高度＝内容高度＋外距（height包含了元素内容宽度、边框、内距）
+element宽间宽度＝内容宽度＋外距（width包含了元素内容宽度、边框、内距）
+内盒尺寸计算（元素大小）
+element高度＝内容高度（height包含了元素内容宽度、边框、内距）
+element宽度＝内容宽度（width包含了元素内容宽度、边框、内距）
+
+flex项目称动到左边或右边也取决于主轴的方向。如果flex-direction设置为row，设置justify-content控制方向；如果设置为column，设置align-items控制方向。
+布局 ---> display: flex;
+方向 ---> flex-direction: row(横)||column(竖);
+上下 ---> align-items: flex-start||center||flex-end;
+左右 ---> justify-content: 同上;
+倒序 ---> row-reverse
+兼容加-webkit-前缀
+
+在Responsive布局中，可以毫无保留的丢弃：
+第一， 尽量少用无关紧要的div；
+第二，不要使用内联元素（inline）；
+第三，尽量少用JS或flash；
+第四，丢弃没用的绝对定位和浮动样式；
+第五，摒弃任何冗余结构和不使用100%设置。
+有舍才有得，丢弃了一些对Responsive有影响的东东，那么有哪些东东能帮助Responsive确定更好的布局呢？
+第一，使用HTML5 Doctype和相关指南；
+第二，重置好你的样式（reset.css）；
+第三，一个简单的有语义的核心布局；
+第四，给重要的网页元素使用简单的技巧，比如导航菜单之类元素。
+使用这些技巧，无非是为了保持你的HTML简单干净，而且在你的页面布局中的关键部分（元素）不要过分的依赖现代技巧来实现，比如说CSS3特效或者JS脚本。
+
+ Internet Explorer 8或者更老的浏览器不支持媒体查询。你可以使用media-queries.js或者respond.js来在IE中添加对媒体查询的支持。
+
+media-queries.js(http://code.google.com/p/css3-mediaqueries-js/)      
+
+ respond.js(https://github.com/scottjehl/Respond)
+
+ <!—[if lt IE9]>
+      <scriptsrc=http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js></script>
+ ?<![endif]>
+
+进入CSS3进代之后我们可以通过CSS3的伪类“:before”，“:after”和CSS3的伪元素“::before”、“::after”来实现，其关键是依靠CSS3中的“content”属性来实现。不过这个属性对于img和input元素不起作用。
+
+@:after ::after
+基本概念
+
+1.他们都是CSS伪元素，与:hover/:active等伪类不一样。 
+2.:before/:after伪元素是在CSS2中提出来的，所以兼容性可能到IE8了。 
+3.::before/::after是CSS3中的写法，为了将伪类和伪元素区分开。但是平时为了兼容性，还是会用一个冒号的写法。
+
+基本用法
+
+p:after{} 
+img:before{}
+1
+2
+1
+2
+这两个伪类下特有的属性 content ，用于在 CSS 渲染中向元素逻辑上的头部或尾部添加内容。注意这些添加不会改变文档内容，不会出现在 DOM 中，不可复制，仅仅是在 CSS 渲染层加入。比较有用的是以下几个值：
+
+[String] – 使用引号包括一段字符串，将会向元素内容中添加字符串。示例： a:after { content: "↗"; }
+
+attr() – 调用当前元素的属性，可以方便的比如将图片的 Alt 提示文字或者链接的 Href 地址显示出来。示例：a:after { content:"(" attr(href) ")"; }
+
+url() / uri() – 用于引用媒体文件。示例： h1::before { content: url(logo.png); }
+
+counter() – 调用计数器，可以不使用列表元素实现序号功能。具体请参见 counter-increment 和 counter-reset 属性的用法。示例： 
+h2:before { counter-increment: chapter; content: "Chapter " counter(chapter) ". " }
+
+进阶用法 
+我们最常用的就是用来清除浮动和制作三角之类的特殊元素了。 
+现在大家常用的清除浮动的方法：
+
+.clearfix {*zoom: 1;}
+.clearfix:before,.clearfix:after {display: table;line-height: 0;content: "";}
+.clearfix:after {clear: both;}
+1
+2
+3
+1
+2
+3
+制作三角的方法：
+
+
+
+    .c-main:before{
+    content: '';
+    border-top: 9px solid transparent;/*方框上部分背景颜色为透明*/
+    border-bottom: 9px solid transparent;/*方框下部分背景为透明*/
+    border-right: 9px solid #eee;/*箭头背景颜色*/
+    position: absolute;/*绝对定位1*/
+    top: 25px;/*距离顶部位置偏移量2*/
+    left: -9px;/*距离左边位置偏移量3*/ /*123都是控制显示位置的*/
+    }
+    .c-main:after{
+    content: '';
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-right: 7px solid #fbfdfb;/*箭头背景颜色，覆盖前面的#eee颜色，使其颜色与整体颜色一致*/
+    position: absolute;
+    top: 27px;
+    left: -7px;
+    }
+背景图片或者颜色的渐变处理
+background-image: -ms-radial-gradient(farthest-side ellipse at center,  rgba(246,241,232,.85) 39%,rgba(212,204,186,.5) 100%), url("http://fs0.139js.com/file/s_jpg_857b081bjw1du3kveu19sj.jpg");
+
+  background:-webkit-gradient(linear ,10% 10%，100% 100%，
+
+                                                              color-stop(0.14,rgb(255,0,0)),
+
+                                                              color-stop(0.5,rgb(255,255,0)),
+
+                                                              color-stop(1,rgb(0,0,255)) );
+
+             第一个参数：表示的是渐变的类型
+
+                                  linear线性渐变
+
+             第二个参数：分别对应x，y方向渐变的起始位置
+
+             第三个参数：分别对应x，y方向渐变的终止位置
+
+             第四/五/N个参数：设置渐变的位置及颜色
+
+      (2)第二种写法：这种写法比较简单，而且效果比较自然
+
+            background:-webkit-gradient(linear, 0 0, 0 100%, from(＃2074af), to(＃2c91d2));
+
+             第一个参数：表示的是渐变的类型
+
+                                   linear线性渐变
+
+             第二个参数：分别对应x，y方向渐变的起始位置
+
+             第三个参数：分别对应x，y方向渐变的终止位置
+
+             第四个参数：设置了起始位置的颜色
+
+             第五个参数：设置了终止位置的颜色
+rotateX（95deg）
+从左到右是x轴，从上到下是y轴，从里到外（与屏幕垂直）是z轴。
+我看了一下从左到右是y轴，从上到下是x轴  是沿着轴线去旋转的！
+
+window.scrollTo(0,document.body.scrollHeight);   
+window.scrollTo(0,0);
+
+[javascript] view plain copy 在CODE上查看代码片派生到我的代码片
+$(document).ready(function()   
+{   
+alert($(window).height()); //浏览器时下窗口可视区域高度   
+alert($(document).height()); //浏览器时下窗口文档的高度   
+alert($(document.body).height());//浏览器时下窗口文档body的高度   
+alert($(document.body).outerHeight(true));//浏览器时下窗口文档body的总高度 包括border padding margin   
+alert($(window).width()); //浏览器时下窗口可视区域宽度   
+alert($(document).width());//浏览器时下窗口文档对于象宽度   
+alert($(document.body).width());//浏览器时下窗口文档body的高度   
+alert($(document.body).outerWidth(true));//浏览器时下窗口文档body的总宽度 包括border padding margin   
+}   
+) 
+@与其他一些display属性类似，table-cell同样会被其他一些CSS属性破坏，例如float, 
+position:absolute，所以，在使用display:table-cell与float:left或是position:absolute
+属性尽量不用同用。设置了display:table-cell的元素对宽度高度敏感，对margin值无反应，响应padding属性，基本上就是活脱
+脱的一个td标签元素了。 
+@怎么让背景图片不变形
+background：URL no-repeat center center；
+background-size:cover;
+不管外面的div的大小 图片以中心点为起始点不会变形
+@图片居中
+#tab { overflow:hidden; 
+　　　　width:100%;要显示的宽度
+    }
+#tab img{ overflow:hidden; width:1920px; height:447px;
+     position: relative;
+　　　left:50%;  刚好在中间
+　　　margin-left:-960px;图片宽度一半
+    }
+ie6不支持png格式  可以换用jpg格式
+margin：10px;
+js:offsetLeft和jqery offset().left以及css :left的不同说明
+offsetLeft一般来讲是说距离其父元素左边的距离
+  JS下的offsetLeft和style.left，以及jquery的css("left")，对定位的理解相似，如果父元素中有定位元素，都是相对于上一个定位元素（position不为static）定位。
+值得一提的是如果没有已经定位的父元素，那么offsetLeft指向的是文档（document）的左边缘，而style.left与css（"left"）指向的是body的左边缘，如果body默认存在margin的话，他们取得的值是不一样的。
+     此外老生常谈，css("left")和style.left是带单位"px"的，而offsetLeft没有单位，另外，style.left必须是内联样式，或者在JS中通过style.left赋值，否则取得的将为空字符串（在内部样式和外部样式中指定left是无效的）。而jquery的css("left")没有这一限制，显然使用jquery操作dom的优势就体现出来了。
+     最后是jquery的offset().left，它永远是相对于文档的左边缘（往往体现为浏览器的左边缘）定位的，这样的话使用jquery就可以在不同的应用场景采用不同的方法来获取元素的位置，相比较原生JS有巨大的优势。
+     下面贴出了测试代码和图片，特意给body设置了一个margin来让大家理解相对于文档和body的定位差别。
+样式和结构以及JS代码都放在一起了，方便大家拿走测试。
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+  <meta charset="UTF-8">  
+  <title>Document</title>  
+  <style type="text/css">  
+  body{  
+   margin:20px;  
+  
+  
+  }  
+    .wrap{  
+      width:300px;  
+      height: 300px;  
+      background-color: red;  
+     left:200px;    
+      position:relative;  
+    }  
+    .inner{  
+      position: absolute;  
+      width: 100px;  
+      height: 100px;  
+      left: 50px;  
+      background-color: blue;  
+  
+  
+    }  
+  </style>  
+  <script type="text/javascript" src="http://libs.baidu.com/jquery/2.0.3/jquery.js"></script>  
+</head>  
+<body>  
+  <div class="wrap" id="wrap" style="left:200px;">   
+    <div class="inner" id="inner">  
+    </div>  
+  </div>  
+   
+  <script type="text/javascript">  
+    console.log($(".wrap").css("left"));  
+    console.log($(".wrap").offset().left);  
+    console.log(document.getElementById("wrap").offsetLeft);   
+    console.log(document.getElementById("wrap").style.left);  
+    console.log($(".inner").css("left"));  
+    console.log($(".inner").offset().left);  
+    console.log(document.getElementById("inner").offsetLeft);   
+    console.log("如果style.left没有在内联样式中指定："+document.getElementById("inner").style.left);  
+  </script>  
+</body>  
+</html> 
+200px
+220
+220
+200px
+50px
+270
+50
+如果style.left没有在内联样式中指定://没有响应的值输出
+@242px去掉px的方法
+1、<script type="text/javascript">
+    var str = '442px';
+    var reg = /\d+/;
+    var num = str.match(reg)[0];
+    alert(num)
+   
+</script>
+2、parseInt(224px )
+@数组中去掉相同数字的方法
+
+@CSS3盒阴影效果不仅支持盒外阴影，还支持内阴影，使用时增加一个inset属性即可。例如：box-shadow: inset 0 0 1px #fff;所表示的含义是没有偏移，1像素模糊的白色内阴影。
+body的背景色设置为#333更友好
+
+@设置animation-play-state: paused;然后把延迟设置成不同的负数，就可以看到动画在不同帧的状态。
+如果你需要同时执行多个动画并错开它们的开始时间，可以使用animation-delay。但是这会导致用户打开网页时有些元素需要静止一段时间才会开始移动。
+
+此时可以给animation-delay设置一个负数，这样会将播放头向前移动，因此用户打开网页的时候所有动画都会播放。使用这种方式可以通过共享一套 keyframes 来实现不同的动画。
+检测是否符符w3c标准
+1、网页HTML在线验证：http://validator.w3.org
+2、网页CSS在线验证：http://jigsaw.w3.org/css-validator
+W3C标准的意义，百度一搜一大把，个人意见W3C标准过犹不及
+a标签里面不能放a标签,p里面不能放p元素
+可以放li但是不符合w3c标准
+通过判断浏览器的userAgent，用正则来判断手机是否是ios和Android客户端。代码如下：
+<script type="text/javascript">
+var u = navigator.userAgent;
+var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+alert('是否是Android：'+isAndroid);
+alert('是否是iOS：'+isiOS);
+</script>
+
+
+下面一个比较全面的浏览器检查函数，提供更多的检查内容，你可以检查是否是移动端（Mobile）、ipad、iphone、微信、QQ等。
+<script type="text/javascript">
+//判断访问终端
+var browser={
+    versions:function(){
+        var u = navigator.userAgent, app = navigator.appVersion;
+        return {
+            trident: u.indexOf('Trident') > -1, //IE内核
+            presto: u.indexOf('Presto') > -1, //opera内核
+            webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+            gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1,//火狐内核
+            mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+            ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+            android: u.indexOf('Android') > -1 || u.indexOf('Adr') > -1, //android终端
+            iPhone: u.indexOf('iPhone') > -1 , //是否为iPhone或者QQHD浏览器
+            iPad: u.indexOf('iPad') > -1, //是否iPad
+            webApp: u.indexOf('Safari') == -1, //是否web应该程序，没有头部与底部
+            weixin: u.indexOf('MicroMessenger') > -1, //是否微信 （2015-01-22新增）
+            qq: u.match(/\sQQ/i) == " qq" //是否QQ
+        };
+    }(),
+    language:(navigator.browserLanguage || navigator.language).toLowerCase()
+}
+</script>
+
+
+//判断是否IE内核
+if(browser.versions.trident){ alert("is IE"); }
+//判断是否webKit内核
+if(browser.versions.webKit){ alert("is webKit"); }
+//判断是否移动端
+if(browser.versions.mobile||browser.versions.android||browser.versions.ios){ alert("移动端"); }
+
+
+currentLang = navigator.language;   //判断除IE外其他浏览器使用语言
+if(!currentLang){//判断IE浏览器使用语言
+    currentLang = navigator.browserLanguage;
+}
+alert(currentLang);
+
+
+if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+    //alert(navigator.userAgent);  
+    window.location.href ="iPhone.html";
+} else if (/(Android)/i.test(navigator.userAgent)) {
+    //alert(navigator.userAgent); 
+    window.location.href ="Android.html";
+} else {
+    window.location.href ="pc.html";
+};
+这是到2016年4月这个时间段,市售手机来讲的。 安卓: 2k 2560 x 1440(三星最近的四
+
+
+
+JS 保留小数点后面2位小数
+
+1. 最笨的办法....... [我就怎么干的.........]
+
+function get()
+{
+    var s = 22.127456 + "";
+    var str = s.substring(0,s.indexOf(".") + 3);
+    alert(str);
+}
+
+2. 正则表达式效果不错
+
+<script type="text/javascript">
+onload = function(){
+    var a = "23.456322";
+    var aNew;
+    var re = /([0-9]+\.[0-9]{2})[0-9]*/;
+    aNew = a.replace(re,"$1");
+    alert(aNew);
+}
+</script>
+
+3. 他就比较聪明了.....
+
+<script>
+var num=22.127456;
+alert( Math.round(num*100)/100);
+</script>
+
+4.会用新鲜东西的朋友....... 但是需要 IE5.5+才支持。
+
+ <script>
+var num=22.127456;
+alert( num.toFixed(2));
+</script>
+from:http://xinlingwuyu.javaeye.com/blog/175931
+
+
+@js动态改变htmlfont-size:
+var docEl = document.documentElement,
+    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+    recalc = function() {
+        //设置根字体大小
+        docEl.style.fontSize = 20 * (docEl.clientWidth / 320) + 'px';
+    };
+
+//绑定浏览器缩放与加载时间
+var docEl = document.documentElement,
+    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+    recalc = function() {
+        //设置根字体大小
+        docEl.style.fontSize = 20 * (docEl.clientWidth / 320) + 'px';
+    };
+
+//绑定浏览器缩放与加载时间
+window.addEventListener(resizeEvt, recalc, false);
+document.addEventListener('DOMContentLoaded', recalc, false);
+
+@3D变换的梳理
+要想实现3D的效果，只需指定一个元素为容器并设置transform-style：preserve-3d，那么它的后代元素便会有3D效果。不过有很多需要注意的地方
+坐标系统的 z（前后） 轴同时与 x（左右） 和 y（上下） 轴垂直
+1、3D视图
+设置一个元素的transform-style:preserve-3d；只影响这个元素的子元素(如果孙元素也有3d效果，那么还必须给子元素设置preserve-3d)。这样所有子元素都可以相对与父元素的平面进行3d变形操作。和二维变形一样，三维变形可以使用transform属性来设置。可以通过制定的函数或者通过三维矩阵来对元素变型
+可以呈现3d的属性有，translate3d、scale3d、rotateX、rotateY、rotateZ等等
+2、透视/景深效果
+perspective(length) 为一个元素设置三维透视的距离。仅作用于元素的后代，而不是其元素本身。简单的来说就是假想下，当我们看一个房子的时候，比如房子有200米长，在房里里面与在房子外面，看到的角度都是不一样的，当设置perspective<200的时候，就是我们在房里看，如果perspective>200或者更多的时候，就相当在外面看，而且越远看房子的角度大小也就不一样
+当元素没有设置perspective(length)时，所有后代元素被压缩在同一个二维平面上，不存在景深的效果。如果设置perspective(length)后，将会看到三维的效果。默认的透视视角中心在容器
+总结：呈现3d效果需要3部分
+ 父元素或者当前运动元素上设置透视角perspective，perspective属性的值决定了3D效果的强度
+3D视图，设置在父元素上，子元素都可以相对与父元素的平面进行3d变形操作
+3D变形函数，translate3d、scale3d、rotateX、rotateY、rotateZ等等
+
+异步编程梳理
+这里要了解3个步骤
+var dtd = $.Deferred();  //创建
+dtd.resolve();          //成功
+dtd.then()              //执行回调
+
+
+dtd.then(function() {
+   //操作1
+}).then(function() {
+   //操作2
+}).then(function() {
+  //操作3
+})
+
+创建一个观察者对象
+var observer = new Observer();
+通过调用subscribe方法，实现一个事件的观察
+observer.subscribe("任务名"，处理函数)
+通过publish触发观察事件，在任意时刻触发了这个观察的任务名，将会触发这个事件订阅subscribe方法
+ observer.publish("任务名")
+取消事件订阅，意味着就不会执行了
+ observer.unsubscribe("任务名")
+
+SVG有什么优势？
+文件体积小，能够被大量的压缩
+图片可无限放大而不失真(矢量图的基本特征)
+在视网膜显示屏上效果极佳
+能够实现互动和滤镜效果
+
+总的来说：Canvas绘制的总体的步骤
+创建HTML页面，设置画布标签
+编写js，获取画布dom对象
+通过Canvas标签的Dom对象获取上下文
+设置绘制线样式、颜色
+绘制矩形，或者填充矩形
+
+<canvas id="cvs"></canvas>
+      //第一步：获取canvas元素
+    var cvs = document.getElementById('cvs'); //画布
+     //第二步：获取上下文
+    var ctx = cvs.getContext('2d'); // 画笔
+    //第三步：指定绘制线样式、颜色
+    ctx.strokeStyle = "red";
+    ctx.fillStyle='blue';
+    //第四步：绘制矩形，只有线。内容是空的
+    ctx.strokeRect(10, 10, 190, 100);//红色
+    //以下演示填充矩形。
+    //?
+    ctx.fillRect(110,110,100,100)//蓝色
+    </script>
+
+js实现+1
+第一种： x++
+第二种：x = x + 1
+carmada  | 发布于2012-05-09 09:08 评论 0 5
+还有一种
+x+=1;
+网海1书生  | 发布于2012-05-08 15:55 评论 0 3
+自己想，楼上说的只是给你举个例子
+想实现x加1的方法，你要多少就有多少
+特殊提醒：
+js是弱类型，所以有可能使用楼上的方法会出错，那么就使用转换的方式实现/1、paresInt函数或者
+2、
+x=x*1 +1;
+前面是将x转成数字
+然后进行加1
+3、
+答案：变量前加上+后，变量将转换为数字，进行数字运算。比如：
+ var x = "3";
+ var y = x + 10; // 310
+ var z = +x + 10 // 13
+ 操作Json和Json数组的一些基本方法
+一、定义一个json对象
+         1、直接定义
+         1）、属性值为常量：
+           var jsonObj={userId:'001'}; //字段可以不用也可用引号引起来，但字符串值必须用引号（单引号和双引号都行）
+         2）、属性值为Json对象：
+              var jsonObj={id:{userId:'001',sex:'男'},id1:{userId:'002',sex:'女'}};              2、由字符串转换
+            var jsonStr="{\"userId\":\"001\"}";//字段和字符串值必须用双引号引起，单引号都不行
+            var jsonObj=JSON.parse(jsonStr);//字符串转json对象       
+         3、由字符串转换
+                   jsonObj.name='李明';
+                   或者：jsonObj['name']='李明';
+
+                   结果：{serId:"001",name:'李明'}            
+        4、循环访问json对象属性
+                   var jsonObj={id:{userId:'001',sex:'男'},id1:'002'};                
+                   for(var field in jsonObj)
+                   {
+                           alert(field);//依次输出Id和Id1;
+                           alert(jsonObj[field].userId)  //针对第一次循环，输出：001【第一个属性值为json对象，要通过属性值的属性访问】
+                           alert(jsonObj[field]);//针对第二次循环，输出：002【第二个属性值为简单常量，直接输出即可】
+                   }
+二、定义一个json数组
+           var josnArry=[];
+         1、添加json对象元素：
+                  jsonArry.push(jsonObj);
+         2、删除元素
+                  1）、delete jsonArry[0];
+                              删除指定位置元素。注意：不直接直接删除，而是用null项取代。数组长度不变
+                              结果：[ null]，此时jsonArry[0]的值为undefined,后续访问数组时要考虑删除后的元素的特殊情况               
+                   2）、splice(index,length):
+                            删除指定位置开始指定个数的项
+                            和delete区别：1、splice直接清空指定项，数组长度减小。而delete 只是用null项取代原有项
+       2、splice可以一次性删除多项。而         delete职能删除一项
+         3、循环访问数组
+                 1、jQuery方式
+                       $.each(jsonArry,function(index,item){
+                          var userId=item.userId;          
+                        });
+                 2、一般js方法
+                       for(var i=0;i<jsonArry.length;i++)
+                       {
+                         var userId=jsonArry[i].userId;  
+                       }
+                 3、特殊方法（类似方法2）
+                       for(var item in jsonArry)
+                       { 
+                          var userId=jsonArry[item].userId;//注意：此处的item不是数组项，而是数组项的索引
+                       }                    
+三、字符串和json对象和json对象数组相互转换
+           var jsonStr="{\"userId\":\"001\"}";
+           var jsonArry="[{\"userId\":\"001\"},{\"userId\":\"002\"}]";
+         1、字符串转json对象或json对象数组
+                  var jsonObj=JSON.parse(jsonStr);
+                  var jsonArry=JSON.parse(jsonArry);
+         2、json对象或json对象数组转字符串
+                 var jsonStr=JSON.stringify(jsonObj);
+                 var jsonArryStr=JSON.stringify(jsonArry);
+
+
+判断微信内核
+document.addEventListener("WeixinJSBridgeReady",function(){
+WeixinJSBridge.call("showToolbar")
+});
+
+ie6下的完全透明，直接使用transparent就能全部兼容
+.bg{background:transparent;}
+2、只有半透明才需要用到filter滤镜来处理.
+.bg{
+  background: #000000;
+  filter:Alpha(opacity=50);/* 只支持IE6、7、8、9 */
+  position:static; /* IE6、7、8只能设置position:static(默认属性) ，否则会导致子元素继承Alpha值 */
+  *zoom:1; /* 激活IE6、7的haslayout属性，让它读懂Alpha */
+}
+
+
+
+HTML5技术支持WebApp在手机上拍照，显示在页面上并上传到服务器。这是手机微博应用中常见的功能，当然你也可以在其它类型应用中适当使用此技术。
+　　1、 视频流
+　　HTML5 的 The Media Capture（媒体捕捉） API 提供了对摄像头的可编程访问，用户可以直接用 getUserMedia（请注意目前仅Chrome和Opera支持）获得摄像头提供的视频流。我们需要做的是添加一个HTML5 的 Video 标签，并将从摄像头获得的视频作为这个标签的输入来源。
+<video id=”video” autoplay=”"></video>
+<script>
+var video_element=document.getElementById(‘video’);
+if(navigator.getUserMedia){ // opera应使用opera.getUserMedianow
+navigator.getUserMedia(‘video’,success,error); //success是回调函数,当然你也可以直接在此写一个匿名函数
+}
+function success(stream){
+video_element.src=stream;
+}
+</script>
+此时，video 标签内将显示动态的摄像视频流。下面需要进行拍照了。
+　　2、 拍照
+　　拍照是采用HTML5的Canvas功能，实时捕获Video标签的内容，因为Video元素可以作为Canvas图像的输入，所以这一点很好实现。主要代码如下：
+
+var canvas=document.createElement(‘canvas’); //动态创建画布对象
+var ctx=canvas.getContext(’2d’);
+var cw=vw,ch=vh;
+ctx.fillStyle=”#ffffff”;
+ctx.fillRect(0,0,cw,ch);
+ctx.drawImage(video_element,0,0,cw,ch,0,0,vw,vh); //将video对象内指定的区域捕捉绘制到画布上指定的区域，可进行不等大不等位的绘制。
+document.body.append(canvas);
+
+　　3、 图片获取
+　　从Canvas获取图片数据的核心思路是用canvas的toDataURL将Canvas的数据转换为base64位编码的PNG图像，类似于“data:image/png;base64,xxxxx”的格式。
+var imgData=canvas.toDataURL(“image/png”);
+
+这样，imgData变量就存储了一长串的字符数据内容，表示的就是一个PNG图像的base64编码。因为真正的图像数据是base64编码逗号之后的部分，所以要让实际服务器接收的图像数据应该是这部分，我们可以用两种办法来获取。
+　　第一种：是在前端截取22位以后的字符串作为图像数据，例如：
+var data=imgData.substr(22);
+
+　　如果要在上传前获取图片的大小，可以使用：
+var length=atob(data).length; //atob 可解码用base-64解码的字串
+
+　　第二种：是在后端获取传输的数据后用后台语言截取22位以后的字符串（也就是在前台略过上面这步直接上传）。例如PHP里：
+$image=base64_decode(str_replace(‘data:image/jpeg;base64,’,”,$data);
+
+　　4、 图片上传
+　　在前端可以使用Ajax将上面获得的图片数据上传到后台脚本。例如使用jQuery时可以用：
+$.post(‘upload.php’,{‘data’:data});
+
+在后台我们用PHP脚本接收数据并存储为图片。
+function convert_data($data){
+$image=base64_decode(str_replace(‘data:image/jpeg;base64,’,”,$data);
+save_to_file($image);
+}
+function save_to_file($image){
+$fp=fopen($filename,’w');
+fwrite($fp,$image);
+fclose($fp);
+}
+
+　　以上的解决方案不仅能用于Web App拍照上传，也可以通过Canvas的编辑功能函数提供图片编辑，例如裁剪、上色、涂鸦、圈点等功能，然后把用户编辑完的图片上传保存到服务器上。
+　　在还在不断补充修正的HTML5的驱动下，Web App与Native App之间的距离将越来越小。在可预见的不远的未来，越来越多老的和新的开发项目必将会迁移到WEB应用上来。
+相关规范：
+
+
+javascript scrollTop 获取滚动条相对于其顶部的偏移（如制作自动显示隐藏的“返回顶部”按钮）。在实际应用中经常会遇到以下问题：
+document.documentElement.scrollTop在Chrome里总为0
+document.body.scrollTop 在IE和firefox里总为0
+
+1、各浏览器下 window.pageYOffset/document.documentElement.scrollTop/document.body.scrollTop的差异
+示例：
+复制代码 代码如下:
+
+window.scroll(0,100)
+console.log(“window.pageYOffset:”+window.pageYOffset)
+console.log(“document.documentElement.scrollTop:”+document.documentElement.scrollTop)
+console.log(“document.body.scrollTop:”+document.body.scrollTop)
+
+IE6/7/8：
+doctype：
+window.pageYOffset：undefined
+document.documentElement.scrollTop:100
+document.body.scrollTop：0
+无doctype：
+window.pageYOffset：undefined
+document.documentElement.scrollTop:0
+document.body.scrollTop：100
+Safari/Chrome:
+window.pageYOffset：100
+document.documentElement.scrollTop:0
+document.body.scrollTop：100
+Firefox/Opera:
+doctype：
+window.pageYOffset：100
+document.documentElement.scrollTop:100
+document.body.scrollTop：0
+无doctype：
+window.pageYOffset：100
+document.documentElement.scrollTop:0
+document.body.scrollTop：100
+2、获取scrollTop值
+完美的获取scrollTop 赋值简写 ：
+复制代码 代码如下:
+var scrollTop = window.pageYOffset|| document.documentElement.scrollTop || document.body.scrollTop;
+
+<div contenteditable="true" tabindex="2" class="content"></div>
+这样就有onfocus和onblur事件了。
+tabindex属性值的是有一定含义的:
+* -1: 用户不能通过tab的方式达到该元素, 只允许通过编程方式来获得focus(element.focus()), 或者就是点击获得focus.
+* 0: 用户可以通过tab的方式达到该元素, 自动定义tab的顺序.
+* >0: 给元素一个指定的tab优先级, 等于1时优先级最高.
+contenteditable="true"加上这个可以让div能够编辑
+
+.content{outline:none;}  
+
+以前在项目里碰到过一个问题
+
+input输入框用一个背景图模拟，设置height和line-height一样的高度，使里面的输入文字能够居中，
+
+在FF下出现的情况是：点击input时，输入光标其实上跟input的height一样高，但当开始输入文字时，光标又变得跟文字一样高，
+
+chrome下光标跟input的height一样高，
+
+而IE下光标跟文字的大小一致。
+
+一直没弄明白为什么这样子，今天听罗浮宫里的同学一讨论，才知道原因所在。
+
+初步结论如下：
+
+IE：不管该行有没有文字，光标高度与font-size一致。
+
+FF：该行有文字时，光标高度与font-size一致。该行无文字时，光标高度与input的height一致。
+
+Chrome：该行无文字时，光标高度与line-height一致；该行有文字时，光标高度从input顶部到文字底部(这两种情况都是在有设定line-height的时候)，如果没有line-height，则是与font-size一致。
+
+解决的方案：
+
+给input的height设定一个较小的高度，然后用padding去填充，基本上可以解决所有浏览器的问题
+
+input{
+    height: 16px;
+    padding: 4px 0px;
+    font-size: 12px;
+}
+for循环终止用if(){
+break;
+}
+for(var i=0;i<10;i++){
+for(var j=0;j<10;j++){
+
+}
+}
+嵌套的for循环，外面循环一次里面循环10次
+
+
+function a(){
+"屏幕宽高为："+screen.width+"*"+screen.height；
+}
+其它：搜索
+网页可见区域宽：document.body.clientWidth 
+网页可见区域高：document.body.clientHeight 
+网页可见区域宽：document.body.offsetWidth (包括边线的宽) 
+网页可见区域高：document.body.offsetHeight (包括边线的宽) 
+网页正文全文宽：document.body.scrollWidth 
+网页正文全文高：document.body.scrollHeight 
+网页被卷去的高：document.body.scrollTop 
+网页被卷去的左：document.body.scrollLeft 
+网页正文部分上：window.screenTop 
+网页正文部分左：window.screenLeft 
+屏幕分辨率的高：window.screen.height 
+屏幕分辨率的宽：window.screen.width 
+屏幕可用工作区高度：window.screen.availHeight 
+屏幕可用工作区宽度：window.screen.availWidth 
+HTML精确定位:scrollLeft,scrollWidth,clientWidth,offsetWidth 
+scrollHeight: 获取对象的滚动高度。 
+scrollLeft:设置或获取位于对象左边界和窗口中目前可见内容的最左端之间的距离 
+scrollTop:设置或获取位于对象最顶端和窗口中可见内容的最顶端之间的距离 
+scrollWidth:获取对象的滚动宽度 
+offsetHeight:获取对象相对于版面或由父坐标 offsetParent 属性指定的父坐标的高度 
+offsetLeft:获取对象相对于版面或由 offsetParent 属性指定的父坐标的计算左侧位置 
+offsetTop:获取对象相对于版面或由 offsetTop 属性指定的父坐标的计算顶端位置 
+event.clientX 相对文档的水平座标 
+event.clientY 相对文档的垂直座标 
+event.offsetX 相对容器的水平坐标 
+event.offsetY 相对容器的垂直坐标 
+document.documentElement.scrollTop 垂直方向滚动的值 
+event.clientX+document.documentElement.scrollTop 相对文档的水平座标+垂直方向滚动的量
+
+最近在做一个手机端页面时，遇到了一个奇怪的问题：字体的显示大小，与在CSS中指定的大小不一致。大家可以查看这个Demo（记得打开Chrome DevTools）。
+
+https://github.com/amfe/article/issues/10
+1、手动指定 viewport width=320，这时 Font Boosting 不会被触发。（后边可以知道，这个说法不严谨，在其他设置均为默认值时，这一条才有效）
+2、Font Boosting 仅在未限定尺寸的文本流中有效，给元素指定宽高，就可以避免 Font Boosting 被触发。/
+3、显然第 2 条方案是有缺陷的，文本内容不可能都指定宽高。不过还好，我们通过指定 max-height , min-height, min-width, max-width（经 @Ovaldi 指正，只有 max-height 有效） 也是可以的。比如 body * { max-height: 999999px; } 就可以无副作用的禁掉 Font Boosting 特性。当然，我觉得没必要使用通用选择器，用类似 p { max-height: 999999px; } 可能更好一些。
+
+
+手机端模拟遮盖层的时候，会触发滚动事件
+禁止的方法如下：要在事件监听的里面做判断；
+function Dosubmit(){
+    var checkedPw= $(".pay .selected").parent('p').text();
+    if(checkedPw=='现金支付'){
+      $(".topWarp").show();
+      var jinzhi=0;
+      document.addEventListener("touchmove",function(e){
+      if(jinzhi==0){
+      e.preventDefault();
+      e.stopPropagation();//jquery下面直接一句return false 就可以了
+
+      }
+      },false);
+      $(".tips .BTn").on('click', function(event) {
+        jinzhi=1;
+       
+          $(".topWarp").hide();
+      });
+    }
+    else{
+        //微信支付
+    }
+}
+
+ie8下面的双外边距的问题
+ie8不支持媒体查询，可以加一行代码解决，但是只是在服务器端可以看出效果
+移动端的click都是touch之后，才会模拟触发。
+
+触发的顺序是
+
+touchstart
+
+touchmove
+
+touchend
+
+mousedown
+
+mousemove
+
+mouseenter
+
+click
+js事件：
+注：IE8以下不支持事件监听，因为直到ie9ie才开始支持W3C规范，之前ie都有自己的标准（
+addEventListener()是标准的绑定事件监听函数的方法，是W3C所支持的，Chrome、FireFox、Opera、Safari、IE9.0及其以上版本都支持该函数；但是，IE8.0及其以下版本不支持该方法，它使用attachEvent()来绑定事件监听函数。所以，这种绑定事件的方法必须要处理浏览器兼容问题。
+IE标准
+语法：
+element.attachEvent(event, function)
+event：（必需）事件类型。需加“on“，例如：onclick。
+function：（必需）指定要事件触发时执行的函数。
+）
+element.addEventListener(event, function, useCapture)
+event : （必需）事件名，支持所有 DOM事件 。
+function：（必需）指定要事件触发时执行的函数。
+useCapture：（可选）指定事件是否在捕获或冒泡阶段执行。true，捕获。false，冒泡。默认false。
+
+事件监听的优点
+1、可以绑定多个事件。常规的事件只执行最后一个绑定的事件
+<input type="button" value="click me" id="btn4">
+ 
+<script>
+var btn4 = document.getElementById("btn4");
+btn4.addEventListener("click",hello1);
+btn4.addEventListener("click",hello2);
+ 
+function hello1(){
+ alert("hello 1");
+}
+function hello2(){
+ alert("hello 2");
+}
+</script>
+2、可以解除相应的绑定
+<input type="button" value="click me" id="btn5">
+ 
+<script>
+var btn5 = document.getElementById("btn5");
+btn5.addEventListener("click",hello1);//执行了
+btn5.addEventListener("click",hello2);//不执行
+btn5.removeEventListener("click",hello2);
+ 
+function hello1(){
+ alert("hello 1");
+}
+function hello2(){
+ alert("hello 2");
+}
+</script>
+封装事件监听：
+<input type="button" value="click me" id="btn5">
+ 
+//绑定监听事件
+function addEventHandler(target,type,fn){
+ if(target.addEventListener){
+ target.addEventListener(type,fn);
+ }else{
+ target.attachEvent("on"+type,fn);
+ }
+}
+ 
+//移除监听事件
+function removeEventHandler(target,type,fn){
+ if(target.removeEventListener){
+ target.removeEventListener(type,fn);
+ }else{
+ target.detachEvent("on"+type,fn);
+ }
+}
+ 
+//测试
+var btn5 = document.getElementById("btn5");
+addEventHandler(btn5,"click",hello1);//添加事件hello1
+addEventHandler(btn5,"click",hello2);//添加事件hello2
+removeEventHandler(btn5,"click",hello1);//移除事件hello1
+
+事件委托：
+事件委托就是利用冒泡的原理，把事件加到父元素或祖先元素上，触发执行效果。
+<input type="button" value="click me" id="btn6">
+ 
+var btn6 = document.getElementById("btn6");
+document.onclick = function(event){
+ event = event || window.event;
+ var target = event.target || event.srcElement;
+ if(target == btn6){
+ alert(btn5.value);
+ }
+}
+上面只是个例子，代码尽可能的简化了。在实际的代码中 我们可能用到jQuery的live()、delegate()、bind()、on()等。
+事件委托优点
+1、提高JavaScript性能。事件委托可以显著的提高事件的处理速度，减少内存的占用。 实例分析JavaScript中的事件委托和事件绑定 ，这篇文章写得还不错。
+

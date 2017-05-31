@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+  <meta name="viewport" content="initial-scale=1, user-scalable=0, minimal-ui" charset="UTF-8">
+        <script src="js/resizeRem.js"></script>
+        <link rel="stylesheet" href="css/resetClass1.css" />
+        <link rel="stylesheet" href="css/common.css" />
+        <link rel="stylesheet" href="css/news-list.css" />
+        <link rel="stylesheet" href="js/dist/dropload.css" />
+        <link rel="stylesheet" href="js/dist/dropload.css" />
+    <title>加载底部</title>
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <link rel="stylesheet" href="js/dist/dropload.css">
+</head>
+<body>
+    <div class="wrap">
+        <header class="mainBg height1 header">E课堂</header>
+
+        <div class="content inner">
+        <ul class="lists">
+            <li><a href="news-Detail.html"><p>全面深改</p><span class="grap">2016-12-14 12:06
+</span></a></li>
+            <li><a href="news-Detail.html"><p>全面深改三年：渐入佳境 次第开花</p><span class="grap">2016-12-14 12:06
+</span></a></li>
+            <li><a href="news-Detail.html"><p>全面深改三年：渐入佳境 次第开花</p><span class="grap">2016-12-14 12:06
+</span></a></li>
+            <li><a href="news-Detail.html"><p>全面深改三年：渐入佳境 次第开花</p><span class="grap">2016-12-14 12:06
+</span></a></li>
+<li><a href="news-Detail.html"><p>全面深改三年：渐入佳境 次第开花</p><span class="grap">2016-12-14 12:06
+</span></a></li>
+            <li><a href="news-Detail.html"><p>全面深改三年：渐入佳境 次第开花</p><span class="grap">2016-12-14 12:06
+</span></a></li>
+            <li><a href="news-Detail.html"><p>全面深改三年：渐入佳境 次第开花</p><span class="grap">2016-12-14 12:06
+</span></a></li>
+
+        </ul>
+        </div>
+           </div>
+  <script src="js/jquery-3.1.1.js"></script>
+  <script src="js/dist/dropload.min.js"></script>
+<script>
+$(function(){
+    // 页数
+    var page = 0;
+    // 每页展示5个
+    var size = 5;
+    // dropload
+    $('.content').dropload({
+        scrollArea : window,
+        loadDownFn : function(me){
+            page++;
+            setTimeout(function(){
+                        // 插入数据到页面，放到最后面
+                        $('.lists').append('<li><a href="news-Detail.html"><p>全面深改三年：渐入佳境 次第开花</p><span class="grap">2016-12-14 12:06</span></a></li>');
+                        // 每次数据插入，必须重置
+                        me.resetload();
+                    },1000);
+            // 拼接HTML
+            //var result = '';
+            // $.ajax({
+            //     type: 'GET',
+            //     url: 'http://ons.me/tools/dropload/json.php?page='+page+'&size='+size,
+            //     dataType: 'json',
+            //     success: function(data){
+            //         var arrLen = data.length;
+            //         if(arrLen > 0){
+            //             for(var i=0; i<arrLen; i++){
+            //                 result +=   '<a class="item opacity" href="'+data[i].link+'">'
+            //                                 +'<img src="'+data[i].pic+'" alt="">'
+            //                                 +'<h3>'+data[i].title+'</h3>'
+            //                                 +'<span class="date">'+data[i].date+'</span>'
+            //                             +'</a>';
+            //             }
+            //         // 如果没有数据
+            //         }else{
+            //             // 锁定
+            //             me.lock();
+            //             // 无数据
+            //             me.noData();
+            //         }
+            //         // 为了测试，延迟1秒加载
+            //         setTimeout(function(){
+            //             // 插入数据到页面，放到最后面
+            //             $('.lists').append(result);
+            //             // 每次数据插入，必须重置
+            //             me.resetload();
+            //         },1000);
+            //     },
+            //     error: function(xhr, type){
+            //         alert('Ajax error!');
+            //         // 即使加载出错，也得重置
+            //         me.resetload();
+            //     }
+            // });
+        }
+    });
+});
+</script>
+</body>
+</html>

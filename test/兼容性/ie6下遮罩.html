@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>DIV CSS遮罩层 兼容IE6</title>
+<script language="javascript" type="text/javascript">
+function showdiv() {
+            document.getElementById("show").style.display ="block";
+        }
+function hidediv() {
+            document.getElementById("show").style.display ='none';
+        }
+</script>
+<style type="text/css">
+ .overlay{
+    position: fixed;
+    z-index: 100000; /*按需设置*/
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+    overflow: hidden;
+    background-color: #000;
+    }
+* html { background:url(*) fixed; }
+* html body { margin:0; height:100%; }
+* html .overlay{
+   position: absolute;
+   left: expression(documentElement.scrollLeft + documentElement.clientWidth - this.offsetWidth);
+   top: expression(documentElement.scrollTop + documentElement.clientHeight - this.offsetHeight);
+}
+
+.cen{
+     position:absolute;
+    top:50%;
+    left:50%;
+    width:200px;
+    height:100px;
+    margin-top:-50px;
+    margin-left:-100px;
+
+    border:1px solid red;
+    line-height:30px;
+    font-size:16px;
+    text-align:center;
+    color: red;
+}
+
+</style>
+</head>
+<body>
+<input id="btnshow" type="button" value="Show" onclick="showdiv();"/>
+<div id="show" class="overlay">
+    <div class="cen">
+        是否垂直居中？
+        <input id="btnclose" type="button" value="Close" onclick="hidediv();"/>
+    </div>
+</div>
+</body>
+</html>

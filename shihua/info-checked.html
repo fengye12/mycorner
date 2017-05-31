@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+        <script src="js/resizeRem.js"></script>
+        <script src="js/jquery-3.1.1.js"></script>
+        <link rel="stylesheet" href="css/resetClass.css" />
+        <link rel="stylesheet" href="css/common.css" />
+        <link rel="stylesheet" href="css/info-checked.css" />
+        <title>会员信息</title>
+    </head>
+    <body>
+    <div class="wrap">
+        <header class="mainBg height1 header">资料审核 </header>
+        <div class="info-Box">
+                <div class="info">
+                    <div class="info-line whiteBg"><label>身份证号：</label><input type="text" placeholder="请输入身份证号" /></div>
+                    <div class="info-line whiteBg"><label>手机号：</label><input type="text" placeholder="请输入手机号" /></div>
+                    <div class="info-line whiteBg"><label>加油卡号：</label><input type="text" placeholder="请输加油卡号" /></div>
+                    <button class="mainBg check-btn">确认</button>
+                </div>
+        </div>
+    </div>
+<script>
+    var tips=$(".tip-wrap .tips")
+    var tipWrap=$(".tip-wrap")
+    tips.on("click",function(e){
+        e.stopPropagation();
+    })
+    tipWrap.on("click",function(){
+        tipWrap.fadeOut(200)
+    })
+    $(".mess-info").on('click', '.checked', function(event) {
+        event.preventDefault();
+      if($(".name").text=" "){
+        tipWrap.fadeIn(200);
+      }
+    });
+</script>
+    </body>
+</html>

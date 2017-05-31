@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+            #img{filter: alpha(opacity:30);opacity:0.3};
+        </style>
+        <title></title>
+    </head>
+    <script>
+    window.onload=function(){
+        var oImg=document.getElementById('img')
+        oImg.onmouseover=function(){
+
+            startMove(100);
+        }
+          oImg.onmouseout=function(){
+            startMove(30);
+        }
+    }
+        var timer=null;
+
+        var alpha=30;
+        function startMove(iTarget){
+            var oImg=document.getElementById('img');
+            clearInterval(timer);
+            timer=setInterval(function(){
+                if(alpha<iTarget){
+                    iSpeed=10;
+                }else{
+                    iSpeed=-10;
+                }
+                if(alpha==iTarget){
+                    clearInterval(timer)
+                }else{
+                    alpha=alpha+iSpeed;
+
+                    oImg.style.filter='alpha(opacity:'+alpha+')';
+                    oImg.style.opacity=alpha/100;
+                    // console.log(oImg.style.filter);
+                    // console.log(oImg.style.opacity)
+                    document.title=alpha;
+                }
+            },30)
+        }
+    </script>
+    <body>
+    <img src="../ceshi/images/logo1.png" alt="" id="img" />
+    </body>
+</html>

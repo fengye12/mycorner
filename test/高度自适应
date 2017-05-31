@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>高度自适应的简单方法</title>
+<style type="text/css">
+body, div, dl, dt, dd, ul, ol, li,h1, h2, h3, h4, h5, pre, code,form, fieldset, legend, input, button,textarea, p, blockquote, th, td{margin:0;padding:0}
+fieldset, img{border:0}
+abbr, acronym{border:0;font-variant:normal}
+ol, ul {list-style: none}
+table{border-collapse:collapse;border-spacing:0}
+a{text-decoration:none}
+.wrap{margin:0 auto;width:960px;min-height:100px}
+*html .wrap{height:100px}
+.header{float:left;width:960px;background:pink}
+.content{float:left;width:960px;background:gray;color:#fff}
+.footer{float:left;width:960px;background:green;color:#fff}
+.left{display:inline;padding-top:1px;float:left;margin-right:20px;width:700px;background:blue}
+.left-block{float:left;margin-top:15px;width:700px;background:purple}
+.right{display:inline;float:left;padding-top:1px;width:240px;background:yellow}
+.right-block{float:left;margin-top:15px;width:240px;background:#f60}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="header">这里是头部，你可以在里面写很多东西，看看他是否能够高度自适应。它是粉红色的。
+  <br />
+  </div>
+  <div class="content">
+       这里是内容容器，它里面包含了.left和.right，并且会被他们撑开。它是灰色的。
+  <div class="left">
+    <div class="left-block">
+       这里是内容左边的容器，你可以在里面写很多东西，看看他是否能够高度自适应。它是紫色的。同时可以看到他把父容器.left撑开了，因为.left也是能够高度自适应的，.left的背景色是蓝色,
+
+为了能看到.left，我给它设定了padding，同时，我还给.left-block设定了margin-top:15px
+    </div>
+    <div class="left-block">
+       这里是内容左边的第二个容器，你可以在里面写很多东西，看看他是否能够高度自适应。它是紫色的。
+    </div>
+  </div>
+  <div class="right">
+    <div class="right-block">
+         这里是内容右边的容器，你可以在里面写很多东西，看看他是否能够高度自适应。它是橙色的。同时可以看到他把父容器.right撑开了，因为.left也是能够高度自适应的，.right的背景色是
+
+黄色,为了能看到.right，我给它设定了padding，同时，我还给.right-block设定了margin-top:15px
+    </div>
+    <div class="right-block">
+         这里是内容右边的第二个容器，你可以在里面写很多东西，看看他是否能够高度自适应。它是橙色的。
+    </div>
+  </div>
+  </div>
+  <div class="footer">
+  这里是底部，你可以在里面写很多东西，看看他是否能够高度自适应。它是绿色的。
+  </div>
+</div>
+</body>
+</html>

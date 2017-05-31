@@ -1,0 +1,43 @@
+/*
+* @Author: anchen
+* @Date:   2016-12-27 09:27:44
+* @Last Modified by:   anchen
+* @Last Modified time: 2016-12-29 10:58:20
+*/
+.mess-info p{
+    padding: 0 0.32rem;
+}
+.name-line{
+    margin-bottom: 0.2rem;
+}
+.point-line{
+    margin-bottom: 0.1rem;
+}
+.rightcoin{
+    background-image: url('../images/rightcoin.png');
+    background-size: 0.2rem 0.33rem;
+    background-repeat: no-repeat;
+    background-position: 7rem center;
+}
+.tip-wrap{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    width: 7.5rem;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+}
+.tip-wrap .tips{
+    font-size: 15px;
+    width: 5.18rem;
+    border-radius: 5px;
+    padding: 0 0.44rem;
+    box-sizing: border-box;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}

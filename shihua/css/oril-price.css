@@ -1,0 +1,39 @@
+/*
+* @Author: anchen
+* @Date:   2016-12-27 09:26:30
+* @Last Modified by:   anchen
+* @Last Modified time: 2016-12-28 11:02:25
+*/
+.province{
+    background-image: url('../images/bg2.png');
+    background-size: cover;
+    background-position: center center;
+    margin-top: 0.12rem;
+    height: 2.24rem;
+    padding: 0 0.22rem;
+    color: #fff;
+}
+.station{
+    background-image: url('../images/bg1.png');
+    background-size: cover;
+    background-position: center center;
+    margin-top: 0.12rem;
+    height: 2.24rem;
+    padding: 0 0.22rem;
+    color: #fff;
+}
+.date,.item{
+position: relative;
+}
+.date .logo{
+    position: absolute;
+    left: 0;
+    padding-left: .38rem ;
+    background: url('../images/bowl.png') no-repeat left center;
+    background-size: .28rem .22rem;
+}
+.item span{
+display: block;
+width: 2.35rem;
+text-align: center;
+}

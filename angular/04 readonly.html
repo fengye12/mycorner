@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+        <script src="js/resizeRem.js"></script>
+        <script src="js/jquery-3.1.1.js"></script>
+        <link rel="stylesheet" href="css/resetClass.css" />
+        <link rel="stylesheet" href="css/common.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+        <title>关于我们</title>
+    </head>
+    <body ng-app="app" >
+     <div class="main" ng-controller="main">
+     <form action="" name="myForm">
+       <label for="">用户名：
+       <input type="text" name="username" ng-model="uname" ng-required="true" ng-readonly="couldReady" />
+       <span ng-show="myForm.username.$invalid  &&  myForm.username.$dirty">用户名必填！</span>
+       </label>
+     </form>
+  <button ng-click="check()">提交</button>
+    </div>
+    <script>
+      var app=angular.module('app',[]);
+      app.controller('main',function($scope){
+        $scope.couldReady=false;
+         $scope.check=function(){
+          $scope.couldReady=!$scope.couldReady;
+            console.log($scope)
+            console.log($scope.myForm.username)
+         }
+      })
+
+    </script>
+    </body>
+</html>

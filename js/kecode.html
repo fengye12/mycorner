@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <script>
+        // onclick=onmousedown+onmouseup;
+        // onkeydown
+        // onkeyup
+        // onpress= onkeydown+onkeyup
+        window.onload=function(){
+        document.onkeydown=function(ev){
+            var oEvent=event || ev;
+            console.log(oEvent)
+            alert(oEvent.keyCode)
+        }
+             }
+    </script>
+    <body>
+    </body>
+</html>

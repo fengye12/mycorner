@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    <span id="btn">插入</span>
+   <ul id="ul1">
+       <li id="li1">原来的</li>
+
+   </ul>
+
+   <script>
+   var btn=document.getElementById('btn')
+var LI1=document.getElementsByTagName('li')
+       var oUl=document.getElementById('ul1');
+       btn.onclick=function(){
+        var oLi=document.createElement('li');
+        oLi.innerHTML="新增";
+        //oUl.appendChild(oLi)
+        oUl.insertBefore(oLi,LI1[0])
+
+       }
+
+   </script>
+    </body>
+</html>

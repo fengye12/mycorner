@@ -1,0 +1,102 @@
+ps类：
+在线压缩图片：https://zhitu.isux.us/
+j技术类：
+peter的视屏：http://haoduoshipin.com/
+1.1024px显屏 @media screen and (max-width : 1024px)
+2.800px显屏 @media screen and (max-width : 800px)
+iPad横板显屏 @media screen and (max-device-width: 1024px) and (orientation: landscape)
+iPad竖板显屏 @media screen and (max-device-width: 768px) and (orientation: portrait)
+iPhone 和 Smartphones
+@media screen and (min-device-width: 320px) and (min-device-width: 480px) {
+/* 样式写在这 */            }
+特效展示问题：
+焦点图/幻灯片
+swiper適合在移動端使用
+superslide適合在pc端使用
+使用jekyll作为博客模板的步骤：
+首先Fork或Download一份本项目代码。
+修改_config.yaml及about.md文件，以变更个人信息。
+修改_include目录下相关文件，以配置网站统计(analytics.html)，网友评论(comment.html)，右侧栏目(categories.html),热门文章(hot.html),友情链接(links.html)等。
+修改CNAME文件，以绑定自己的域名。
+删除_posts下文章，换成你自己的。
+去谷歌自定义搜索新建一个你的搜索引擎，把你的Id替换根目录下search.html我的ID
+最后，push到你自己的博客Repo~
+https://www.zhihu.com/question/30018945
+炫酷效果：
+http://jsrun.net/
+jsdemo的地址：
+http://jikeytang.github.io
+淘宝移动端适配各种手机：https://github.com/amfe/article/issues/17
+上面有很多可以直接拿来或者稍作修改就能使用的功能组件，特别适合我这种对前端一窍不通的人：
+http://bootsnipp.com/
+设置transform：
+element.style.webkitTransform = "rotate(-2deg)";
+如果还需要其他前缀：
+element.style.webkitTransform = "";
+element.style.MozTransform = "";
+element.style.msTransform = "";
+element.style.OTransform = "";
+element.style.transform = "";
+
+transform兼容性ie9+，以下的不能用。
+
+
+链接：https://www.zhihu.com/question/33033740/answer/55932651
+先按HTML5和CSS3的标准做好，在chrome下测试正常，然后通过条件注释给IE8单独一个CSS文件，通过CSS规则覆盖修补布局的错位。
+因为IE9以下的浏览器不支持HTML5标签，所以需要导入一个html5.js补丁，原理是通过JS来生成HTML5新标签对象。
+因为本着移动优先的原则，现在写CSS都会用media query（响应式设计），IE8以下的浏览器不支持media query，这会导致@media 声明的CSS不能生效，因此要导入一个css3-mediaqueries.js补丁。
+如下：
+
+<!--[if lte IE 8]>
+        <script src="/js/html5.js"></script>
+        <script src="/js/css3-mediaqueries.js"></script>
+        <link href="/css/ie8.css" rel="stylesheet" type="text/css">
+<![endif]-->
+
+/* 因为条件注释只对IE10以下版本有效（IE11已经取消支持），所以在其他现代浏览器里面会自动忽略，不会加载，因此不会有性能问题 */
+/* 因为IE9以下浏览器不支持CSS3，IE9支持一部分，因此不能显示一些CSS3的过渡效果，对此有两种办法，一种是忽略，也就是降级或者是差异化设计。
+或者可以用jquery的动画替代，引入方法可以是条件注释，也可以通过检测Navigator来判断IE版本 */
+最后再补充几句：
+IE9，甚至IE10或者11在CSS上的表现有时候也不能和Chrome或者Chromium内核这样的标准浏览器一致，比如我遇到过IE字体渲染导致的行高不一致，这种时候都可以用条件注释解决，IE11不支持条件注释，可以用正则表达式判断，比如下面这段代码是判断全部IE版本
+var browser = navigator.appName;
+        var ie11 = !!navigator.userAgent.match(/Trident\/7\./);
+        if (browser == 'Microsoft Internet Explorer' || ie11 == true) {
+            //do something
+        }
+js获取浏览器的高度和宽度：
+var sHeight=document.documentElement.scrollHeihgt;
+var sWidth=document.documentElement.scrollWidth;
+js获取可视区的宽度和高度：
+如果页面是竖向页面那么可视区的宽度和浏览器的宽度是一致的
+var cHight=document.documentElement.clientHight;
+var cWidth=document.documentElement.scrollWidth;
+
+获取页面中的div的宽度和高度（包括padding border）：
+var height=div.offsetHeight;
+var width=div.offsetWidth;
+var left=div.offsetLeft;
+var right=div.offsetRight;
+
+色彩搭配：http://color.phpddt.com/
+
+###1px像素边框问题：
+可以before.after设置成1px 
+然后根据媒体查询进行scaleY(0.7)/0.5
+###图片跟旁边即使其的div有间隙的问题
+可以用font-size:0;来解决
+
+###学习网站
+http://www.w3cplus.com/
+
+###better-scroll
+滚动插件
+###es6
+http://es6.ruanyifeng.com
+###闭包的问题
+闭包是指在javascript中，内部函数总可以访问其所在的外部函数中声明的变量和参数，即使外部函数被返回（寿命终了）
+之后。
+
+### overflow: hidden解决ie6下最小高度的问题
+width: 0;
+    height: 0;
+    overflow: hidden;

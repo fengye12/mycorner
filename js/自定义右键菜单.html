@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <style>
+        #ull{
+            width: 50px;
+            background: #ccc;
+            border: 1px solid #ddd;
+           display: none;
+           position: absolute;
+        }
+
+    </style>
+    <script>
+    window.onload=function(){
+        var oText=document.getElementById('text1')
+        oText.onkeydown=function(ev){
+            var oEvent=ev||event;
+            //不允许输入数字
+            if(oEvent.keyCode!=8&& (oEvent.keyCode>48 && oEvent.keyCode<57)){
+                return false;//阻止默认事件
+            }
+        }
+    }
+    document.oncontextmenu=function(ev){
+
+        var oUL=document.getElementById('ull');
+        var oEvent=ev||event;
+        oUL.style.display="block";
+        oUL.style.left=oEvent.clientX+'px';
+        oUL.style.top=oEvent.clientY+'px';
+        return false;//阻止默认的右键弹框
+    }
+    document.onclick=function(){
+        var oUl=document.getElementById('ull');
+        oUl.style.display='none';
+    }
+    </script>
+    <ul id="ull">
+        <li>右键事件 </li>
+        <li>右键事件</li>
+        <li>右键事件</li>
+        <li>右键事件</li>
+        <li>右键事件</li>
+    </ul>
+    <input type="text" id="text1" />
+    </body>
+</html>

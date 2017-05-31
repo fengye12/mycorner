@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="css/resetClass.css" />
+    <link rel="stylesheet" href="css/chart.css" />
+    <script src="js/resizeRem.js"></script>
+    <script src="js/jquery-1.11.1.js"></script>
+    <script src="js/chart.js"></script>
+    <link rel="stylesheet" href="css/dropload.css" />
+    <title>专家团队</title>
+</head>
+
+<body>
+    <div class="wrap">
+   <!--  头部 -->
+       <header class="header textcenter bgColor">
+           <p>徐丽颖</p>
+           <p class="zc">高级英语教师</p>
+           <img src="images/right.png" class="fr"/>
+       </header>
+       <!-- 聊天内容开始 -->
+       <div class="ContentBox" id="myDIV">
+       <!-- 下拉加载数据提示文字 -->
+        <div class="dropload-up" style="transition: all 300ms; height: 50px;display:none"></div>
+       <!--  聊天内容 -->
+    <div id="content">
+       <div class="consultant clearfix">
+           <p class="textcenter date">10-12 10:25</p>
+           <img src="images/personalH.png" class="conHeader" />
+           <div class="bgColor content"><p>您好，我有题目不会做,您这边能帮我解答一下吗？</p>
+             <div class="Triangle1"></div>
+         </div>
+     </div>
+     <div class="consultant clearfix">
+       <p class="textcenter date">10-12 10:25</p>
+       <img src="images/personalH.png" class="conHeader" />
+       <div class="bgColor content">
+           <img src="images/img.png" class="picSend"/>
+           <div class="Triangle1"></div>
+       </div>
+   </div>
+   <div class="expert clearfix">
+     <p class="textcenter date">10-12 10:25</p>
+     <img src="images/personalH.png" class="conHeader" />
+     <div class="whiteBg content"><p class="text">答案是：12.3850.588</p>
+        <div class="Triangle1"></div>
+        <div class="Triangle2"></div>
+    </div>
+</div>
+<div class="expert clearfix">
+ <p class="textcenter date">10-12 10:25</p>
+ <img src="images/personalH.png" class="conHeader" />
+ <div class="whiteBg content"><p class="text">很高兴能帮到你</p>
+    <div class="Triangle1"></div>
+    <div class="Triangle2"></div>
+</div>
+</div>
+<div class="expert clearfix">
+ <p class="textcenter date">10-12 10:25</p>
+ <img src="images/personal.png" class="conHeader" />
+ <div class="whiteBg content"><p class="text">你理解了吗</p>
+    <div class="Triangle1"></div>
+    <div class="Triangle2"></div>
+</div>
+</div>
+<div class="expert clearfix">
+ <p class="textcenter date">10-12 10:25</p>
+ <img src="images/personal.png" class="conHeader" />
+ <div class="whiteBg content">
+   <img src="images/img.png" class="picSend"/>
+   <div class="Triangle1"></div>
+   <div class="Triangle2"></div>
+</div>
+</div>
+<div class="consultant clearfix">
+   <p class="textcenter date">10-12 10:25</p>
+   <img src="images/personalH.png" class="conHeader" />
+   <div class="bgColor content">
+       <img src="images/img.png" class="picSend"/>
+       <div class="Triangle1"></div>
+   </div>
+</div>
+<div class="expert clearfix">
+ <p class="textcenter date">10-12 10:25</p>
+ <img src="images/personal.png" class="conHeader" />
+ <div class="whiteBg content"><p class="text">很高兴能帮到你</p>
+    <div class="Triangle1"></div>
+    <div class="Triangle2"></div>
+</div>
+</div>
+<div class="expert clearfix">
+ <p class="textcenter date">10-12 10:25</p>
+ <img src="images/personal.png" class="conHeader" />
+ <div class="whiteBg content"><p class="text">很高兴能帮到你</p>
+    <div class="Triangle1"></div>
+    <div class="Triangle2"></div>
+</div>
+</div>
+<div class="expert clearfix">
+ <p class="textcenter date">10-12 10:25</p>
+ <img src="images/personal.png" class="conHeader" />
+ <div class="whiteBg content ">
+   <img src="images/img.png" class="picSend"/>
+   <div class="Triangle1"></div>
+   <div class="Triangle2"></div>
+</div>
+</div>
+</div>
+<div id="preview"></div>
+<!-- 聊天内容结束 -->
+ <span id="maodian"></span>
+<a href="#maodian" class="clickm"><button id="subBtn" type="button"></button></a>
+</div>
+<!-- 底部聊天框 -->
+<div class="chartBox">
+ <div class="textBox" >
+   <div tabindex="2" contenteditable="true"></div>
+ </div>
+ <input type="file" capture="camera" accept="image/*" class="cameraInput" onchange="preview(this)">
+ <img src="images/pictures.png"  class="imgSelect" />
+ <button class="bgColor send" >发送</button>
+</div>
+<div class="picseen">
+<div class="pinch-zoom imgB">
+  <img src="" width="100%" />
+  </div>
+</div>
+</div>
+<style>
+  .picseen{
+    width: 7.5rem;
+    height: 100%;
+    background-color: #000;
+    display: none;
+    position: fixed;
+    top: 0;
+    z-index: 6;
+  }
+  .picseen .imgB{
+    width: 100%;
+    position: absolute;
+  }
+</style>
+<!-- 下拉加载数据引用的js -->
+<script src="js/dropload.min.js"></script>
+<script src="js/underscore.js"></script>
+<script src="js/pinchzoom.js"></script>
+<script>
+$(function () {
+picSeenF();
+function  picSeenF(){
+   var src;
+  var img=$(".picseen img")
+  var picSeen=$(".picseen");
+   $('.picSend').each(function(index, el) {
+     $(this).on("click",function(){
+      src=$(this).attr('src');
+      picSeen.fadeIn(300);
+      img.attr({
+        src: src,
+      });
+    $('.pinch-zoom').each(function () {
+    new RTP.PinchZoom($(this), {});
+  });
+     })
+   });
+   picSeen.on("click",function(){
+      picSeen.fadeOut(300);
+   })
+    $('.pinch-zoom').each(function () {
+    new RTP.PinchZoom($(this), {});
+  });
+  }
+})
+ var TextDiv=$('#content');
+  function preview(file) {//预览图片得到图片base64
+    var prevDiv = document.getElementById('preview');
+    if (file.files && file.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function(evt){
+        TextDiv.append('<div class="expert clearfix"><p class="textcenter date">10-12 10:25</p><img src="images/personal.png" class="conHeader" /><div class="whiteBg content"><div class="pinch-zoom"><img src="' + evt.target.result + '" class="picSend" /></div><div><div class="Triangle1"></div><div class="Triangle2"></div></div></div>'
+          );
+          var maoC=$("#subBtn");
+          maoC.trigger('click');
+          picSeenF();
+          function  picSeenF(){
+             var src;
+            var img=$(".picseen img")
+            var picSeen=$(".picseen");
+             $('.picSend').each(function(index, el) {
+               $(this).on("click",function(){
+                src=$(this).attr('src');
+                picSeen.fadeIn(300);
+                img.attr({
+                  src: src,
+                });
+              $('.pinch-zoom').each(function () {
+              new RTP.PinchZoom($(this), {});
+            });
+               })
+             });
+             picSeen.on("click",function(){
+                picSeen.fadeOut(300);
+             })
+              $('.pinch-zoom').each(function () {
+              new RTP.PinchZoom($(this), {});
+            });
+            }
+
+      }
+      reader.readAsDataURL(file.files[0]);
+    } else {
+      TextDiv.append('<div class="img" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src=\'' + file.value + '\'"></div>');
+    }
+  };
+</script>
+    </body>
+    </html>

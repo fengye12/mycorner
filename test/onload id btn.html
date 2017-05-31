@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+<style>
+    #oDiv{
+width: 200px;
+height: 100px;
+position: absolute;
+left: 0;
+top: 50px;
+background: red;
+    }
+</style>
+    </head>
+    <script>
+        window.onload=function(){
+            var btn1=document.getElementById("btn");
+            // 所以 btn btn1 都是id为btn的元素
+                // btn 本身就是id为btn的元素
+            btn.onclick=function(){
+                var oDiv=document.getElementById("oDiv");
+                timer=setInterval(function(){
+                        oDiv.style.left=oDiv.offsetLeft+10+'px';
+                }, 30)
+            }
+        }
+    </script>
+    <body>
+    <div id="oDiv"></div>
+    <input type="button" id="btn"  value="开始运动"/>
+
+    </body>
+</html>

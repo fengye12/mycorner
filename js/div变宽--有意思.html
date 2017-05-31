@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+div{
+    width: 100px;
+    height: 50px;
+    background: red;
+    margin-top: 20px;
+    border: 1px solid #000;
+}
+.span{
+    width: 1px ;
+    height:300px;
+    background: #000;
+    position: absolute;
+    left: 300px;
+
+}
+    </style>
+    <script>
+    window.onload=function(){
+        var aDiv=document.getElementsByTagName('div');
+        aDiv[0].onclick=function(){
+
+        startMove(this,'width',300);
+         // alert("q")
+  }
+   aDiv[1].onclick=function(){
+        startMove(this,'border-width',20);
+  }
+     aDiv[2].onclick=function(){
+        startMove(this,'height',200);
+  }
+     aDiv[3].onclick=function(){
+        startMove(this,'opacity',30);
+  }
+}
+    function getStyle(obj,attr){
+if(obj.currentStyle){
+    return obj.currentStyle[atrr];
+}else{
+    return getComputedStyle(obj,false)[attr];
+}
+    }
+    var timer=null;
+    function startMove(obj,attr,iTarget){
+        clearInterval(obj.timer);//目的是不要让多次点击的时候出现速度加倍（同时开了很多定时器）
+        obj.timer=setInterval(function(){
+            var icur=0;
+            if(attr=='opacity'){
+                icur=parseInt(parseFloat(getStyle(obj,attr)*100));
+            }else{
+                 icur=parseInt(getStyle(obj,attr));
+            }
+            var iSpeed=(iTarget-icur)/8;//取整
+            iSpeed=iSpeed>0?Math.ceil(iSpeed):Math.floor(iSpeed);
+            if(icur==iTarget){
+                clearInterval(obj.timer);
+            }else{
+               if(attr=='opacity'){
+               obj.style.filter='alpha(opacity:+'+icur+iSpeed+')';
+               obj.style[attr]=(icur+iSpeed)/100;
+            }else{
+                obj.style[attr]=icur+iSpeed+'px';
+            }
+            }
+        }, 30);
+    }
+    </script>
+    <body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <span class="span"></span>
+    <textarea name="" id="txt" cols="30" rows="10"></textarea>
+    </body>
+</html>

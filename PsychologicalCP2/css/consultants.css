@@ -1,0 +1,189 @@
+/*
+* @Author: anchen
+* @Date:   2016-12-03 09:27:23
+* @Last Modified by:   anchen
+* @Last Modified time: 2016-12-08 11:50:02
+*/
+.header {
+    height: .88rem;
+    line-height: .88rem;
+    font-size: 18px;
+    position: relative;
+    margin-bottom: 0.15rem;
+}
+.warp{
+  position: relative;
+}
+/* .box2{
+  position: fixed;
+  top: 0;
+  width: 7.5rem;
+  z-index: 5;
+  display: none;
+} */
+.box1{
+  z-index: 2;
+}
+.box3{
+  width: 7.5rem;
+}
+.header .img1{
+    width: 0.18rem;
+    position: absolute;
+     left: 0.3rem;
+    top: 0.25rem;
+}
+.header .img2{
+    width:0.44rem;
+    position: absolute;
+     right: 0.3rem;
+    top: 0.25rem;
+
+}
+    .ConsultantsMes{
+       padding: 0.1rem 0.3rem;
+       border-top: 1px solid #ddd;
+    }
+    .ConsultantsMes:first-child{
+        border-top: none;
+    }
+   .ConsultantsBox{
+       position: relative;
+   }
+    .ConsultantsBox dt img{
+       width: 1rem;
+       vertical-align: top;
+    }
+    .ConsultantsBox dd{
+       padding-left: 1.2rem;
+    }
+   .ConsultantsBox .checked{
+       width: 0.32rem;
+       position: absolute;
+       top: 0.26rem;
+       right: 0.7rem;
+       display: none;
+   }
+   .ConsultantsBox .bianji{
+    width: 0.40rem;
+    position: absolute;
+    top: 0.26rem;
+    right: 0;
+   }
+   .ConsultantsBox .checked.none{
+         display: block;
+   }
+   .ConsultantsBox .old{
+       background: url('../images/personal.png') no-repeat left center;
+       background-size: 19px;
+       padding-left: 24px;
+       font-size: 12px;
+       display: inline-block;
+   }
+   .ConsultantsBox .phone{
+       background: url('../images/phone.png') no-repeat left center;
+       background-size: 15px;
+       padding-left: 20px;
+       font-size: 12px;
+       display: inline-block;
+       margin-left: 0.2rem;
+   }
+   .old i,
+   .phone i,
+   .name i{
+       font-size: 13px;
+       padding-left: 0.1rem;
+   }
+   .ConsultantsBox .name{
+       font-size: 15px;
+   }
+   .ConsultantsBox .message{
+   position: absolute;
+   bottom: 0;
+   height: 22px;
+   }
+.box3 .header .img2{
+  width: 0.43rem;
+  height: 0.43rem;
+}
+   .content{
+       padding: 0 0.3rem 0.2rem 0.3rem;
+   }
+   .content .name{
+       height: 0.6rem;
+       line-height: 0.6rem;
+       border-bottom: 1px solid #ddd;
+   }
+   .content .old{
+       border: none;
+   }
+   .content .beforeName{
+       width: 1.35rem;
+       display: inline-block;
+   }
+   .name input{
+   padding: 4px 0;
+   }
+   .box2 .sex input[type="radio"]+label{
+       background: url(../images/yes2.png) no-repeat left center;
+       background-size: 20px;
+       display: inline-block;
+       height:20px;
+       padding-left: 28px;
+       padding-right: 0.2rem;
+   }
+   .box2 .sex input[type="radio"]:checked+label{
+       background: url(../images/yes.png) no-repeat left center;
+       background-size: 20px;
+       }
+       .box3 .sex input[type="radio"]+label{
+           background: url(../images/yes2.png) no-repeat left center;
+           background-size: 20px;
+           display: inline-block;
+           height:20px;
+           padding-left: 28px;
+           padding-right: 0.2rem;
+       }
+       .box3 .sex input[type="radio"]:checked+label{
+           background: url(../images/yes.png) no-repeat left center;
+           background-size: 20px;
+           }
+   .sex input{
+       display: none;
+   }
+   .sex{
+       padding: 0.1rem 0;
+   }
+   .content input[type=text]{
+       border: none;
+   }
+   .content .textBox{
+       width: 100%;
+       border-radius: 4px;
+       padding: 8px;
+   }
+   .footbtn{
+       position: fixed;
+       bottom: 0.45rem;
+       width: 7.5rem;
+   }
+   .footbtnC{
+       position: fixed;
+       bottom: 0.45rem;
+       width: 7.5rem;
+   }
+   .footbtn .Btn{
+       width: 6.6rem;
+       height: 0.8rem;
+       line-height: 0.8rem;
+       font-size: 18px;
+       border-radius: 2px;
+   }
+   .footbtnC .Btn{
+       width: 3.9rem;
+       height: 0.8rem;
+       line-height: 0.8rem;
+       font-size: 18px;
+       border-radius: 2px;
+   }
+

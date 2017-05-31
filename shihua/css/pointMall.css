@@ -1,0 +1,250 @@
+/* CSS Document */
+
+a{
+	text-decoration:none;
+	color:#000;
+	}
+body{
+	background:#f3f4f8;
+	font-size:15px;
+	}
+.wrap{
+	width: 7.5rem;
+	margin: auto;
+}
+.wrapg{
+    margin-left: -1px;
+    overflow: hidden;
+    width: 7.5rem;
+}
+#moreS{
+    display: none;
+}
+.top{
+	background:#fff;
+            border-bottom: 1px solid #ddd;
+	}
+.top p{
+	font-weight:bold;
+	float:left;
+	text-align:center;
+	width:50%;
+	box-sizing:border-box;
+	height:1rem;
+	line-height:1rem;
+	}
+.top p:first-child{
+    border-right:1px solid #ddd;
+}
+.top p span{
+	display:inline-block;
+	}
+.clear{
+	clear:both;
+	}
+.kq_wrap{
+	width:100%;
+	background:#fff;
+	border-bottom:1px solid #ddd;
+	}
+.kq{
+	width:90%;
+	margin:auto;
+	height:0.8rem;
+	line-height:0.8rem;
+	}
+.kq_center{
+	text-align:center;
+	}
+.kq_center .fh{
+	color:#999;
+	padding-left:0.2rem;
+	float:left;
+	background:url(../images/sss.png) no-repeat left center;
+	background-size:8px 16px;
+	}
+.kq #more1{
+	float:right;
+	background:url(../images/righticon.png) no-repeat right center;
+	background-size:8px 16px;
+	padding-right:0.2rem;
+	color:#999;
+	}
+.kq #more2{
+	float:right;
+	background:url(../images/righticon.png) no-repeat right center;
+	background-size:8px 16px;
+	padding-right:0.2rem;
+	color:#999;
+	}
+#morek{
+	display:none;
+	}
+.center{
+	width:2.5rem;
+	margin:auto;
+	padding-top:0.3rem;
+	position:relative;
+	}
+.position{
+	position:relative;
+}
+.faceValue{
+	display:block;
+	color:#ff4500;
+	font-size:18px;
+	font-weight: 600;
+	position:absolute;
+	top:50%;
+	left:50%;
+	z-index:90;
+	-webkit-transform:translate(-50%,-50%);
+	transform:translate(-50%,-50%)
+}
+.cp{
+	width:2.6rem;
+	margin:auto;
+	margin-bottom:0.3rem;
+	}
+.cp1,.cp2{
+	line-height:24px;
+	font-size:14px;
+	}
+.cp1{
+	margin-top:5px;
+	width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    -webkit-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+	}
+.cp2{
+	color:#ff5500;
+	}
+.cp2 span{
+	margin-left:5px;
+	}
+.center img{
+	width:2.5rem;
+	height:1.5rem;
+	}
+.cp3{
+	position:relative;
+	}
+.cp3 img{
+	position:absolute;
+	float:right;
+	top:-0.5rem;
+	left:90%;
+	}
+.bg{
+	width:100%;
+	background:#fff;
+	border-bottom:1px solid #ddd;
+	}
+#wrap{
+    padding: 0 0.1rem;
+    font-size: 12px;
+    box-sizing: border-box;
+}
+.p1,.p2,.p3{
+	margin-top:0.3rem;
+	}
+.p1,.p2,.p3,.p4,.p5{
+	border:1px solid #ddd;
+	height:0.5rem;
+	line-height:0.5rem;
+	width:29%;
+	border-radius:2px;
+	text-align:center;
+	margin-bottom:0.3rem;
+	box-sizing:border-box;
+	}
+.p1,.p4,.p5{
+	float:left;
+	margin-right:6.5%;
+	}
+.p3{
+	float:right;
+	}
+.p2{
+	float:left;
+	}
+.wkdh{
+	display:none;
+	}
+#span1{
+	border-bottom:2px solid #ff5500;
+	}
+/*   .parent {
+     margin-right: -2%;
+    } */
+ul{
+	list-style-type:none;
+}
+*{
+	margin: 0;
+	padding: 0;
+}
+ul li{
+background:#fff;
+    float:left;
+    width: 50%;
+    border-bottom: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    box-sizing:border-box;
+    }
+    .tip-wrap{
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        width: 7.5rem;
+        background: rgba(0, 0, 0, 0.6);
+        display: none;
+    }
+    .tip-wrap .tips{
+        width: 5.42rem;
+        border-radius: 5px;
+        padding: 0 0.42rem;
+        box-sizing: border-box;
+        text-align: center;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        z-index: 100;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+    .tip-header{
+        margin-bottom: 0.25rem;
+        font-size: 15px;
+    }
+    .date input{
+        width: 100%;
+        text-align: center;
+        font-size: 14px;
+        border: none;
+    }
+    .date{
+        border-bottom: 1px dashed #ddd;
+        height: 0.5rem;
+        position: relative;
+    }
+.date #date{
+    position: absolute;
+       top: 0;
+       color: transparent;
+       background: transparent;
+}
+    .lin-btn{
+        font-size: 15px;
+        height: 0.7rem;
+        line-height: 0.7rem;
+        width: 3rem ;
+        border-radius: 5px;
+        margin: 0.18rem auto;
+        border: none;
+    }
+
+

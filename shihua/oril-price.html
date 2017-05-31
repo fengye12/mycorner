@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+        <script src="js/resizeRem.js"></script>
+        <script src="js/jquery-3.1.1.js"></script>
+        <link rel="stylesheet" href="css/resetClass.css" />
+        <link rel="stylesheet" href="css/common.css" />
+        <link rel="stylesheet" href="css/oril-price.css" />
+        <title>会员章程</title>
+    </head>
+    <body>
+    <div class="wrap">
+        <header class="mainBg height1 header">油价发布 </header>
+<div class="province whiteBg">
+<div>
+<p class="height1 text-Cenetr date"><span class="date1">2016-12-14</span><span class="logo">省内</span></p>
+<div class="height3 fl text-Cenetr item">
+<span>0#柴油</span>
+<span>3元/L</span>
+</div>
+<div class="height3 fl text-Cenetr item">
+<span>92#汽油</span>
+<span>3元/L</span>
+</div>
+<div class="height3 fl text-Cenetr item">
+<span>95#汽油</span>
+<span>3元/L</span>
+</div>
+</div>
+</div>
+<div class="station">
+<div>
+<p class="height1 text-Cenetr date"><span class="date1">2016-12-14</span><span class="logo">省内</span></p>
+<div class="height3 fl text-Cenetr item">
+<span>0#柴油</span>
+<span>3元/L</span>
+</div>
+<div class="height3 fl text-Cenetr item">
+<span>92#汽油</span>
+<span>3元/L</span>
+</div>
+<div class="height3 fl text-Cenetr item">
+<span>95#汽油</span>
+<span>3元/L</span>
+</div>
+</div>
+    </div>
+<script>
+var setDate=$(".date1")
+var dd = new Date();
+  var Year=dd.getFullYear();
+  var Month=dd.getMonth()+1;
+  var day=dd.getDate();
+setDate.text(Year+"-"+Month+"-"+day)
+    var tips=$(".tip-wrap .tips")
+    var tipWrap=$(".tip-wrap")
+    tips.on("click",function(e){
+        e.stopPropagation();
+    })
+    tipWrap.on("click",function(){
+        tipWrap.fadeOut(200)
+    })
+    $(".mess-info").on('click', '.checked', function(event) {
+        event.preventDefault();
+      if($(".name").text=" "){
+        tipWrap.fadeIn(200);
+      }
+    });
+</script>
+    </body>
+</html>

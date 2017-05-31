@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+        <script src="js/resizeRem.js"></script>
+        <script src="js/jquery-3.1.1.js"></script>
+        <link rel="stylesheet" href="css/resetClass.css" />
+        <link rel="stylesheet" href="css/common.css" />
+        <link rel="stylesheet" href="css/member-info.css" />
+        <title>会员信息</title>
+    </head>
+    <body>
+    <div class="wrap">
+        <header class="mainBg height1 header">会员信息</header>
+        <div class="mess-info">
+            <p class="whiteBg height1 checked name-line">客户姓名<span class="fr mainColor name"></span></p>
+            <p class="whiteBg height1 checked point-line">积分<span class="fr mainColor">3500分</span></p>
+             <p class="whiteBg height1 checked point-line rightcoin">积分商城</p>
+              <p class="whiteBg height1 point-line rightcoin" >兑换规则</p>
+              <p class="whiteBg height1 point-line rightcoin" >积分记录</p>
+        </div>
+        <div class="tip-wrap">
+            <div class="tips whiteBg">
+                <p class="height1 ">提示</p>
+
+                <p class="height3">您的资料还未审核，请立即前往 审核页面</p>
+                <p class="height2 "><a href="info-checked.html " class="mainColor">立即审核</a></p>
+            </div>
+        </div>
+    </div>
+<script>
+    var tips=$(".tip-wrap .tips")
+    var tipWrap=$(".tip-wrap")
+    tips.on("click",function(e){
+        e.stopPropagation();
+    })
+    tipWrap.on("click",function(){
+          event.preventDefault();
+        tipWrap.fadeOut(200)
+    })
+    $(".mess-info").on('click', '.checked', function(event) {
+        event.preventDefault();
+      if($(".name").text=" "){
+        tipWrap.fadeIn(200);
+      }
+    });
+</script>
+    </body>
+</html>

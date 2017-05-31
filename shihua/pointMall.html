@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+<script type="text/javascript" src="js/resizeRem.js"></script>
+<script type="text/javascript" src="js/pointMall.js"></script>
+<link type="text/css" rel="stylesheet" href="css/resetClass.css" />
+<link type="text/css" rel="stylesheet" href="css/pointMall.css" />
+<link rel="stylesheet" href="css/common.css" />
+<script src="mobiscroll/js/mobiscroll.core-2.5.2.js" type="text/javascript"></script>
+<script src="mobiscroll/js/mobiscroll.core-2.5.2-zh.js" type="text/javascript"></script>
+
+<link href="mobiscroll/css/mobiscroll.core-2.5.2.css" rel="stylesheet" type="text/css" />
+<link href="mobiscroll/css/mobiscroll.animation-2.5.2.css" rel="stylesheet" type="text/css" />
+<script src="mobiscroll/js/mobiscroll.datetime-2.5.1.js" type="text/javascript"></script>
+<script src="mobiscroll/js/mobiscroll.datetime-2.5.1-zh.js" type="text/javascript"></script>
+
+<!-- S 可根据自己喜好引入样式风格文件 -->
+<script src="mobiscroll/js/mobiscroll.android-ics-2.5.2.js" type="text/javascript"></script>
+<link href="mobiscroll/css/mobiscroll.android-ics-2.5.2.css" rel="stylesheet" type="text/css" />
+<title>积分商城</title>
+<style>
+  .android-ics .dwwr{
+    z-index: 200;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="wrapg">
+<div class="top">
+	<p><span id="span1">礼品类目</span></p>
+    <p><span id="span2">我可兑换</span></p>
+    <div class="clear"></div>
+</div>
+<!--我可兑换点击开始-->
+<div class="wkdh">
+	<div class="bg">
+    	<div class="wrap" id="wrap">
+        	<p class="p1">0~500</p>
+            <p class="p2">500~2000</p>
+            <p class="p3">2000~10000</p>
+            <p class="p4">10000~50000</p>
+            <p class="p5">50000以上</p>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="parent">
+    	<ul id="wkdh"></ul>
+    </div>
+</div>
+<!--更多开始-->
+<!-- //卡券更多 -->
+<div id="morek">
+    <div class="kq_wrap clearfix">
+    	<p class="kq kq_center">
+           <span class="fh"id="fh">返回</span>
+           卡券</p>
+       </div>
+       <div class="parent">
+           <ul id="voucherList1">
+              <li>
+                   	<div class="center">
+               	   <img src="images/fkq20.jpg" width="100%"/>
+                  </div>
+               	<div class="cp">
+                		<p class="cp1">酒店房间现金抵用券</p>
+                    	<p class="cp2">积分<span class="jfz">500</span></p>
+                  	<div class="cp3">
+                  	<img src="images/duihuan_03.png" width="26%"/>
+              	</div>
+                  </div>
+                  <div class="clear"></div>
+              </li>
+
+        </ul>
+    </div>
+</div>
+ <!-- //卡券更多 -->
+<!--  //商品更多 -->
+<div id="moreS">
+    <div class="kq_wrap clearfix">
+        <p class="kq kq_center">
+            <span class="fh" id="spfh">返回</span>
+            商品</p>
+        </div>
+        <div class="parent">
+            <ul id="spList1">
+                <li>
+                    <div class="center">
+                     <img src="images/fkq20.jpg" width="100%"/>
+                    </div>
+                  <div class="cp">
+                      <p class="cp1">酒店房间现金抵用券</p>
+                        <p class="cp2">积分<span class="jfz">500</span></p>
+                      <div class="cp3">
+                      <img src="images/duihuan_03.png" width="26%"/>
+                  </div>
+                    </div>
+                    <div class="clear"></div>
+                </li>
+                <li>
+                      <div class="center">
+                     <img src="images/fkq20.jpg" width="100%"/>
+                    </div>
+                  <div class="cp">
+                      <p class="cp1">酒店房间现金抵用券</p>
+                        <p class="cp2">积分<span class="jfz">500</span></p>
+                      <div class="cp3">
+                      <img src="images/duihuan_03.png" width="26%"/>
+                  </div>
+                    </div>
+                    <div class="clear"></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+<!--  商品更多 -->
+<!-- 原始状态 -->
+<div class="lplm clearfix" id="lplm">
+    <div class="kq_wrap clearfix">
+       <p class="kq">卡券<span class="more" id="more1">更多</span></p>
+   </div>
+   <div class="parent clearfix" id="kq">
+       <ul id="voucherList">
+            <li>
+                  <div class="center">
+                 <img src="images/fkq20.jpg" width="100%"/>
+                </div>
+              <div class="cp">
+                  <p class="cp1">酒店房间现金抵用券</p>
+                    <p class="cp2">积分<span class="jfz">500</span></p>
+                  <div class="cp3">
+                  <img src="images/duihuan_03.png" width="26%"/>
+              </div>
+                </div>
+                <div class="clear"></div>
+            </li>
+            <li>
+                  <div class="center">
+                 <img src="images/fkq20.jpg" width="100%"/>
+                </div>
+              <div class="cp">
+                  <p class="cp1">酒店房间现金抵用券</p>
+                    <p class="cp2">积分<span class="jfz">500</span></p>
+                  <div class="cp3">
+                  <img src="images/duihuan_03.png" width="26%"/>
+              </div>
+                </div>
+                <div class="clear"></div>
+            </li>
+       </ul>
+   </div>
+   <div class="kq_wrap ">
+       <p class="kq ">商品<span class="more" id="more2">更多</span></p>
+   </div>
+  <div class="parent clearfix" id="sp">
+    	<ul id="spList">
+          <li>
+                <div class="center">
+               <img src="images/fkq20.jpg" width="100%"/>
+              </div>
+            <div class="cp">
+                <p class="cp1">酒店房间现金抵用券</p>
+                  <p class="cp2">积分<span class="jfz">500</span></p>
+                <div class="cp3">
+                <img src="images/duihuan_03.png" width="26%"/>
+            </div>
+              </div>
+              <div class="clear"></div>
+          </li>
+          <li>
+                <div class="center">
+               <img src="images/fkq20.jpg" width="100%"/>
+              </div>
+            <div class="cp">
+                <p class="cp1">酒店房间现金抵用券</p>
+                  <p class="cp2">积分<span class="jfz">500</span></p>
+                <div class="cp3">
+                <img src="images/duihuan_03.png" width="26%"/>
+            </div>
+              </div>
+              <div class="clear"></div>
+          </li>
+    	</ul>
+    </div>
+ </div>
+ <div class="tip-wrap">
+   <div class="tips whiteBg">
+<p class="height2 tip-header">预约领取</p>
+<p class="height2 mainColor">请输入预约领取时间</p>
+<p class="date"><input type="text" readonly  id="date" onchange="datechange(this)" /><input type="text" value="" class="date1"/></p>
+<p class="height2 leftali">提示：一经兑换无法取消</p>
+<button class="mainBg lin-btn">领取</button>
+   </div>
+ </div>
+ </div>
+ </div>
+</body>
+</html>

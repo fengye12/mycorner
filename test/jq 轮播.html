@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    </head>
+ <!--    只要把相应的图片放进去就可以了  图片高度不设置他会相对于自身的宽度自适应高度 -->
+<!--  有待改进关于轮播到第一张时过度不平滑 -->
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    li,ul{
+        list-style: none;
+    }
+    a{
+        text-decoration: none;
+        margin: 0;
+        padding: 0;
+
+    }
+    #pics{
+        width: 100%;
+        overflow: hidden;
+        position: absolute;
+        border: 1px solid red;
+    }
+    .pics{
+
+        position: relative;
+        left: 0;
+        transition: all 0.8s;
+    }
+    .pics li{
+        float :left;
+    }
+    .pics_pre{
+        width: 30px;
+        position: absolute;
+        left: 0;
+        height: 100%;
+        top: 0;
+    }
+    .pics_next{
+        position: absolute;
+        right: 0;
+        width: 30px;
+        height: 100%;
+        top: 0;
+    }
+    .pics_list{
+        position: absolute;
+        left: 50%;
+        -webkit-transform: translate(-50%);
+        bottom: 0;
+        cursor: pointer;
+        text-align: center;
+    }
+    li img{
+       vertical-align:top;/* 解决li中img之间的空隙问题 或者将容器ul的font-size：0；*/
+        display:block;
+    }
+    .pics_list >li{
+
+        width: 8px;
+        height: 8px;
+        border-radius: 4px;
+        background: #fff;
+        cursor: pointer;
+        float: left;
+        margin:5px ;
+        left: 35%;
+    }
+    .active{
+        background: #666 ;
+        opacity: 0.6;
+    }
+    </style>
+    <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+    <body>
+        <div id="pics">
+                <ul class="pics">
+                    <li><img src="images/1.jpg" alt="图片1" /></li>
+                    <li><img src="images/2.jpg" alt="图片2"></li>
+                    <li><img src="images/3.jpg" alt="图片3"></li>
+                    <li><img src="images/1.jpg" alt="图片4"></li>
+                    <li><img src="images/2.jpg" alt="图片5"></li>
+                </ul>
+                <span class="pics_pre"></span>
+                <span class="pics_next"></span>
+                <ul class="pics_list"></ul>
+        </div>
+        <script>
+            var pics=$('#pics');
+            var pics_ul=$('.pics');
+            var pics_li=$('.pics li');
+            var pics_list=$('.pics_list')
+            var pics_pre=$(".pics_pre")
+            var pics_next=$(".pics_next")
+            var inow;
+            var btn=true;
+           var num=pics_li.length
+            var singLength=pics.width()
+            pics_ul.width(num*singLength)
+            pics_li.width(singLength)
+            pics_li.find("img").width(singLength);
+            for(i=0;i<pics_li.length;i++){
+                pics_list.append('<li></li>')
+            }
+            var pics_list_li=$('.pics_list li');
+                 show(0);
+           pics_list_li.each(function(index, el) {
+               $(this).on('click',function(){
+                inow=$(this).index();
+                 show(inow)
+               })
+
+           });
+           //上一张函数
+           pics_pre.click(function(event) {
+               /* Act on the event */
+               console.log(inow)
+               if(inow>0){
+                inow=inow-1;
+               }
+               else{
+                inow=pics_li.length-1;
+               }
+               show(inow)
+           });
+           //下一张函数
+           pics_next.click(function(event) {
+               /* Act on the event */
+                  console.log(inow)
+                if(inow<pics_li.length-1){
+                inow=inow+1;
+                console.log(inow)
+               }
+               else{
+                inow=0;
+               }
+               show(inow)
+           });
+           //定时器 实现自动轮播
+           var timer= setInterval(function(){
+             if(inow<pics_li.length-1){
+                inow=inow+1;
+               }
+               else{
+                inow=0;
+               }
+               show(inow);
+           }, 3000)
+           //主要的函数部分 实现图片切换
+           function show(ipic){
+              var imgWidth=$("#pics").width();
+             //   var ileft=-pics_li.eq(ipic).css("left");
+             var ileft=-(ipic)*imgWidth;
+              pics_ul.css('left',ileft)
+               pics_list_li.removeClass('active');
+               pics_list_li.eq(ipic).addClass('active')
+           }
+           //鼠标移入事件
+           pics.mouseover(function(){
+             pics_next.show();
+            pics_pre.show();
+            clearInterval(timer);
+});
+//鼠标出事件
+           pics.mouseout(function(){
+             pics_next.hide();
+            pics_pre.hide();
+            timer=setInterval(function(){
+               if(inow<pics_li.length-1){
+                inow=inow+1;
+               }
+               else{
+                inow=0;
+               }
+               show(inow)
+            }, 3000)
+           })
+        </script>
+
+    </body>
+</html>

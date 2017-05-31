@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+        <script src="js/resizeRem.js"></script>
+        <script src="js/jquery-3.1.1.js"></script>
+        <link rel="stylesheet" href="css/resetClass.css" />
+        <link rel="stylesheet" href="css/common.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+        <title>关于我们</title>
+    </head>
+    <body ng-app="myApp" >
+     <div class="main" ng-controller="myCtrl">
+    <div>{{obj | json}}</div>
+    <h1>{{pirce | currency}}</h1>
+    <div>{{ colors | filter:'e'}}</div>
+     <div>{{ colors | filter:key}}</div>
+     <div>{{ colors | filter:firstCharIsUpper}}</div>
+    </div>
+    <script>
+      var app=angular.module('myApp',[])
+      app.controller('myCtrl',function($scope){
+       $scope.obj={
+        red:"红色",
+        green:"绿色",
+        blue:[0,0,255]
+       };
+       $scope.pirce=19.9;
+       $scope.colors=['Red','blue','Green','yellow','black'];
+       $scope.key='o';
+       $scope.firstCharIsUpper=function(value,index,arr){
+        console.log(arguments)
+        return value[0]===value[0].toUpperCase();
+       }
+      })
+
+    </script>
+    </body>
+</html>

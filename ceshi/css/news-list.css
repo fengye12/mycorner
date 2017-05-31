@@ -1,0 +1,54 @@
+
+html,body{
+    height: 100%;
+}
+body{
+    background-image: url(../images/back.png);
+    background-size: cover;
+    background-position: center center;
+}
+.header{
+      width: 7.5rem;
+      box-sizing: border-box;
+}
+    .content li{
+        width: 7.5rem;
+        box-sizing: border-box;
+        height: 0.9rem;
+        line-height: 0.9rem;
+        font-size: 15px;
+        padding: 0 0.2rem;
+        background: #fff;
+        position: relative;
+        margin-bottom: 1px;
+    }
+     .content li p{
+        width: 4.5rem;
+        overflow: hidden;/*注意不要写在最后了*/
+    white-space: nowrap;
+    -webkit-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+     }
+     .content li span{
+        position: absolute;
+        right: 0.3rem;
+        top: 50%;
+       -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+     }
+     .grap{
+        color: #a0a0a0;
+        font-size: 12px;
+     }
+     .header{
+        position: relative;
+     }
+     .backimg{
+        position: absolute;
+        left: 0.32rem;
+        top: 50%;
+        height: 0.33rem;
+        width: 0.18rem;
+         -webkit-transform: translateY(50%);
+        transform: translateY(-50%);
+     }

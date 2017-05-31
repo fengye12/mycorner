@@ -1,0 +1,76 @@
+/*
+* @Author: anchen
+* @Date:   2016-12-02 16:48:16
+* @Last Modified by:   anchen
+* @Last Modified time: 2016-12-02 18:32:07
+*/
+    .header {
+        height: .88rem;
+        line-height: .88rem;
+        font-size: 18px;
+        position: relative;
+    }
+    .header img{
+        width: 0.18rem;
+        position: absolute;
+        left: 0.3rem;
+       top: 0.25rem;
+    }
+        .topmessage{
+            padding: 0.6rem 0 0.25rem 0;
+            background-image: url(../images/bGimg.png);
+            background-size: cover;
+            background-position: 50% 50%;
+        }
+        .topmessage img{
+            width: 1.3rem;
+        }
+        .topmessage p{
+            font-size: 18px;
+            color: #fff;
+            line-height: 28px;
+        }
+        .topmessage p:last-child{
+            line-height: 22px;
+        }
+        .teacher span{
+            font-size: 16px;
+            display: inline-block;
+            padding: 0 8px;
+            line-height: 22px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+        .help{
+            margin: 0.2rem 0 0.3rem 0;
+            padding: 0 0.3rem;
+            height: 0.6rem;
+            line-height: 0.6rem;
+        }
+        .goodAt{
+            padding: 0.1rem 0.3rem 0.2rem 0.3rem;
+        }
+        .help p{
+            background: url('../images/comment.png') no-repeat left center;
+            background-size: 0.44rem;
+            padding-left: 0.6rem;
+        }
+        .goodAt p:first-child{
+            background: url('../images/goodat.png') no-repeat left center;
+            background-size: 0.44rem;
+            padding-left: 0.6rem;
+            height: 0.6rem;
+            line-height: 0.6rem;
+            margin-bottom: 0.2rem;
+        }
+        .chartonlineBtn{
+            position: fixed;
+            bottom: 0.45rem;
+            width: 7.5rem;
+        }
+        .chartonline{
+            width: 2.8rem;
+            height: 0.8rem;
+            line-height: 0.8rem;
+            font-size: 16px;
+        }

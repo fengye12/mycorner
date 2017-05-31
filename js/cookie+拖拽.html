@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <style>
+        #div1{
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: absolute;
+        }
+    </style>
+    <script>
+// onmousedown :存储距离
+// onmousemove: 根据距离计算出div的新位置
+// onmouseleave:
+    function setCookie(name,value,iDay){
+    var oDate=new Date();
+    oDate.setDate(oDate.getDate()+iDay);
+    docuemnt.cookie=name+'='+value+';expires'
+}
+
+function getCookie(name){
+    var arr=document.cookie.split(';');
+    var  i=0;
+    for(i=0;i<arr.length;i++){
+        var arr2=arr[i].split('=');
+        if(arr2[0]==name){
+            return arr2[1];
+        }
+    }
+    return ' ' ;
+  }
+  function removeCookie(name){
+    setCookie(name,'1',-1);//让他昨天过期的意思
+  }
+window.onload=function(){
+    var oDiv=document.getElementById('div1')
+    var disX=0;
+    var disY=0;
+   var x=getCookie('x');
+   var y=getCookie('y');
+   if(x){
+    oDiv.style.left=x+'px';
+    oDiv.style.top=y+'px';
+   }
+
+    oDiv.onmousedown=function(ev){
+ var oEvent=ev||event;
+        disX=oEvent.clientX-oDiv.offsetLeft;
+        disY=oEvent.clientY-oDiv.offsetTop;
+        //move事件只能在onmousedown里面写 不然不单击鼠标也会动
+        //可以在document或者oDiv上面加move事件 但是如果加在div上面又可以在拖动速很快的情况下失效。最好在document上面
+        document.onmousemove=function(ev){
+ var oEvent=ev||event;
+            var left=oEvent.clientX-disX;
+            var top=oEvent.clientY-disY;
+            //不让浏览器超出可见区的范围
+            if(left<0){
+                left=0;
+            }else if(left>document.documentElement.clientWidth-oDiv.offsetWidth){
+                left=document.documentElement.clientWidth-oDiv.offsetWidth;
+            }
+            if(top<0){
+                top=0;
+            }else if(top>document.documentElement.clientHeight-oDiv.offsetHeight){
+                top=document.documentElement.clientHeight-oDiv.offsetHeight;
+            }
+
+                 oDiv.style.left=left+'px';
+                 oDiv.style.top=top+'px';
+        }
+        document.onmouseup=function(){
+            document.onmousemove=null;
+            document.onmouseup=null;
+            setCookie(x,oDiv.offsetLeft,5);
+            setCookie(y,oDiv.offsetTop,5);
+
+        }
+        return false;//FF下面有bug,阻止默认行为
+    }
+
+}
+    </script>
+    <body>
+    <div id="div1"></div>
+    </body>
+</html>

@@ -1,0 +1,46 @@
+
+        html,body{
+            height: 100%;
+            background-color: #fff;
+        }
+             .header{
+                position: relative;
+             }
+             .backimg{
+                position: absolute;
+                left: 0.32rem;
+                top: 50%;
+                height: 0.33rem;
+                width: 0.18rem;
+                 -webkit-transform: translateY(50%);
+                transform: translateY(-50%);
+             }
+             .content{
+                padding: 0 0.32rem;
+                   position: relative;
+             }
+             .grap{
+                color: #a0a0a0;
+                font-size: 12px;
+             }
+             .content .title{
+              /*   text-align:justify; */
+                text-align: center;
+              display: inline-block;
+              width: 100%;
+                line-height: 0.6rem;
+                margin-top: 0.3rem;
+                position: relative;
+                font-size: 600;
+                font-size: 18px;
+             }
+.date{
+    text-align: right;
+    font-size: 12px;
+    line-height: 0.5rem;
+}
+ .dateil{
+    text-align:justify;
+    font-size: 14px;
+    line-height: 20px;
+}

@@ -1,0 +1,66 @@
+/*
+* @Author: anchen
+* @Date:   2016-12-14 15:01:17
+* @Last Modified by:   anchen
+* @Last Modified time: 2016-12-29 12:58:43
+*/
+     .header{
+       height: 0.88rem;
+       line-height: 0.88rem;
+       text-align: center;
+       font-size: 18px;
+       margin-bottom: 0.12rem;
+     }
+     .DoctorM{
+       margin-bottom: 0.28rem;
+     }
+     .DoctorM li{
+       padding: 0 0.32rem;
+       line-height: 0.88rem;
+       background: #fff;
+       border-bottom: 1px solid #ddd;
+       font-size: 14px;
+     }
+     .DoctorM .detail{
+      line-height: 22px;
+      padding-bottom: 0.15rem;
+     }
+      .DoctorM .detail span{
+      display: inline-block;
+      padding-right: 5px;
+     }
+     .DoctorM li:last-child{
+       border: none;
+     }
+     .PatientM{
+       margin-bottom: 0.28rem;
+     }
+     .PatientM li{
+        padding: 0 0.32rem;
+       height: 0.88rem;
+       line-height: 0.88rem;
+       background: #fff;
+       border-bottom: 1px solid #ddd;
+       font-size: 14px;
+     }
+     .PatientM li:last-child{
+       border: none;
+     }
+     .OperationM{
+margin-top: 0.28rem;
+     }
+     .OperationM li{
+       padding: 0 0.32rem;
+       line-height: 0.88rem;
+       background: #fff;
+       border-bottom: 1px solid #ddd;
+       font-size: 14px;
+     }
+     .OperationM li:last-child{
+       border: none;
+     }
+     .OperationM .detail{
+       color: #7a7a7a;
+       line-height: 22px;
+       padding-bottom: 0.4rem;
+     }

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <script src="ajax.js"></script>
+    <script>
+        window.onload=function(){
+           // var oBtn=document.getElementById('btn')
+            // oBtn.onclick=function(){
+            //     aja.('data.json',function(str){
+            //         var arr=eval(str)//->  [{a:'5',d:'6'},{s:'8',d:'9'}]
+            //         alert(arr[0]);//->a:'5',d:'6'
+            //     });
+            var aBtn=document.getElementsByTagName('a');
+            var oUL=document.getElementById('btn')
+            var i=0;
+            for(i=0;i<aBtn.length;i++){
+                aBtn[i].index=i;
+                aBtn[i].onclick=function(){
+                    ajax('page'+(this.idex+1)+'.txt',function(){
+                        var aDate=eval(str);
+                        oUl.innerHTML='';
+                        for(i-=0;i<aData[i].length;i++){
+                            var oLi=document.createElement('li');
+                            oLi.innerHTMl='<strong>'+aData[i].user+'</strong><i>'+aData[i].pass+'</i>';
+                            oUL.append('oLi');
+                        }
+                    })
+                }
+            }
+            };
+    </script>
+    <body>
+    读取服务器上的一个文件，文件里面放了一个json
+    <input type="button" id="btn"/>
+    <ul id="ul">
+
+    </ul>
+    <a href="javascript:;">1</a>
+    <a href="javascript:;">2</a>
+    <a href="javascript:;">3</a>
+    </body>
+</html>

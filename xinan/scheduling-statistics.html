@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta content="initial-scale=1.0,maximum-scale=1.0,width=device-width" name="viewport">
+        <meta content="telephone=no,email=no" name="format-detection">
+        <meta name="apple-touch-fullscreen" content="YES">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <script src="js/resizeRem.js"></script>
+        <link rel="stylesheet" href="css/resetClass.css" />
+        <link rel="stylesheet" href="css/common.css" />
+        <link rel="stylesheet" href="css/schedulingStatistics.css" />
+         <script src="js/jquery-1.11.1.js"></script>
+         <script src="mobiscroll/js/mobiscroll.core-2.5.2.js" type="text/javascript"></script>
+         <script src="mobiscroll/js/mobiscroll.core-2.5.2-zh.js" type="text/javascript"></script>
+
+         <link href="mobiscroll/css/mobiscroll.core-2.5.2.css" rel="stylesheet" type="text/css" />
+         <link href="mobiscroll/css/mobiscroll.animation-2.5.2.css" rel="stylesheet" type="text/css" />
+         <script src="mobiscroll/js/mobiscroll.datetime-2.5.1.js" type="text/javascript"></script>
+         <script src="mobiscroll/js/mobiscroll.datetime-2.5.1-zh.js" type="text/javascript"></script>
+
+         <!-- 样式风格文件 -->
+         <script src="mobiscroll/js/mobiscroll.android-ics-2.5.2.js" type="text/javascript"></script>
+         <link href="mobiscroll/css/mobiscroll.android-ics-2.5.2.css" rel="stylesheet" type="text/css" />
+         <title>排班统计</title>
+    </head>
+    <body>
+    <div class="wrap">
+        <header class="bgColor header" ><span>排班统计</span></header>
+        <div class=" centerContent">
+          <div class=" whiteBg topContent">
+            <div class="firstDate Date">
+              <label for="startDate" class="mainColor">起始日期</label><input type="text" value="2016-12-14" readonly id="startDate"  onchange="endDatestart(this.value)"/>
+            </div>
+            <div class="secondDate Date">
+              <label for="endDate" class="mainColor">截止日期</label><input type="text" value="2016-12-14" readonly id="endDate"/>
+            </div>
+            <button class="bgColor search-btn">查询</button>
+          </div>
+          <div class="whiteBg bottomContent">
+            <table>
+              <tr>
+                <td class="mainColor title">班次总量</td>
+                <td class="mainColor">总时长</td>
+                <td class="mainColor">总台数</td>
+              </tr>
+              <tr>
+                <td>16</td>
+                <td>3小时11分</td>
+                <td>4</td>
+              </tr>
+              <tr>
+                <td>13</td>
+                <td>3小时25分</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>3小时11分</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td>14</td>
+                <td>3小时40分</td>
+                <td>4</td>
+              </tr>
+              <tr>
+                <td>16</td>
+                <td>3小时11分</td>
+                <td>4</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+    </div>
+    </body>
+    <script>
+  var firstDate=new Date($("#startDate").val());
+  var currYear = (new Date()).getFullYear();
+  function endDatestart(el){
+      firstDate=new Date(el);
+      $("#endDate").val(el);
+       $("#endDate").mobiscroll({ preset: 'date',
+                theme: 'android-ics light', //皮肤样式
+                display: 'bottom', //显示方式
+                mode: 'scroller', //日期选择模式
+                lang: 'zh',
+                startYear: currYear - 10, //开始年份
+                endYear: currYear + 10 ,//结束年份
+                cancelText: '取消',
+               minDate:firstDate
+      })
+  }
+   $("#startDate").mobiscroll({ preset: 'date',
+            theme: 'android-ics light', //皮肤样式
+            display: 'bottom', //显示方式
+            mode: 'scroller', //日期选择模式
+            lang: 'zh',
+            startYear: currYear - 10, //开始年份
+            endYear: currYear + 10 ,//结束年份
+            cancelText: '取消',
+            showNow:true,
+            nowText:'今天',
+           dateFormat: 'yy-mm-dd',
+             onSelect:function(valueText){
+           firstDate=new Date(valueText)
+            return firstDate;
+           }
+  })
+    $("#endDate").mobiscroll({ preset: 'date',
+             theme: 'android-ics light', //皮肤样式
+             display: 'bottom', //显示方式
+             mode: 'scroller', //日期选择模式
+             lang: 'zh',
+             startYear: currYear - 10, //开始年份
+             endYear: currYear + 10 ,//结束年份
+             cancelText: '取消',
+            minDate:firstDate
+   })
+
+
+</script>
+</html>

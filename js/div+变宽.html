@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+div{
+    width: 100px;
+    height: 50px;
+    background: red;
+    margin-top: 20px;
+    filter: alpha(opacity:30);
+    opacity: 0.3;
+}
+    </style>
+    <script>
+
+    window.onload=function(){
+var oDiv=document.getElementsByTagName('div');
+for(i=0;i<oDiv.length;i++){
+      oDiv[i].alpha=30;
+    oDiv[i].onmouseover=function(){
+
+        startMove(this,100)
+    };
+    oDiv[i].onmouseout=function(){
+        startMove(this,30);
+    }
+}
+    }
+    //淡入淡出素有的东西都不能公用：定时器 和 透明度 选择器
+    function startMove(obj,iTarget){
+        clearInterval(obj.timer);//目的是不要让多次点击的时候出现速度加倍（同时开了很多定时器）
+        obj.timer=setInterval(function(){
+            var iSpeed=(iTarget-obj.alpha)/8;//取整
+            iSpeed=iSpeed>0?Math.ceil(iSpeed):Math.floor(iSpeed);
+            if(obj.alpha==iTarget){
+                clearInterval(obj.timer);
+            }else{
+               obj.alpha+=iSpeed;
+               obj.style.filter='alpha(opacity:'+obj.alpha+')';
+               obj.style.opacity=obj.alpha/100;//火狐下的兼容版本
+            }
+        }, 30);
+    }
+    </script>
+    <body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    </body>
+</html>

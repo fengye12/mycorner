@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <style>
+#div1{
+    width: 100px;
+    height: 100px;
+    background: red;
+    position: absolute;
+    left: .0px;
+}
+.span{
+    width: 1px ;
+    height:300px;
+    background: #000;
+    position: absolute;
+    left: 300px;
+
+}
+    </style>
+    <script>
+    var timer=null;
+    function startMove(iTarget){
+        var oDiv=document.getElementById('div1');
+        clearInterval(timer);//目的是不要让多次点击的时候出现速度加倍（同时开了很多定时器）
+        timer=setInterval(function(){
+             console.log(iTarget)
+             console.log(oDiv.offsetLeft)
+           if(oDiv.offsetLeft<iTarget){
+            iSpeed=5;
+           }else{
+            iSpeed=-5;
+           }
+
+            if(Math.abs(oDiv.offsetLeft-iTarget)<5){
+                clearInterval(timer);
+            }else{
+                oDiv.style.left=oDiv.offsetLeft+iSpeed+'px';
+            }
+            txt.value+=iSpeed+'\n'
+        }, 30);
+    }
+    </script>
+    <body>
+    <input type="button" id="btn" onclick="startMove(300)" value="开始运动"/><br>
+    <div id="div1" ></div>
+    <span class="span"></span>
+    <textarea name="" id="txt" cols="30" rows="10"></textarea>
+    </body>
+</html>

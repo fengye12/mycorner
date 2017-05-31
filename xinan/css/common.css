@@ -1,0 +1,59 @@
+/*
+* @Author: anchen
+* @Date:   2016-12-14 12:22:57
+* @Last Modified by:   anchen
+* @Last Modified time: 2017-01-13 12:28:50
+*/
+body{
+    font-size:14px;
+    background-color:#ebebeb;
+    color: #3d3d3d;
+}
+.wrap{
+    width: 7.5rem;
+    margin: auto;
+}
+.grap{
+color: #767676;
+}
+.grade2{
+    color: #00c853;
+}
+.grade5{
+    color: #f4511e;
+}
+.moregrap{
+    color: #656565;
+    padding-left: 6px;
+}
+.bigsize{
+    font-size: 15px;
+}
+.smallsize{
+    font-size: 14px;
+}
+.smallersize {
+    font-size:12px;
+}
+.bgColor{
+background-color: #2196f3;
+color: #fff;
+}
+.mainColor{
+    color:#2196f3 ;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.whiteBg{
+    background-color: #fff;
+}
+.textcenter{
+    text-align: center;
+}
+.box-sizing{
+    box-sizing: border-box;
+}

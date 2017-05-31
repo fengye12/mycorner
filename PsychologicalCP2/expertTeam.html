@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta content="telephone=no,email=no" name="format-detection">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="stylesheet" href="css/resetClass.css" />
+        <link rel="stylesheet" href="css/expertTeam.css" />
+        <script src="js/resizeRem.js"></script>
+        <script src="js/jquery-1.11.1.js"></script>
+        <title>专家团队</title>
+        <style>
+          .footer{
+        padding:0.26rem;
+        margin-top: 0.45rem;
+    }
+    .footer .fl{
+        width: 50%;
+    }
+    .footer p{
+        font-size: 12px;
+        color: #666;
+    }
+    .ContetBox img{
+        width: 2.2rem;}
+        </style>
+    </head>
+    <body>
+        <div class="wrap" style="position:relative">
+        <div class="searchBox">
+          <div class="find-dor-top clearfix">
+              <div class="search-border">
+                  <form id="searchForm" method="post" action="javascript:return true">
+                  <input class="keyWord" type="search" id="find-search-value" autocomplete="off" name="keyWord" value="" placeholder="输入专家姓名" style="height:28px">
+                  </form>
+              </div>
+              <a href="javascript:;" class="search-find-btn">取消</a>
+          </div>
+          <div class="search_his">
+                <ul class="ContentBox">
+                  <li class="whiteBg liBox">
+                      <div class="posi">
+                       <dl class="clearfix">
+                           <dt class="fl">
+                               <img src="images/img.png" >
+                           </dt>
+                           <dd class="name"><span>徐丽颖</span><i>高级英语教师</i></dd>
+                           <dd class="come"><em>北京市海淀区高级人民中学</em></dd>
+                           <dd class="detail"><span>助力次数：<i class="textColor">377</i></span>
+                               <span>推荐度：<i class="textColor">50</i></span></dd>
+                               <a href="expertInfo.html">
+                                   <dd class="help bgColor">提问</dd>
+                               </a>
+                           </dl>
+                       </div>
+                   </li>
+                   <li class="whiteBg liBox">
+                       <div class="posi">
+                        <dl class="clearfix">
+                            <dt class="fl">
+                                <img src="images/img.png" >
+                            </dt>
+                            <dd class="name"><span>徐丽颖</span><i>高级英语教师</i></dd>
+                            <dd class="come"><em>北京市海淀区高级人民中学</em></dd>
+                            <dd class="detail"><span>助力次数：<i class="textColor">377</i></span>
+                                <span>推荐度：<i class="textColor">50</i></span></dd>
+                                <a href="expertInfo.html">
+                                    <dd class="help bgColor">提问</dd>
+                                </a>
+                            </dl>
+                        </div>
+                    </li>
+                </ul>
+              </div>
+          </div>
+         <header class="header textcenter bgColor">
+             专家团队
+             <img src="images/search.png" class="fr searchBtn"/>
+         </header>
+         <div class="ContentBox">
+             <ul>
+              <li class="whiteBg liBox">
+                  <div class="posi">
+                   <dl class="clearfix">
+                       <dt class="fl">
+                           <img src="images/img.png" >
+                       </dt>
+                       <dd class="name"><span>徐丽颖</span><i>高级英语教师</i></dd>
+                       <dd class="come"><em>北京市海淀区高级人民中学</em></dd>
+                       <dd class="detail"><span>助力次数：<i class="textColor">377</i></span>
+                           <span>推荐度：<i class="textColor">50</i></span></dd>
+                           <a href="expertInfo.html">
+                               <dd class="help bgColor">提问</dd>
+                           </a>
+                       </dl>
+                   </div>
+               </li>
+               <li class="whiteBg liBox">
+                  <div class="posi">
+                     <dl class="clearfix">
+                         <dt class="fl">
+                             <img src="images/img.png" >
+                         </dt>
+                         <dd class="name"><span>徐丽颖</span><i>高级英语教师</i></dd>
+                         <dd class="come"><em>北京市海淀区高级人民中学</em></dd>
+                         <dd class="detail"><span>助力次数：<i class="textColor">377</i></span>
+                             <span>推荐度：<i class="textColor">50</i></span></dd>
+                             <a href="expertInfo.html">
+                                 <dd class="help bgColor">提问</dd>
+                             </a>
+                         </dl>
+                     </div>
+                 </li>
+           </ul>
+       </div>
+       <section class="footer whiteBg">
+                <div class="ContetBox clearfix ">
+                    <div class="textcenter box-sizing">
+                        <img src="images/erweima2.jpg" />
+                        <p>长按或扫面二维码关注我们</p>
+                    </div>
+                </div>
+            </section>
+   </div>
+   <script>
+     var searchBtn=$(".header .searchBtn");
+     var searchBox=$(".searchBox");
+     var quxiaoBtn=$(".search-find-btn");
+     searchBtn.on("click",function(){
+      searchBox.show();
+     })
+     quxiaoBtn.on("click",function(){
+        searchBox.hide();
+     })
+   </script>
+    </body>
+</html>

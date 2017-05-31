@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>css3曲线阴影和翘边阴影</title>
+        <style>
+            body{
+                font-family: Arial;
+                font-size: 20px;
+
+            }
+            body,ul,li{
+                margin: 0;
+                padding: 0;
+                list-style-type: none;
+            }
+            .warp{
+                width: 70%;
+                margin: 50px auto;
+                background-color: #fff;
+            }
+           .warp  h1{
+                font-size: 20px;
+                font-weight: 600;
+                text-align: center;
+                line-height: 200px;
+            }
+            .effect{
+                box-shadow: 0px 1px  4px rgba(0,0,0,0.3),  0px 0px  40px rgba(0,0,0,0.1) inset;
+                -webkit-box-shadow: 0px 1px  4px rgba(0,0,0,0.3), 0px 0px  40px rgba(0,0,0,0.1) inset;
+                -o-box-shadow: 0px 1px  4px rgba(0,0,0,0.3), 0px 0px  40px rgba(0,0,0,0.1) inset;
+                -moz-box-shadow: 0px 1px  4px rgba(0,0,0,0.3), 0px 0px  40px rgba(0,0,0,0.1) inset;
+                position: relative
+            }
+            .effect:after,.effect :before{
+                content: ' ' ;
+                z-index: -1;
+                background: #fff;
+                position: absolute;
+                left: 10px;
+                right: 10px;
+                top: 50%;
+                bottom: -2px;
+                box-shadow: 0px 0px  20px rgba(0,0,0,0.8);
+                -webkit-box-shadow: 0px 0px  20px rgba(0,0,0,0.8);
+                -o-box-shadow: 0px 0px  20px rgba(0,0,0,0.8);
+                -moz-box-shadow: 0px 0px  20px rgba(0,0,0,0.8);
+                border-radius: 100px/10px;
+            }
+            .box{
+                width: 980px;
+                height: auto;
+                margin: 20px auto;
+                clear: :both;
+                overflow: hidden;
+            }
+            .box li{
+                position: relative;
+                width: 300px;
+                height: 210px;
+                float: left;
+                background: #fff;
+                margin: 20px 10px;
+                border: 1px solid #efefef;
+                box-shadow: 0 1px 4px rgba(0,0,0,0.27),0 0px 60px rgba(0,0,0,0.1) inset;
+                -webkit-box-shadow: 0 1px 4px rgba(0,0,0,0.27),0 0px 60px rgba(0,0,0,0.1) inset;
+                -o-box-shadow: 0 1px 4px rgba(0,0,0,0.27),0 0px 60px rgba(0,0,0,0.1) inset;
+                -moz-box-shadow: 0 1px 4px rgba(0,0,0,0.27),0 0px 60px rgba(0,0,0,0.1) inset;
+            }
+            .box li img{
+                display: block;
+                width: 290px;
+                height: 200px;
+                margin: 5px;
+            }
+            .box li:before{
+                content: ' ';
+                position: absolute;
+                width: 90%;
+                z-index:-2 ;
+                height: 80%;
+                left: 20px;
+                bottom:8px ;
+                background: transparent;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+                -webkit-box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+                -o-box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+                -moz-box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+                transform: skew(-12deg) rotate(-4deg);
+                -webkit-transform: skew(-12deg) rotate(-4deg);
+                -o-transform: skew(-12deg) rotate(-4deg);
+                -ms-transform: skew(-12deg) rotate(-4deg);
+                -moz-transform: skew(-12deg) rotate(-4deg);
+                /* skew(-12deg) rotate(-4deg);向左边变形(水平方向)12deg,向左边旋转4deg */
+
+            }
+              .box li:after{
+                content: '';
+                position: absolute;
+                width: 90%;
+                z-index:-2 ;
+                height: 80%;
+                right: 20px;
+                bottom:8px ;
+                background: transparent;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+                -webkit-box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+                -o-box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+                -moz-box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+                transform: skew(12deg) rotate(4deg);
+                -webkit-transform: skew(12deg) rotate(4deg);
+                -o-transform: skew(12deg) rotate(4deg);
+                -ms-transform: skew(12deg) rotate(4deg);
+                -moz-transform: skew(12deg) rotate(4deg);
+
+            }
+        </style>
+    </head>
+    <body>
+    <div class="warp effect">
+        <h1>shadow effect</h1>
+        </div>
+        <ul class="box">
+            <li><img src="images/1.jpg" alt="" /></li>
+            <li><img src="images/2.jpg" alt="" /></li>
+            <li><img src="images/3.jpg" alt="" /></li>
+        </ul>
+    </body>
+</html>

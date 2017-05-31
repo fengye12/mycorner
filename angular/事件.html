@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+        <script src="js/resizeRem.js"></script>
+        <script src="js/jquery-3.1.1.js"></script>
+        <link rel="stylesheet" href="css/resetClass.css" />
+        <link rel="stylesheet" href="css/common.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+        <title>关于我们</title>
+    </head>
+    <body ng-app="myApp" >
+     <div class="main" ng-controller="myCtrl">
+     <button ng-click=choose('red')>{{colors[0]}}</button>
+     <button ng-click=choose(colors[2])>{{colors[2]}}</button>
+      <button ng-bind="colors[1]" ng-click=choose(colors[1])></button>
+     <p>选中的颜色{{chooseColor}}</p>
+     <button ng-click="togglePage(true)" ng-bind="'商品详情'"></button>
+     <button ng-click="togglePage(false)" ng-bind="'用户评论'"></button>
+     <div ng-show="showFirst" ng-bind="'详情展示'"></div>
+     <div ng-hide="showFirst" ng-bind="'评论展示'"></div>
+    </div>
+    <script>
+      var app=angular.module('myApp',[])
+      app.controller('myCtrl',function($scope){
+        $scope.colors=['red','green','blue'];
+        $scope.chooseColor="";
+        $scope.choose=function(e){
+        console.log(this)
+        console.log(arguments)
+        // 第一种通过this访问
+        //this.chooseColor="red"
+        // 第二种通过$scope访问
+        //$scope.chooseColor="red"
+        //如果参数是一个事件对象$event，我们就用
+       //this.chooseColor=e.target.innerHTML;
+       //如果参数是一个字符串
+       this.chooseColor=e;
+        }
+        //两个页面的显隐
+        // 定义显隐变量
+        $scope.showFirst=true;
+        // 增加交互事件
+ $scope.togglePage=function(isShowFirst){
+        $scope.showFirst=isShowFirst;
+      }
+      })
+
+    </script>
+    </body>
+</html>

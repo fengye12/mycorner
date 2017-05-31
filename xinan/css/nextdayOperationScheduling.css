@@ -1,0 +1,214 @@
+/*
+* @Author: anchen
+* @Date:   2016-12-14 13:59:41
+* @Last Modified by:   anchen
+* @Last Modified time: 2017-01-12 16:21:09
+*/
+.header{
+ padding: 0.14rem 0;
+ text-align: center;
+}
+.header1{
+height: 0.88rem;
+line-height: 0.88rem;
+ text-align: center;
+ font-size: 18px;
+}
+.search{
+ width: 5.5rem;
+ margin: auto;
+ border-radius: 3px;
+ text-align: center;
+ height: 0.6rem;
+ line-height: 0.6rem;
+}
+.search span{
+ color: #bcbcbc;
+ background: url('../images/search.png') no-repeat left center;
+ background-size: 0.42rem;
+ padding-left: 0.63rem;
+ display: inline-block;
+ box-sizing: border-box;
+}
+.content{
+}
+.content .operationSc{
+ position: relative;
+ margin-top: 0.12rem;
+ padding: 0.15rem 0.32rem;
+
+}
+.content .personalM{
+   padding: 0.15rem 0.32rem;
+   position: relative;
+}
+.personalM .classify{
+    position: absolute;
+    right: 0.32rem;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    display: inline-block;
+}
+.personalM dd{
+ padding-left: 1.3rem;
+ line-height: 0.5rem;
+}
+.operationSc dd{
+ padding-left: 1.54rem;
+ line-height: 0.47rem;
+}
+.operationSc .name{
+    width: 100%;
+ text-overflow: -o-ellipsis-lastline;
+ overflow: hidden;
+ text-overflow: ellipsis;
+ display: -webkit-box;
+ -webkit-line-clamp: 2;
+ -webkit-box-orient: vertical;
+}
+.personalM  dl img{
+ width: 1rem;
+ height: 1rem;
+ vertical-align: top;
+}
+
+.operationSc dl img{
+ width: 1.3rem;
+ height: 1.3rem;
+ vertical-align: top;
+}
+.meIn{
+ height: 0.5rem;
+ line-height: 0.5rem;
+ padding: 0 0.32rem;
+}
+.special{
+ border: 1px solid #f44336;
+ color: #f44336;
+ border-radius: 5px;
+ display: inline-block;
+ padding:  0 0.1rem;
+ height: 0.35rem;
+ font-size: 13px;
+ line-height: 0.35rem;
+}
+.special1{
+    display: inline-block;
+ height: 0.5rem;
+ line-height: 0.5rem;
+ position: absolute;
+ top: 50%;
+ right: 0.32rem;
+ transform: translateY(-50%);
+ -webkit-transform: translateY(-50%);
+}
+html,body{
+    height: 100%;
+}
+  .searchBox{
+    background-color: #fff;
+    height: 100%;
+    z-index: 99;
+    position: absolute;
+    top: 0;
+    width: 7.5rem;
+    display: none;
+}
+.find-dor-top {
+    position: relative;
+    padding: 0.15rem 0.32rem;
+    margin-bottom: 0.2rem;
+}
+.search-border{
+    width: 5.8rem;
+    margin-right: 0.86rem;
+    background: #fff;
+    border-radius: 4px;
+    position: relative;
+    padding: 1px 0 1px 8px;
+}
+.searchBox .find-dor-top .search-border input {
+padding: 0.12rem 2px;
+height: 0.56rem;
+box-sizing: border-box;
+font-size: 14px;
+width: 5.7rem;
+border: none;
+}
+  .find-dor-top .search-find-btn {
+    position: absolute;
+    right: 0.3rem;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    top: 50%;
+    width: 0.86rem;
+    height: 30px;
+    line-height: 30px;
+    text-align: right;
+    font-size: 15px;
+    color: #fff;
+}
+    input[type=search]::-webkit-input-placeholder{
+      color: #bcbcbc;
+  }
+  input[type=search]::-webkit-search-cancel-button{
+    -webkit-appearance: none;
+    display: inline-block;
+    position: relative;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: url(../images/fand_dis_logo_clearbtn.png) no-repeat center center;
+    background-size: 16px 16px;
+}
+search_his .search_yx {
+    padding-left: 0.3rem;
+    color: #000000;
+    border-bottom: 0 none;}
+    .search_his .search_yx span {
+        display: block;
+        color: #afafaf;
+        height: 0.5rem;
+        line-height: 0.5rem;
+        font-size: 14px;
+        border-bottom: #dcdcdc solid 1px;
+        padding-left: 10px;
+    }
+  .content1  .roomSel{
+       width: 0.9rem;
+         display: block;
+       padding: 0 0.3rem;
+       box-sizing: border-box;
+      padding-right: 0.3rem;
+           line-height: 15px;
+           text-align: center;
+     /*   writing-mode: vertical-rl;
+       -webkit-writing-mode: vertical-rl; */
+    }
+   .content1 .roomnumber{
+       display: block;
+       text-align: center;
+    }
+   .content1 .operationSc dd{
+       padding-left: 1rem;
+    }
+   .content1 .operationSc .left-pa{
+       padding-right: 8px;
+    }
+       .bigsizeshujian{
+            font-size: 36px;
+            width: 1rem;
+            height: 1.8rem;
+
+            line-height: 1.8rem;
+        }
+        .content1 .operationSc dd{
+            padding-left: 1rem;
+        }
+        @media only screen and (max-width: 375px){
+           .bigsizeshujian{
+                font-size: 30px;
+            }
+        }
+

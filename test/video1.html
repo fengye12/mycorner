@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <link href="http://vjs.zencdn.net/5.0.2/video-js.css" rel="stylesheet">
+</head>
+<body>
+    <video id="video2"
+                     class="video-js vjs-default-skin vjs-big-play-centered"
+                     controls
+                     preload="auto"
+                     width="640"
+                     height="264"
+                     poster="http://static.qiakr.com/app/full_res.jpg">
+            <source id="sourceBox" src="http://static.qiakr.com/movie/0060202.mp4" type='video/mp4'>
+            <p class="vjs-no-js">不支持播放</p>
+        </video>
+        <div class="actions">
+            <a href="javascript:;" id="btn1">播放</a>
+            <a href="javascript:;" id="btn2">暂停</a>
+            <a href="javascript:;" id="btn3">隐藏音量调节控件</a>
+            <a href="javascript:;" id="btn4">设置宽高</a>
+            <a href="javascript:;" id="btn6">隐藏</a>
+            <a href="javascript:;" id="btn5">显示</a>
+            <a href="javascript:;" id="btn7">设置其它资源</a>
+            <a href="javascript:;" id="btn8">销毁</a>
+        </div>
+</body>
+<script src="http://vjs.zencdn.net/ie8/1.1.0/videojs-ie8.min.js"></script>
+<script src="http://vjs.zencdn.net/5.0.2/video.js"></script>
+<script type="text/javascript">
+    var oV = videojs('#video2');
+    oV.src="http://static.qiakr.com/movie/0080108.mp4";
+    oV.load();
+    oV.width(300).height(200);
+    oV.paly();
+    oV.pause();
+</script>
+</html>

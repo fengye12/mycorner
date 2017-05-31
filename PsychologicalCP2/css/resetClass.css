@@ -1,0 +1,71 @@
+/* CSS Document */
+*{
+    margin:0px;
+    padding:0px;
+}
+body{
+    font-size:14px;
+    background-color:#f7f7f7;
+    line-height: 22px;
+    color: #333;
+}
+.bgColor{
+background-color: #00c853;
+color: #fff;
+}
+.textColor{
+    color:#00c853 ;
+}
+.wrap{
+    width: 7.5rem;
+    margin: auto;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.whiteBg{
+    background-color: #fff;
+}
+.textcenter{
+    text-align: center;
+}
+.box-sizing{
+    box-sizing: border-box;
+}
+input,textarea{
+    outline: none;
+    border: none;
+    border: 1px solid #ddd;
+}
+button{
+    border: none;
+}
+ol,ul,li{
+    list-style-type: none;
+}
+i,em,ins{
+    font-style: normal;
+    text-decoration:none;
+}
+a{text-decoration:none;
+    color: #333;
+}
+.clear { clear: both; display: block; height: 0; overflow: hidden; visibility: hidden; width: 0; }
+.clearfix:after { clear: both; content: ' '; display: block; font-size: 0; height: 0; line-height: 0; visibility: hidden; width: 0; }
+/*去除高亮*/
+a:focus,input:focus,button,a,input,p,div,span{
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    /*     -webkit-user-modify:read-write-plaintext-only;  */
+    -moz-tap-highlight-color:rgba(0,0,0,0);
+    -o-tap-highlight-color:rgba(0,0,0,0);
+    -ms-tap-highlight-color:rgba(0,0,0,0);
+    -tap-tap-highlight-color:rgba(0,0,0,0);
+}
+/*  解决苹果手机上的按钮显示问题*/
+input[type="button"],input[type="text"], input[type="submit"], input[type="reset"], button,textarea{ cursor: pointer; -webkit-appearance: none;
+  font-size: 14px;
+   }
+input[type="search"]{-webkit-appearance:none;}

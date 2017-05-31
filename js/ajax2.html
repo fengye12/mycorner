@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+<script>
+var a=12;
+alert(window.a)->12;
+alert(b)//->报错
+alert(window.b)//->undefined
+// 全局函数和全局变量都属于window下的；
+// 当用一个不存在的变量的时候会报错，但是如果用一个不存在的属性的时候就不会报错，而是undefined;
+    window.onload=function(){
+        var oBtn=document.getElementById('btn0');
+        oBtn.onclick=function(){
+        var oAjax=null;
+            //1.创见ajax对象
+            //ie6以上
+            // var oAjax=new  XMLHttpRequest();
+            // alert(oAjax);
+            //  var oAjax=new ActiveXObject("Microsoft.XMLHTTP");//ie6下要用到插件 浏览器自带的插件 只要拿来用就可以了
+            // alert(oAjax);
+            if(window.XMLHttpRequest){
+                var oAjax=new  XMLHttpRequest();
+            }else{
+              var oAjax=new ActiveXObject("Microsoft.XMLHTTP");//ie6
+            }
+            //同步 （一件一件完成）异步 （多见事一起）
+            // 2.链接服务器
+            // open（方法，url ,是否异步）
+             alert(oAjax.readyState) //->0
+            oAjax.open('GET','abc.txt',true);
+             alert(oAjax.readyState) //->0,1,2.3.4
+            // 3.发送请求
+            oAjax.send();
+
+            // 4.接受返回
+            // OnReadyStateChange
+            oAjax.onreadystatechange=function(){
+                if(oAjax.readyState==4){
+                    if(oAjax.status==200){
+                        alert('成功'+oAjax.responseText)
+                    }else{
+                            alert('失败')
+                    }
+                }
+            };
+        }
+    }
+</script>
+    <body>
+    ajax 打电话的步骤
+    打电话         ajax请求
+    1.买个手机          1.创建ajax对象
+    2.拨号                    2.连接服务器
+    3.说话            3.发送请求
+    4.听         4.接受返回
+    </body>
+</html>

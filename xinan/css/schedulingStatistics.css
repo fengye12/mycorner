@@ -1,0 +1,56 @@
+
+  .header{
+    height: 0.88rem;
+    line-height: 0.88rem;
+    text-align: center;
+    font-size: 18px;
+  }
+  .centerContent{
+    margin: 0.36rem 0.25rem 0 0.25rem;
+  }
+  .topContent{
+    padding: 0 0.3rem 0.5rem 0.3rem;
+  }
+  .topContent .Date{
+    width: 6.4rem;
+    height: 0.8rem;
+    line-height: 0.8rem;
+    overflow: hidden;
+    border-bottom: 1px dashed #ddd;
+  }
+  .topContent input{
+    border: none;
+   padding: 6px 0.6rem;
+   height: 0.7rem;
+   box-sizing: border-box;
+   width: 5rem;
+   font-size: 14px;
+   line-height: 14px;
+  }
+  .search-btn{
+    width: 6.26rem;
+    margin: auto;
+    height: 0.69rem;
+    font-size: 14px;
+    line-height: 0.69rem;
+    border-radius: 5px;
+    margin-top: 0.66rem;
+  }
+  .bottomContent{
+    margin-top: 0.36rem;
+    width: 7rem;
+  }
+  .bottomContent table{
+    width: 100%;
+    padding-bottom: 1.1rem;
+  }
+  .bottomContent table td{
+    width: 33.33%;
+    text-align: center;
+    height: 0.5rem;
+    line-height: 0.5rem;
+  }
+  .bottomContent table .title{
+    height: 0.88rem;
+    line-height: 0.88rem;
+  }

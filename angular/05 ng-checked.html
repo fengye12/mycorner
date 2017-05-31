@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+        <script src="js/resizeRem.js"></script>
+        <script src="js/jquery-3.1.1.js"></script>
+        <link rel="stylesheet" href="css/resetClass.css" />
+        <link rel="stylesheet" href="css/common.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+        <title>关于我们</title>
+    </head>
+    <body ng-app="app" >
+     <div class="main" ng-controller="main">
+     <form action="" name="myForm">
+       <label for="">44
+       <input type="checkbox" ng-model="size44" value="abc" ng-checked="ischecked" />
+       </label>
+        <button ng-click="check()">提交</button>
+     </form>
+    </div>
+    <script>
+      var app=angular.module('app',[]);
+      app.controller('main',function($scope){
+        $scope.ischecked=false;
+          console.log($scope)
+         $scope.check=function(){
+          $scope.ischecked=!$scope.ischecked;
+            console.log($scope)
+         }
+      })
+
+    </script>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <script>
+     window.onload=function(){
+            var oText1=document.getElementById('text1');
+            var oText2=document.getElementById('text2');
+            var oBtn=document.getElementById('BTn');
+            oBtn.onclick=function(){
+                oText1.value+=oText2.value+'/n';
+                oText2.value= ' ';
+            };
+            oText2.onkeydown=function(ev){
+                var oEvent=ev || event;
+                if(oEvent.ctrlKey && oEvent.keyCode==13){
+                    oText1.value+=oText2.value+'\n';
+                    oText2.value= ' ';
+                }
+            }
+
+        }
+    </script>
+    <body>
+    <textarea name="" id="text1" cols="30" rows="10"></textarea><br>
+    <input type="text" id="text2"/><input type="button" value="提交" id="BTn" />
+    </body>
+</html>

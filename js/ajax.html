@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <script>
+        window.onload=function(){
+            var oBtn=document.getElementById('btn1')
+            oBtn.onclick=function(){
+                aja.('data.txt',function(str){
+                    var arr=eval(str)
+                    alert(arr[0]);
+                });
+            };
+
+        // var str='[1,2,3]';
+        // var arr=eval(str);//字符串作为参数
+        //     alert(arr[0])//->1
+        // var str1="function show(){alert('abc')}"
+        // eval(str1);
+        // show();
+};
+</script>
+    <body>
+    请求服务器上的文件，这个文件放了一个数组
+    ajax从服务器上读取的文件都是string类型的文件 eval计算字符串里的值
+    <input type="button" id="btn1" value="读取数组文件">
+    </body>
+</html>

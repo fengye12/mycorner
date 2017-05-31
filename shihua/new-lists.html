@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+        <script src="js/resizeRem.js"></script>
+        <link rel="stylesheet" href="css/resetClass.css" />
+        <link rel="stylesheet" href="css/common.css" />
+        <title>E课堂</title>
+        <style>
+        html,body{
+            height: 100%;
+        }
+        body{
+            background-image: url(images/back.png);
+            background-size: cover;
+            background-position: center center;
+        }
+            .content li{
+                height: 0.9rem;
+                line-height: 0.9rem;
+                font-size: 15px;
+                padding: 0 0.2rem;
+                background: #fff;
+                position: relative;
+                margin-bottom: 1px;
+            }
+             .content li p{
+                width: 4.5rem;
+                margin-right: 1.1rem;
+                overflow: hidden;/*注意不要写在最后了*/
+            white-space: nowrap;
+            -webkit-text-overflow: ellipsis;
+                text-overflow: ellipsis;
+             }
+             .content li span{
+                position: absolute;
+                right: 0.3rem;
+                top: 50%;
+                -webkit-transform: translateY(50%);
+                transform: translateY(-50%);
+             }
+             .grap{
+                color: #a0a0a0;
+                font-size: 12px;
+             }
+             .header{
+                position: relative;
+             }
+             .backimg{
+                position: absolute;
+                left: 0.32rem;
+                top: 50%;
+                height: 0.33rem;
+                width: 0.18rem;
+                 -webkit-transform: translateY(50%);
+                transform: translateY(-50%);
+             }
+        </style>
+    </head>
+    <body>
+    <div class="wrap">
+        <header class="mainBg height1 header">E课堂<img src="images/sss1.png" class="backimg"/></header>
+        <div class="content">
+        <ul>
+            <li><p>全面深改三年：渐入佳境 次第开花</p><span class="grap">2016-12-14 12:06
+</span></li>
+            <li><p>全面深改三年：渐入佳境 次第开花</p><span class="grap">2016-12-14 12:06
+</span></li>
+            <li><p>全面深改三年：渐入佳境 次第开花</p><span class="grap">2016-12-14 12:06
+</span></li>
+            <li><p>全面深改三年：渐入佳境 次第开花</p><span class="grap">2016-12-14 12:06
+</span></li>
+        </ul>
+        </div>
+
+    </div>
+    </body>
+</html>

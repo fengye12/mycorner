@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+        <script src="js/resizeRem.js"></script>
+        <script src="js/jquery-3.1.1.js"></script>
+        <link rel="stylesheet" href="css/resetClass.css" />
+        <link rel="stylesheet" href="css/common.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+        <title>关于我们</title>
+    </head>
+    <body ng-app="myApp" >
+     <div class="main" ng-controller="myCtrl">
+      <label>Name:</label>
+      <input type="text" ng-model="msg" placeholder="Enter a name here">
+      <p ng-bind="date"></p>
+      <h1>Hello {{msg}}!</h1>
+    </div>
+    <script>
+    // 查看angular对象
+    console.log(angular)
+    // vue对于一个应用程序，我们要创建它，而angular我们只要把它拿过用就可以了
+        var app=angular.module('myApp',[])
+        console.log(app)
+        // 在控制器的作用域中创建变量，所以我们先把页面中的控制器拿过来
+        // 我们想使用作用域，我们要先把作用域传递进去$scope
+      app.controller('myCtrl',function($scope){
+        // 输出作作用域
+        console.log(this)
+        // 输出参数数组
+        console.log(arguments)
+        console.log($scope)
+        $scope.msg="hello";
+        $scope.date="9月10号";
+      })
+    </script>
+    </body>
+</html>

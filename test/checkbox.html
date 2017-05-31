@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>prop demo</title>
+  <style>
+  p {
+    margin: 20px 0 0;
+  }
+  b {
+    color: blue;
+  }
+  </style>
+  <script src="js/jquery-3.1.1.js"></script>
+</head>
+<body>
+
+<div class="radio">
+  <input type="radio" name="radiot" id="radio1"/><label for="radio1">新的</label>
+  <input type="radio" name="radiot" id="radio2"/><label for="radio2">的</label>
+  <input type="radio" name="radiot" id="radio3"/><label for="radio3">新</label>
+</div>
+<div class="checkbox">
+<input id="check1" type="checkbox" name="test"><label for="check1" name="test">Check me</label>
+<input id="check2" type="checkbox" name="test" ><label for="check2" name="test">Check</label>
+<input id="check3" type="checkbox" name="test" >
+<label for="check3" name="test">me</label>
+<p></p>
+<span></span>
+</div>
+<style>
+/* css选择选中的表单 */
+input[type="radio"]:checked + label{
+color: #ff5400;
+}
+input[type="checkbox"]:checked + label{
+color: #ff5400;
+}
+
+</style>
+<script>
+$(".radio input").on('change', function(event) {
+  event.preventDefault();
+  /* Act on the event */
+  console.log($("input[name='radiot']:radio:checked"));
+  // if($(this).is(':checked')){
+  //   $(this).next('label').css('color', 'red');
+  // }
+});
+$(".checkbox input").on('change',  function(event) {
+  event.preventDefault();
+  /* Act on the event */
+  console.log($(this).attr('checked'));
+  if($(this).is( ":checked" )){
+    console.log($(this));
+    // $(this).next('label').css('color', 'red');
+  }else{
+    // $(this).next('label').css('color', '#000');
+  }
+});
+
+$( "input" ).change(function() {
+  var $input = $( this );
+
+  $( "p" ).html(
+    ".attr( \"checked\" ): <b>" + $(this).attr("checked")+ "</b><br>" +
+    ".prop( \"checked\" ): <b>" + $input.prop( "checked" ) + "</b><br>" +
+    ".is( \":checked\" ): <b>" + $input.is( ":checked" ) + "</b>" );
+}).change();
+</script>
+
+</body>
+</html>

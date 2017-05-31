@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="js/jquery-1.10.1.min.js"></script>
+    </head>
+    <body>
+    <div style="width:1920px;height:894px;">
+        <div class="footer-more-trigger"  style="width:1920px;left:-50%;top:auto;border:none;padding:0">
+        <div class="footer-more-trigger" style="leftt:-960px;top:auto;border:none;padding:0">
+            <div  style="width:1920px;height:894px;background-color:#333333;border:none;">
+              <img src="https://img.alicdn.com/imgextra/i3/1641711921/TB2PZvocNlmpuFjSZPfXXc9iXXa_!!1641711921.jpg" alt=" 1920.jpg"/>
+            </div>
+        </div>
+        </div>
+        </div>
+        <style>
+        #PW{
+            display: none;
+        }
+            #black_overlay
+            {
+                display: none;
+            position: fixed;
+            z-index: 1000;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            filter: alpha(opacity=80);
+            opacity: 0.8;
+            overflow: hidden;
+            background-color: #000;
+            }
+            *html
+            {
+            background: url(*) fixed;
+            }
+            *html,body
+            {
+            margin: 0;
+            height: 100%;
+            }
+            /*IE6*/
+            *html #black_overlay
+            {
+            position: absolute;
+            left: expression(documentElement.scrollLeft + documentElement.clientWidth - this.offsetWidth);
+            top: expression(documentElement.scrollTop + documentElement.clientHeight - this.offsetHeight);
+            }
+            #load_content
+            {
+            display: none;
+            position: absolute;
+            top: 40%;
+            left: 40%;
+            width: 250px;
+            height: 150px;
+            border-top: 16px solid #FFF;
+            border-right: 26px solid #FFF;
+            border-left: 26px solid #FFF;
+            border-bottom: none;
+            text-align: center;
+            background-color: white;
+            z-index: 1002;
+            overflow: auto;
+            font-size: 14px;
+            font-weight: bold;
+            }
+            #load_content .tipsa{
+                color: red;
+                padding-left: 5px;
+                display: none;
+            }
+             .text{
+                display: block;
+                width: 250px ;
+                margin: auto;
+                padding:2px;
+                height: 32px;
+                line-height: 24px;
+                box-sizing: border-box;
+                margin-right: 10px;
+                vertical-align: top;
+            }
+            .btn-box{
+                margin-top: 25px;
+            }
+           .btn-box .confirm{
+            float: left;
+                width: 50px ;
+                height: 30px;
+                line-height: 30px;
+                margin-right: 10px;
+                line-height: 26px;
+            }
+           .btn-box .cancle{
+             float: left;
+                width: 50px ;
+                height: 30px;
+                line-height: 30px;
+                line-height: 26px;
+            }
+        </style>
+        <div id="black_overlay" style=""></div>
+        <div style="" id="load_content" >
+        <div>
+        <p style="text-align:left;padding:0;padding-left:5px;margin:0;margin:10px 0;">请输入密码:<span class="tipsa">输入密码有误！</span></p>
+        <input type="text" class="text" />
+        <div class="btn-box">
+            <button class="confirm">确定</button>
+            <button class="cancle">取消</button>
+        </div>
+        </div>
+        </div>
+        <a href="#" id="downLoad">百度</a>
+        <input type="text"  hidden value="123456" id="PW"/>
+            <script>
+            var downLoad=$('#downLoad');
+            var password=$("#PW").val();
+            var mask=$("#black_overlay");
+            var tip=$("#load_content");
+            var confirm=$("#load_content .confirm");
+            var cancle=$("#load_content .cancle");
+            var tipsa=$("#load_content .tipsa");
+            var loadPw= $("#load_content .text") ;
+               downLoad.on('click', function(event) {
+                 mask.show();
+                tip.show();
+               });
+               confirm.on('click', function(event) {
+                   event.preventDefault();
+                   console.log(loadPw.val()==password)
+                   if(loadPw.val()==password){
+                      mask.hide();
+                        tip.hide();
+                        loadPw.val(' ');
+                         tipsa.hide();
+                         window.open("http://www.baidu.com");
+                   }else{
+                    tipsa.show();
+                   }
+               });
+              cancle.on('click', function(event) {
+                  event.preventDefault();
+                     mask.hide();
+                       tip.hide();
+                         loadPw.val(' ');
+                         tipsa.hide();
+              });
+
+            </script>
+
+    </body>
+</html>

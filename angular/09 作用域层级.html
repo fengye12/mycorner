@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+        <script src="js/resizeRem.js"></script>
+        <script src="js/jquery-3.1.1.js"></script>
+        <link rel="stylesheet" href="css/resetClass.css" />
+        <link rel="stylesheet" href="css/common.css" />
+        <script src="js/angular.min.js"></script>
+        <title>关于我们</title>
+    </head>
+    <body ng-app="app" >
+    <h1>{{msg}}</h1>
+    <div ng-controller="otherBrother">
+
+    </div>
+    <div ng-controller="parent">
+         <h2 ng-click="changemsg()">{{msg}}</h2>
+         <div ng-controller="child">
+             <h3>{{msg}}</h3>
+         </div>
+    </div>
+    <div class="brother" ng-controller="brother">
+        <h4>{{msg}}</h4>
+    </div>
+    <script>
+    var msg="hello Kittty"
+      var app=angular.module('app',[]);
+    // 根作用域可以在run方法中使用
+    app.run(function($rootScope){
+      // console.log(this)
+      // console.log(arguments)
+      // console.log($rootScope)
+      // 将全局作用域变量赋值给根作用域中的msg变量
+    $rootScope.msg=msg;
+
+    })
+    app.controller("parent",function($scope){
+console.log($scope)
+ // $scope.msg="parent msg"
+$scope.changemsg=function(){
+    $scope.msg="parent msg"
+    // $rootScope.msg="root msg";好像不行哎访问不到rootscope
+    //$scope.$parent.msg="new root msg"
+    //  // 如果想修改兄弟节点的msg
+    $scope.$$nextSibling.msg="new brother msg"
+}
+    });
+     app.controller("child",function($scope){
+// console.log($scope)
+    })
+      app.controller("brother",function($scope){
+        // console.log($scope)
+        $scope.msg="Brother"
+    })
+         app.controller("otherBrother",function($scope){
+        // console.log($scope)
+         $scope.msg="otherBrother"
+    })
+
+    </script>
+    </body>
+</html>

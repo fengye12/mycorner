@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+        <script src="js/resizeRem.js"></script>
+        <script src="js/jquery-3.1.1.js"></script>
+        <link rel="stylesheet" href="css/resetClass.css" />
+        <link rel="stylesheet" href="css/common.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+        <title>关于我们</title>
+    </head>
+    <body ng-app="myApp" >
+     <div class="main" ng-controller="myCtrl">
+    <!--  默认保留三位小数 这个地方6为 -->
+    <input type="text" ng-model="msg" />
+      <h1>{{msg | toCamel :true}}</h1>
+      <h1>{{msg | toCamel }}</h1>
+    </div>
+    <script>
+      var app=angular.module('myApp',[])
+      // 驼峰过滤器
+      app.filter('toCamel',function() {
+       return function(data, firstchartoCase){
+          if(firstchartoCase){
+            // data=data[0].toUpperCase()+data.slice(1);
+            data=data.replace(/^([a-z])/,function(match,$1){
+              return $1.toUpperCase()
+            })
+          }
+       }
+      });
+      app.controller('myCtrl',function($scope){
+      // 创建一个时间
+
+      })
+
+    </script>
+    </body>
+</html>
