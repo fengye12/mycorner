@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="common.css" />
+  <link rel="stylesheet" href="select3.css" />
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="select3.js"></script>
+  <script type="text/javascript" src="centpage.js"></script>
+</head>
+<style>
+  .box{
+    width: 800px;
+    margin: 0 auto;
+    background: #fff;
+  }
+</style>
+<body>
+<div class="box">
+
+<div style="height:100px;padding:30px;background:#e8edf1">
+  <!-- 分页模板 -->
+    <div class="pagination">
+      <div id="page" class="page">
+      </div>
+      <div class="selectB">
+        <div class="selectedB" id="pageCentS">
+          <div class="sel-wrap">
+          <span class="selected-item">10</span>
+          <span class="selectIcon"></span>
+          </div>
+          <ul class="optionB">
+              <li class="op-item" data-value="10">10条/页</li>
+              <li class="op-item" data-value="20">20条/页</li>
+              <li class="op-item" data-value="100">100条/页</li>
+          </ul>
+        </div>
+      </div>
+      <div id="page2" class="page" style="margin-top:30px">
+      </div>
+
+    </div>
+    </div>
+
+</div>
+</body>
+</html>
+
+<script>
+// 第一个
+  // 分页相关
+  var pcent = new CentPage();//初始化分页
+  var pindex=1, pcount=1000, psize=$("#pageCentS select").val()?$("#pageCentS select").val():"10";
+  var pTemplate = "";//分页模板html
+  var activeNum=pcent.PageNum;//当前页码
+  var obj=$("#page");//存放分页的dom
+
+  //分页active页码
+    function getActive(obj,activeNum){
+     $.each(obj.find('li'), function(index, val) {
+      var nowNum=$(val).text()
+        if(nowNum==activeNum){
+          $(this).addClass("active")
+        }else{
+          $(this).removeClass("active")
+        }
+      });
+      }
+
+     //分页点击页码触发
+  function CentPageOper(num){
+    pindex=num;
+    pTemplate = pcent.GetCentPage(pindex, pcount, psize);
+    $("#page").html(pTemplate);
+     getActive(obj,num);
+  }
+
+  // 分页select change事件
+  function pageChange(objselect){
+    objselect.change(function(){
+      console.log($(this).val())
+      psize=$(this).val();
+      pTemplate = pcent.GetCentPage(1, 1000, psize);
+      $("#page").html(pTemplate);
+      getActive(obj,1)
+    });
+  }
+
+//初始化分页select3
+    $("#pageCentS").select3({
+    'animate':'slide',
+      'value':"10",
+      callback:function(obj){
+        console.log(obj)
+         // var obj=$("#ssselS select");
+        pageChange(obj)
+      }
+  });
+    // 初始化分页select3之后才能初始化分页模板
+    pTemplate=pcent.GetCentPage(pindex, pcount, psize);
+     $("#page").html(pTemplate);
+    getActive(obj,activeNum);
+
+
+</script>
+<script>
+// 第二个
+  // 分页相关
+  var pcent2 = new CentPage();//初始化分页
+  pcent2.EventName="CentPageOper2";
+  var pindex2=1, pcount2=1000, psize2=20;
+  var pTemplate2 = "";//分页模板html
+  var activeNum2=pcent2.PageNum;//当前页码
+  var obj2=$("#page2");//存放分页的dom
+
+
+
+     //分页点击页码触发
+  function CentPageOper2(num){
+    pindex2=num;
+    pTemplate2 = pcent2.GetCentPage(pindex2, pcount2, psize2);
+    $("#page2").html(pTemplate2);
+     getActive(obj2,num);
+  }
+
+    // 初始化分页select3之后才能初始化分页模板
+    pTemplate2=pcent2.GetCentPage(pindex2, pcount2, psize2);
+     $("#page2").html(pTemplate2);
+    getActive(obj2,activeNum2);
+</script>

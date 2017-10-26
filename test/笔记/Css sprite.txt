@@ -25,10 +25,10 @@ verticel align:
 
 
  @¼òµ¥Àí½â¾ÍÊÇÎÒÒª°ÑÎÄ±¾ÏŞÖÆÔÚÒ»ĞĞ£¨white-space: nowrap;£©£¬¿Ï¶¨ÕâÒ»ĞĞÊÇÓĞÏŞÖÆµÄ(width)£¬²¢ÇÒÄãµÄÒç³öµÄ²¿·ÖÒªÒş²ØÆğÀ´£¨overflow: hidden£»£©£¬È»ºó³öÏÖÊ¡ÂÔºÅ£¨ text-overflow: ellipsis£©¡£
-overflow: hidden;/*×¢Òâ²»ÒªĞ´ÔÚ×îºóÁË*/     
-white-space: nowrap;     
--webkit-text-overflow: ellipsis;     
-text-overflow: ellipsis; 
+overflow: hidden;/*×¢Òâ²»ÒªĞ´ÔÚ×îºóÁË*/
+white-space: nowrap;
+-webkit-text-overflow: ellipsis;
+text-overflow: ellipsis;
 
 
 Á½ĞĞ¶à³öÒş²Ø
@@ -46,22 +46,22 @@ $('#id').next()       µ±Ç°ÔªËØÖ®ºóµÚÒ»¸öĞÖµÜ½Úµã
 $('#id').nextAll()    µ±Ç°ÔªËØÖ®ºóËùÓĞµÄĞÖµÜ½Úµã
 ÕâÈı¸ö·½·¨¶¼¿ÉÒÔÌí¼ÓÑ¡ÔñÆ÷£¬¸ø³öÑ¡ÔñÌõ¼ş£¬¾ÍÄÜÕÒµ½ÄãÖ¸¶¨µÄĞÖµÜ½ÚµãÁË¡£
 
-@²ÎÊıĞÎÊ½ÓĞ5ÖÖ£º 
-1£©new Date("month dd,yyyy hh:mm:ss"); 
-2£©new Date("month dd,yyyy"); 
-3£©new Date(yyyy,mth,dd,hh,mm,ss); 
-4£©new Date(yyyy,mth,dd); 
+@²ÎÊıĞÎÊ½ÓĞ5ÖÖ£º
+1£©new Date("month dd,yyyy hh:mm:ss");
+2£©new Date("month dd,yyyy");
+3£©new Date(yyyy,mth,dd,hh,mm,ss);
+4£©new Date(yyyy,mth,dd);
 5£©new Date(ms);
-new Date("January 12,2006 22:19:35"); 
+new Date("January 12,2006 22:19:35");
 
-new Date("January 12,2006"); 
+new Date("January 12,2006");
 
-new Date(2006,0,12,22,19,35); 
+new Date(2006,0,12,22,19,35);
 
-new Date(2006,0,12); 
+new Date(2006,0,12);
 
 new Date(1137075575000);
-/new Date("2014-04-11")Õâ¸öĞÎÊ½Æ»¹ûÊÖ»ú²»ÔõÃ´ÓÑºÃ 
+/new Date("2014-04-11")Õâ¸öĞÎÊ½Æ»¹ûÊÖ»ú²»ÔõÃ´ÓÑºÃ
 /new Date("2014/04/11")
 ÎÒÃÇ½«ÈÕÆÚ¶ÔÏóÉèÖÃÎª 5 ÌìºóµÄÈÕÆÚ£º
 var myDate=new Date()
@@ -163,7 +163,7 @@ flexÏîÄ¿³Æ¶¯µ½×ó±ß»òÓÒ±ßÒ²È¡¾öÓÚÖ÷ÖáµÄ·½Ïò¡£Èç¹ûflex-directionÉèÖÃÎªrow£¬ÉèÖÃjus
 
  Internet Explorer 8»òÕß¸üÀÏµÄä¯ÀÀÆ÷²»Ö§³ÖÃ½Ìå²éÑ¯¡£Äã¿ÉÒÔÊ¹ÓÃmedia-queries.js»òÕßrespond.jsÀ´ÔÚIEÖĞÌí¼Ó¶ÔÃ½Ìå²éÑ¯µÄÖ§³Ö¡£
 
-media-queries.js(http://code.google.com/p/css3-mediaqueries-js/)      
+media-queries.js(http://code.google.com/p/css3-mediaqueries-js/)
 
  respond.js(https://github.com/scottjehl/Respond)
 
@@ -176,13 +176,13 @@ media-queries.js(http://code.google.com/p/css3-mediaqueries-js/)
 @:after ::after
 »ù±¾¸ÅÄî
 
-1.ËûÃÇ¶¼ÊÇCSSÎ±ÔªËØ£¬Óë:hover/:activeµÈÎ±Àà²»Ò»Ñù¡£ 
-2.:before/:afterÎ±ÔªËØÊÇÔÚCSS2ÖĞÌá³öÀ´µÄ£¬ËùÒÔ¼æÈİĞÔ¿ÉÄÜµ½IE8ÁË¡£ 
+1.ËûÃÇ¶¼ÊÇCSSÎ±ÔªËØ£¬Óë:hover/:activeµÈÎ±Àà²»Ò»Ñù¡£
+2.:before/:afterÎ±ÔªËØÊÇÔÚCSS2ÖĞÌá³öÀ´µÄ£¬ËùÒÔ¼æÈİĞÔ¿ÉÄÜµ½IE8ÁË¡£
 3.::before/::afterÊÇCSS3ÖĞµÄĞ´·¨£¬ÎªÁË½«Î±ÀàºÍÎ±ÔªËØÇø·Ö¿ª¡£µ«ÊÇÆ½Ê±ÎªÁË¼æÈİĞÔ£¬»¹ÊÇ»áÓÃÒ»¸öÃ°ºÅµÄĞ´·¨¡£
 
 »ù±¾ÓÃ·¨
 
-p:after{} 
+p:after{}
 img:before{}
 1
 2
@@ -196,11 +196,11 @@ attr() ¨C µ÷ÓÃµ±Ç°ÔªËØµÄÊôĞÔ£¬¿ÉÒÔ·½±ãµÄ±ÈÈç½«Í¼Æ¬µÄ Alt ÌáÊ¾ÎÄ×Ö»òÕßÁ´½ÓµÄ Href
 
 url() / uri() ¨C ÓÃÓÚÒıÓÃÃ½ÌåÎÄ¼ş¡£Ê¾Àı£º h1::before { content: url(logo.png); }
 
-counter() ¨C µ÷ÓÃ¼ÆÊıÆ÷£¬¿ÉÒÔ²»Ê¹ÓÃÁĞ±íÔªËØÊµÏÖĞòºÅ¹¦ÄÜ¡£¾ßÌåÇë²Î¼û counter-increment ºÍ counter-reset ÊôĞÔµÄÓÃ·¨¡£Ê¾Àı£º 
+counter() ¨C µ÷ÓÃ¼ÆÊıÆ÷£¬¿ÉÒÔ²»Ê¹ÓÃÁĞ±íÔªËØÊµÏÖĞòºÅ¹¦ÄÜ¡£¾ßÌåÇë²Î¼û counter-increment ºÍ counter-reset ÊôĞÔµÄÓÃ·¨¡£Ê¾Àı£º
 h2:before { counter-increment: chapter; content: "Chapter " counter(chapter) ". " }
 
-½ø½×ÓÃ·¨ 
-ÎÒÃÇ×î³£ÓÃµÄ¾ÍÊÇÓÃÀ´Çå³ı¸¡¶¯ºÍÖÆ×÷Èı½ÇÖ®ÀàµÄÌØÊâÔªËØÁË¡£ 
+½ø½×ÓÃ·¨
+ÎÒÃÇ×î³£ÓÃµÄ¾ÍÊÇÓÃÀ´Çå³ı¸¡¶¯ºÍÖÆ×÷Èı½ÇÖ®ÀàµÄÌØÊâÔªËØÁË¡£
 ÏÖÔÚ´ó¼Ò³£ÓÃµÄÇå³ı¸¡¶¯µÄ·½·¨£º
 
 .clearfix {*zoom: 1;}
@@ -274,32 +274,32 @@ rotateX£¨95deg£©
 ´Ó×óµ½ÓÒÊÇxÖá£¬´ÓÉÏµ½ÏÂÊÇyÖá£¬´ÓÀïµ½Íâ£¨ÓëÆÁÄ»´¹Ö±£©ÊÇzÖá¡£
 ÎÒ¿´ÁËÒ»ÏÂ´Ó×óµ½ÓÒÊÇyÖá£¬´ÓÉÏµ½ÏÂÊÇxÖá  ÊÇÑØ×ÅÖáÏßÈ¥Ğı×ªµÄ£¡
 
-window.scrollTo(0,document.body.scrollHeight);   
+window.scrollTo(0,document.body.scrollHeight);
 window.scrollTo(0,0);
 
 [javascript] view plain copy ÔÚCODEÉÏ²é¿´´úÂëÆ¬ÅÉÉúµ½ÎÒµÄ´úÂëÆ¬
-$(document).ready(function()   
-{   
-alert($(window).height()); //ä¯ÀÀÆ÷Ê±ÏÂ´°¿Ú¿ÉÊÓÇøÓò¸ß¶È   
-alert($(document).height()); //ä¯ÀÀÆ÷Ê±ÏÂ´°¿ÚÎÄµµµÄ¸ß¶È   
-alert($(document.body).height());//ä¯ÀÀÆ÷Ê±ÏÂ´°¿ÚÎÄµµbodyµÄ¸ß¶È   
-alert($(document.body).outerHeight(true));//ä¯ÀÀÆ÷Ê±ÏÂ´°¿ÚÎÄµµbodyµÄ×Ü¸ß¶È °üÀ¨border padding margin   
-alert($(window).width()); //ä¯ÀÀÆ÷Ê±ÏÂ´°¿Ú¿ÉÊÓÇøÓò¿í¶È   
-alert($(document).width());//ä¯ÀÀÆ÷Ê±ÏÂ´°¿ÚÎÄµµ¶ÔÓÚÏó¿í¶È   
-alert($(document.body).width());//ä¯ÀÀÆ÷Ê±ÏÂ´°¿ÚÎÄµµbodyµÄ¸ß¶È   
-alert($(document.body).outerWidth(true));//ä¯ÀÀÆ÷Ê±ÏÂ´°¿ÚÎÄµµbodyµÄ×Ü¿í¶È °üÀ¨border padding margin   
-}   
-) 
-@ÓëÆäËûÒ»Ğ©displayÊôĞÔÀàËÆ£¬table-cellÍ¬Ñù»á±»ÆäËûÒ»Ğ©CSSÊôĞÔÆÆ»µ£¬ÀıÈçfloat, 
+$(document).ready(function()
+{
+alert($(window).height()); //ä¯ÀÀÆ÷Ê±ÏÂ´°¿Ú¿ÉÊÓÇøÓò¸ß¶È
+alert($(document).height()); //ä¯ÀÀÆ÷Ê±ÏÂ´°¿ÚÎÄµµµÄ¸ß¶È
+alert($(document.body).height());//ä¯ÀÀÆ÷Ê±ÏÂ´°¿ÚÎÄµµbodyµÄ¸ß¶È
+alert($(document.body).outerHeight(true));//ä¯ÀÀÆ÷Ê±ÏÂ´°¿ÚÎÄµµbodyµÄ×Ü¸ß¶È °üÀ¨border padding margin
+alert($(window).width()); //ä¯ÀÀÆ÷Ê±ÏÂ´°¿Ú¿ÉÊÓÇøÓò¿í¶È
+alert($(document).width());//ä¯ÀÀÆ÷Ê±ÏÂ´°¿ÚÎÄµµ¶ÔÓÚÏó¿í¶È
+alert($(document.body).width());//ä¯ÀÀÆ÷Ê±ÏÂ´°¿ÚÎÄµµbodyµÄ¸ß¶È
+alert($(document.body).outerWidth(true));//ä¯ÀÀÆ÷Ê±ÏÂ´°¿ÚÎÄµµbodyµÄ×Ü¿í¶È °üÀ¨border padding margin
+}
+)
+@ÓëÆäËûÒ»Ğ©displayÊôĞÔÀàËÆ£¬table-cellÍ¬Ñù»á±»ÆäËûÒ»Ğ©CSSÊôĞÔÆÆ»µ£¬ÀıÈçfloat,
 position:absolute£¬ËùÒÔ£¬ÔÚÊ¹ÓÃdisplay:table-cellÓëfloat:left»òÊÇposition:absolute
 ÊôĞÔ¾¡Á¿²»ÓÃÍ¬ÓÃ¡£ÉèÖÃÁËdisplay:table-cellµÄÔªËØ¶Ô¿í¶È¸ß¶ÈÃô¸Ğ£¬¶ÔmarginÖµÎŞ·´Ó¦£¬ÏìÓ¦paddingÊôĞÔ£¬»ù±¾ÉÏ¾ÍÊÇ»îÍÑ
-ÍÑµÄÒ»¸ötd±êÇ©ÔªËØÁË¡£ 
+ÍÑµÄÒ»¸ötd±êÇ©ÔªËØÁË¡£
 @ÔõÃ´ÈÃ±³¾°Í¼Æ¬²»±äĞÎ
 background£ºURL no-repeat center center£»
 background-size:cover;
 ²»¹ÜÍâÃæµÄdivµÄ´óĞ¡ Í¼Æ¬ÒÔÖĞĞÄµãÎªÆğÊ¼µã²»»á±äĞÎ
 @Í¼Æ¬¾ÓÖĞ
-#tab { overflow:hidden; 
+#tab { overflow:hidden;
 ¡¡¡¡¡¡¡¡width:100%;ÒªÏÔÊ¾µÄ¿í¶È
     }
 #tab img{ overflow:hidden; width:1920px; height:447px;
@@ -317,54 +317,54 @@ offsetLeftÒ»°ãÀ´½²ÊÇËµ¾àÀëÆä¸¸ÔªËØ×ó±ßµÄ¾àÀë
      ×îºóÊÇjqueryµÄoffset().left£¬ËüÓÀÔ¶ÊÇÏà¶ÔÓÚÎÄµµµÄ×ó±ßÔµ£¨ÍùÍùÌåÏÖÎªä¯ÀÀÆ÷µÄ×ó±ßÔµ£©¶¨Î»µÄ£¬ÕâÑùµÄ»°Ê¹ÓÃjquery¾Í¿ÉÒÔÔÚ²»Í¬µÄÓ¦ÓÃ³¡¾°²ÉÓÃ²»Í¬µÄ·½·¨À´»ñÈ¡ÔªËØµÄÎ»ÖÃ£¬Ïà±È½ÏÔ­ÉúJSÓĞ¾Ş´óµÄÓÅÊÆ¡£
      ÏÂÃæÌù³öÁË²âÊÔ´úÂëºÍÍ¼Æ¬£¬ÌØÒâ¸øbodyÉèÖÃÁËÒ»¸ömarginÀ´ÈÃ´ó¼ÒÀí½âÏà¶ÔÓÚÎÄµµºÍbodyµÄ¶¨Î»²î±ğ¡£
 ÑùÊ½ºÍ½á¹¹ÒÔ¼°JS´úÂë¶¼·ÅÔÚÒ»ÆğÁË£¬·½±ã´ó¼ÒÄÃ×ß²âÊÔ¡£
-<!DOCTYPE html>  
-<html lang="en">  
-<head>  
-  <meta charset="UTF-8">  
-  <title>Document</title>  
-  <style type="text/css">  
-  body{  
-   margin:20px;  
-  
-  
-  }  
-    .wrap{  
-      width:300px;  
-      height: 300px;  
-      background-color: red;  
-     left:200px;    
-      position:relative;  
-    }  
-    .inner{  
-      position: absolute;  
-      width: 100px;  
-      height: 100px;  
-      left: 50px;  
-      background-color: blue;  
-  
-  
-    }  
-  </style>  
-  <script type="text/javascript" src="http://libs.baidu.com/jquery/2.0.3/jquery.js"></script>  
-</head>  
-<body>  
-  <div class="wrap" id="wrap" style="left:200px;">   
-    <div class="inner" id="inner">  
-    </div>  
-  </div>  
-   
-  <script type="text/javascript">  
-    console.log($(".wrap").css("left"));  
-    console.log($(".wrap").offset().left);  
-    console.log(document.getElementById("wrap").offsetLeft);   
-    console.log(document.getElementById("wrap").style.left);  
-    console.log($(".inner").css("left"));  
-    console.log($(".inner").offset().left);  
-    console.log(document.getElementById("inner").offsetLeft);   
-    console.log("Èç¹ûstyle.leftÃ»ÓĞÔÚÄÚÁªÑùÊ½ÖĞÖ¸¶¨£º"+document.getElementById("inner").style.left);  
-  </script>  
-</body>  
-</html> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style type="text/css">
+  body{
+   margin:20px;
+
+
+  }
+    .wrap{
+      width:300px;
+      height: 300px;
+      background-color: red;
+     left:200px;
+      position:relative;
+    }
+    .inner{
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      left: 50px;
+      background-color: blue;
+
+
+    }
+  </style>
+  <script type="text/javascript" src="http://libs.baidu.com/jquery/2.0.3/jquery.js"></script>
+</head>
+<body>
+  <div class="wrap" id="wrap" style="left:200px;">
+    <div class="inner" id="inner">
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    console.log($(".wrap").css("left"));
+    console.log($(".wrap").offset().left);
+    console.log(document.getElementById("wrap").offsetLeft);
+    console.log(document.getElementById("wrap").style.left);
+    console.log($(".inner").css("left"));
+    console.log($(".inner").offset().left);
+    console.log(document.getElementById("inner").offsetLeft);
+    console.log("Èç¹ûstyle.leftÃ»ÓĞÔÚÄÚÁªÑùÊ½ÖĞÖ¸¶¨£º"+document.getElementById("inner").style.left);
+  </script>
+</body>
+</html>
 200px
 220
 220
@@ -379,7 +379,7 @@ offsetLeftÒ»°ãÀ´½²ÊÇËµ¾àÀëÆä¸¸ÔªËØ×ó±ßµÄ¾àÀë
     var reg = /\d+/;
     var num = str.match(reg)[0];
     alert(num)
-   
+
 </script>
 2¡¢parseInt(224px )
 @Êı×éÖĞÈ¥µôÏàÍ¬Êı×ÖµÄ·½·¨
@@ -449,10 +449,10 @@ alert(currentLang);
 
 
 if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
-    //alert(navigator.userAgent);  
+    //alert(navigator.userAgent);
     window.location.href ="iPhone.html";
 } else if (/(Android)/i.test(navigator.userAgent)) {
-    //alert(navigator.userAgent); 
+    //alert(navigator.userAgent);
     window.location.href ="Android.html";
 } else {
     window.location.href ="pc.html";
@@ -614,14 +614,14 @@ x=x*1 +1;
          2£©¡¢ÊôĞÔÖµÎªJson¶ÔÏó£º
               var jsonObj={id:{userId:'001',sex:'ÄĞ'},id1:{userId:'002',sex:'Å®'}};              2¡¢ÓÉ×Ö·û´®×ª»»
             var jsonStr="{\"userId\":\"001\"}";//×Ö¶ÎºÍ×Ö·û´®Öµ±ØĞëÓÃË«ÒıºÅÒıÆğ£¬µ¥ÒıºÅ¶¼²»ĞĞ
-            var jsonObj=JSON.parse(jsonStr);//×Ö·û´®×ªjson¶ÔÏó       
+            var jsonObj=JSON.parse(jsonStr);//×Ö·û´®×ªjson¶ÔÏó
          3¡¢ÓÉ×Ö·û´®×ª»»
                    jsonObj.name='ÀîÃ÷';
                    »òÕß£ºjsonObj['name']='ÀîÃ÷';
 
-                   ½á¹û£º{serId:"001",name:'ÀîÃ÷'}            
+                   ½á¹û£º{serId:"001",name:'ÀîÃ÷'}
         4¡¢Ñ­»··ÃÎÊjson¶ÔÏóÊôĞÔ
-                   var jsonObj={id:{userId:'001',sex:'ÄĞ'},id1:'002'};                
+                   var jsonObj={id:{userId:'001',sex:'ÄĞ'},id1:'002'};
                    for(var field in jsonObj)
                    {
                            alert(field);//ÒÀ´ÎÊä³öIdºÍId1;
@@ -635,7 +635,7 @@ x=x*1 +1;
          2¡¢É¾³ıÔªËØ
                   1£©¡¢delete jsonArry[0];
                               É¾³ıÖ¸¶¨Î»ÖÃÔªËØ¡£×¢Òâ£º²»Ö±½ÓÖ±½ÓÉ¾³ı£¬¶øÊÇÓÃnullÏîÈ¡´ú¡£Êı×é³¤¶È²»±ä
-                              ½á¹û£º[ null]£¬´ËÊ±jsonArry[0]µÄÖµÎªundefined,ºóĞø·ÃÎÊÊı×éÊ±Òª¿¼ÂÇÉ¾³ıºóµÄÔªËØµÄÌØÊâÇé¿ö               
+                              ½á¹û£º[ null]£¬´ËÊ±jsonArry[0]µÄÖµÎªundefined,ºóĞø·ÃÎÊÊı×éÊ±Òª¿¼ÂÇÉ¾³ıºóµÄÔªËØµÄÌØÊâÇé¿ö
                    2£©¡¢splice(index,length):
                             É¾³ıÖ¸¶¨Î»ÖÃ¿ªÊ¼Ö¸¶¨¸öÊıµÄÏî
                             ºÍdeleteÇø±ğ£º1¡¢spliceÖ±½ÓÇå¿ÕÖ¸¶¨Ïî£¬Êı×é³¤¶È¼õĞ¡¡£¶ødelete Ö»ÊÇÓÃnullÏîÈ¡´úÔ­ÓĞÏî
@@ -643,18 +643,18 @@ x=x*1 +1;
          3¡¢Ñ­»··ÃÎÊÊı×é
                  1¡¢jQuery·½Ê½
                        $.each(jsonArry,function(index,item){
-                          var userId=item.userId;          
+                          var userId=item.userId;
                         });
                  2¡¢Ò»°ãjs·½·¨
                        for(var i=0;i<jsonArry.length;i++)
                        {
-                         var userId=jsonArry[i].userId;  
+                         var userId=jsonArry[i].userId;
                        }
                  3¡¢ÌØÊâ·½·¨£¨ÀàËÆ·½·¨2£©
                        for(var item in jsonArry)
-                       { 
+                       {
                           var userId=jsonArry[item].userId;//×¢Òâ£º´Ë´¦µÄitem²»ÊÇÊı×éÏî£¬¶øÊÇÊı×éÏîµÄË÷Òı
-                       }                    
+                       }
 Èı¡¢×Ö·û´®ºÍjson¶ÔÏóºÍjson¶ÔÏóÊı×éÏà»¥×ª»»
            var jsonStr="{\"userId\":\"001\"}";
            var jsonArry="[{\"userId\":\"001\"},{\"userId\":\"002\"}]";
@@ -790,7 +790,7 @@ tabindexÊôĞÔÖµµÄÊÇÓĞÒ»¶¨º¬ÒåµÄ:
 * >0: ¸øÔªËØÒ»¸öÖ¸¶¨µÄtabÓÅÏÈ¼¶, µÈÓÚ1Ê±ÓÅÏÈ¼¶×î¸ß.
 contenteditable="true"¼ÓÉÏÕâ¸ö¿ÉÒÔÈÃdivÄÜ¹»±à¼­
 
-.content{outline:none;}  
+.content{outline:none;}
 
 ÒÔÇ°ÔÚÏîÄ¿ÀïÅöµ½¹ıÒ»¸öÎÊÌâ
 
@@ -836,33 +836,33 @@ function a(){
 "ÆÁÄ»¿í¸ßÎª£º"+screen.width+"*"+screen.height£»
 }
 ÆäËü£ºËÑË÷
-ÍøÒ³¿É¼ûÇøÓò¿í£ºdocument.body.clientWidth 
-ÍøÒ³¿É¼ûÇøÓò¸ß£ºdocument.body.clientHeight 
-ÍøÒ³¿É¼ûÇøÓò¿í£ºdocument.body.offsetWidth (°üÀ¨±ßÏßµÄ¿í) 
-ÍøÒ³¿É¼ûÇøÓò¸ß£ºdocument.body.offsetHeight (°üÀ¨±ßÏßµÄ¿í) 
-ÍøÒ³ÕıÎÄÈ«ÎÄ¿í£ºdocument.body.scrollWidth 
-ÍøÒ³ÕıÎÄÈ«ÎÄ¸ß£ºdocument.body.scrollHeight 
-ÍøÒ³±»¾íÈ¥µÄ¸ß£ºdocument.body.scrollTop 
-ÍøÒ³±»¾íÈ¥µÄ×ó£ºdocument.body.scrollLeft 
-ÍøÒ³ÕıÎÄ²¿·ÖÉÏ£ºwindow.screenTop 
-ÍøÒ³ÕıÎÄ²¿·Ö×ó£ºwindow.screenLeft 
-ÆÁÄ»·Ö±æÂÊµÄ¸ß£ºwindow.screen.height 
-ÆÁÄ»·Ö±æÂÊµÄ¿í£ºwindow.screen.width 
-ÆÁÄ»¿ÉÓÃ¹¤×÷Çø¸ß¶È£ºwindow.screen.availHeight 
-ÆÁÄ»¿ÉÓÃ¹¤×÷Çø¿í¶È£ºwindow.screen.availWidth 
-HTML¾«È·¶¨Î»:scrollLeft,scrollWidth,clientWidth,offsetWidth 
-scrollHeight: »ñÈ¡¶ÔÏóµÄ¹ö¶¯¸ß¶È¡£ 
-scrollLeft:ÉèÖÃ»ò»ñÈ¡Î»ÓÚ¶ÔÏó×ó±ß½çºÍ´°¿ÚÖĞÄ¿Ç°¿É¼ûÄÚÈİµÄ×î×ó¶ËÖ®¼äµÄ¾àÀë 
-scrollTop:ÉèÖÃ»ò»ñÈ¡Î»ÓÚ¶ÔÏó×î¶¥¶ËºÍ´°¿ÚÖĞ¿É¼ûÄÚÈİµÄ×î¶¥¶ËÖ®¼äµÄ¾àÀë 
-scrollWidth:»ñÈ¡¶ÔÏóµÄ¹ö¶¯¿í¶È 
-offsetHeight:»ñÈ¡¶ÔÏóÏà¶ÔÓÚ°æÃæ»òÓÉ¸¸×ø±ê offsetParent ÊôĞÔÖ¸¶¨µÄ¸¸×ø±êµÄ¸ß¶È 
-offsetLeft:»ñÈ¡¶ÔÏóÏà¶ÔÓÚ°æÃæ»òÓÉ offsetParent ÊôĞÔÖ¸¶¨µÄ¸¸×ø±êµÄ¼ÆËã×ó²àÎ»ÖÃ 
-offsetTop:»ñÈ¡¶ÔÏóÏà¶ÔÓÚ°æÃæ»òÓÉ offsetTop ÊôĞÔÖ¸¶¨µÄ¸¸×ø±êµÄ¼ÆËã¶¥¶ËÎ»ÖÃ 
-event.clientX Ïà¶ÔÎÄµµµÄË®Æ½×ù±ê 
-event.clientY Ïà¶ÔÎÄµµµÄ´¹Ö±×ù±ê 
-event.offsetX Ïà¶ÔÈİÆ÷µÄË®Æ½×ø±ê 
-event.offsetY Ïà¶ÔÈİÆ÷µÄ´¹Ö±×ø±ê 
-document.documentElement.scrollTop ´¹Ö±·½Ïò¹ö¶¯µÄÖµ 
+ÍøÒ³¿É¼ûÇøÓò¿í£ºdocument.body.clientWidth
+ÍøÒ³¿É¼ûÇøÓò¸ß£ºdocument.body.clientHeight
+ÍøÒ³¿É¼ûÇøÓò¿í£ºdocument.body.offsetWidth (°üÀ¨±ßÏßµÄ¿í)
+ÍøÒ³¿É¼ûÇøÓò¸ß£ºdocument.body.offsetHeight (°üÀ¨±ßÏßµÄ¿í)
+ÍøÒ³ÕıÎÄÈ«ÎÄ¿í£ºdocument.body.scrollWidth
+ÍøÒ³ÕıÎÄÈ«ÎÄ¸ß£ºdocument.body.scrollHeight
+ÍøÒ³±»¾íÈ¥µÄ¸ß£ºdocument.body.scrollTop
+ÍøÒ³±»¾íÈ¥µÄ×ó£ºdocument.body.scrollLeft
+ÍøÒ³ÕıÎÄ²¿·ÖÉÏ£ºwindow.screenTop
+ÍøÒ³ÕıÎÄ²¿·Ö×ó£ºwindow.screenLeft
+ÆÁÄ»·Ö±æÂÊµÄ¸ß£ºwindow.screen.height
+ÆÁÄ»·Ö±æÂÊµÄ¿í£ºwindow.screen.width
+ÆÁÄ»¿ÉÓÃ¹¤×÷Çø¸ß¶È£ºwindow.screen.availHeight
+ÆÁÄ»¿ÉÓÃ¹¤×÷Çø¿í¶È£ºwindow.screen.availWidth
+HTML¾«È·¶¨Î»:scrollLeft,scrollWidth,clientWidth,offsetWidth
+scrollHeight: »ñÈ¡¶ÔÏóµÄ¹ö¶¯¸ß¶È¡£
+scrollLeft:ÉèÖÃ»ò»ñÈ¡Î»ÓÚ¶ÔÏó×ó±ß½çºÍ´°¿ÚÖĞÄ¿Ç°¿É¼ûÄÚÈİµÄ×î×ó¶ËÖ®¼äµÄ¾àÀë
+scrollTop:ÉèÖÃ»ò»ñÈ¡Î»ÓÚ¶ÔÏó×î¶¥¶ËºÍ´°¿ÚÖĞ¿É¼ûÄÚÈİµÄ×î¶¥¶ËÖ®¼äµÄ¾àÀë
+scrollWidth:»ñÈ¡¶ÔÏóµÄ¹ö¶¯¿í¶È
+offsetHeight:»ñÈ¡¶ÔÏóÏà¶ÔÓÚ°æÃæ»òÓÉ¸¸×ø±ê offsetParent ÊôĞÔÖ¸¶¨µÄ¸¸×ø±êµÄ¸ß¶È
+offsetLeft:»ñÈ¡¶ÔÏóÏà¶ÔÓÚ°æÃæ»òÓÉ offsetParent ÊôĞÔÖ¸¶¨µÄ¸¸×ø±êµÄ¼ÆËã×ó²àÎ»ÖÃ
+offsetTop:»ñÈ¡¶ÔÏóÏà¶ÔÓÚ°æÃæ»òÓÉ offsetTop ÊôĞÔÖ¸¶¨µÄ¸¸×ø±êµÄ¼ÆËã¶¥¶ËÎ»ÖÃ
+event.clientX Ïà¶ÔÎÄµµµÄË®Æ½×ù±ê
+event.clientY Ïà¶ÔÎÄµµµÄ´¹Ö±×ù±ê
+event.offsetX Ïà¶ÔÈİÆ÷µÄË®Æ½×ø±ê
+event.offsetY Ïà¶ÔÈİÆ÷µÄ´¹Ö±×ø±ê
+document.documentElement.scrollTop ´¹Ö±·½Ïò¹ö¶¯µÄÖµ
 event.clientX+document.documentElement.scrollTop Ïà¶ÔÎÄµµµÄË®Æ½×ù±ê+´¹Ö±·½Ïò¹ö¶¯µÄÁ¿
 
 ×î½üÔÚ×öÒ»¸öÊÖ»ú¶ËÒ³ÃæÊ±£¬Óöµ½ÁËÒ»¸öÆæ¹ÖµÄÎÊÌâ£º×ÖÌåµÄÏÔÊ¾´óĞ¡£¬ÓëÔÚCSSÖĞÖ¸¶¨µÄ´óĞ¡²»Ò»ÖÂ¡£´ó¼Ò¿ÉÒÔ²é¿´Õâ¸öDemo£¨¼ÇµÃ´ò¿ªChrome DevTools£©¡£
@@ -889,7 +889,7 @@ function Dosubmit(){
       },false);
       $(".tips .BTn").on('click', function(event) {
         jinzhi=1;
-       
+
           $(".topWarp").hide();
       });
     }
@@ -934,12 +934,12 @@ useCapture£º£¨¿ÉÑ¡£©Ö¸¶¨ÊÂ¼şÊÇ·ñÔÚ²¶»ñ»òÃ°Åİ½×¶ÎÖ´ĞĞ¡£true£¬²¶»ñ¡£false£¬Ã°Åİ¡£Ä
 ÊÂ¼ş¼àÌıµÄÓÅµã
 1¡¢¿ÉÒÔ°ó¶¨¶à¸öÊÂ¼ş¡£³£¹æµÄÊÂ¼şÖ»Ö´ĞĞ×îºóÒ»¸ö°ó¶¨µÄÊÂ¼ş
 <input type="button" value="click me" id="btn4">
- 
+
 <script>
 var btn4 = document.getElementById("btn4");
 btn4.addEventListener("click",hello1);
 btn4.addEventListener("click",hello2);
- 
+
 function hello1(){
  alert("hello 1");
 }
@@ -949,13 +949,13 @@ function hello2(){
 </script>
 2¡¢¿ÉÒÔ½â³ıÏàÓ¦µÄ°ó¶¨
 <input type="button" value="click me" id="btn5">
- 
+
 <script>
 var btn5 = document.getElementById("btn5");
 btn5.addEventListener("click",hello1);//Ö´ĞĞÁË
 btn5.addEventListener("click",hello2);//²»Ö´ĞĞ
 btn5.removeEventListener("click",hello2);
- 
+
 function hello1(){
  alert("hello 1");
 }
@@ -965,7 +965,7 @@ function hello2(){
 </script>
 ·â×°ÊÂ¼ş¼àÌı£º
 <input type="button" value="click me" id="btn5">
- 
+
 //°ó¶¨¼àÌıÊÂ¼ş
 function addEventHandler(target,type,fn){
  if(target.addEventListener){
@@ -974,7 +974,7 @@ function addEventHandler(target,type,fn){
  target.attachEvent("on"+type,fn);
  }
 }
- 
+
 //ÒÆ³ı¼àÌıÊÂ¼ş
 function removeEventHandler(target,type,fn){
  if(target.removeEventListener){
@@ -983,7 +983,7 @@ function removeEventHandler(target,type,fn){
  target.detachEvent("on"+type,fn);
  }
 }
- 
+
 //²âÊÔ
 var btn5 = document.getElementById("btn5");
 addEventHandler(btn5,"click",hello1);//Ìí¼ÓÊÂ¼şhello1
@@ -993,7 +993,7 @@ removeEventHandler(btn5,"click",hello1);//ÒÆ³ıÊÂ¼şhello1
 ÊÂ¼şÎ¯ÍĞ£º
 ÊÂ¼şÎ¯ÍĞ¾ÍÊÇÀûÓÃÃ°ÅİµÄÔ­Àí£¬°ÑÊÂ¼ş¼Óµ½¸¸ÔªËØ»ò×æÏÈÔªËØÉÏ£¬´¥·¢Ö´ĞĞĞ§¹û¡£
 <input type="button" value="click me" id="btn6">
- 
+
 var btn6 = document.getElementById("btn6");
 document.onclick = function(event){
  event = event || window.event;
@@ -1006,3 +1006,20 @@ document.onclick = function(event){
 ÊÂ¼şÎ¯ÍĞÓÅµã
 1¡¢Ìá¸ßJavaScriptĞÔÄÜ¡£ÊÂ¼şÎ¯ÍĞ¿ÉÒÔÏÔÖøµÄÌá¸ßÊÂ¼şµÄ´¦ÀíËÙ¶È£¬¼õÉÙÄÚ´æµÄÕ¼ÓÃ¡£ ÊµÀı·ÖÎöJavaScriptÖĞµÄÊÂ¼şÎ¯ÍĞºÍÊÂ¼ş°ó¶¨ £¬ÕâÆªÎÄÕÂĞ´µÃ»¹²»´í¡£
 
+
+21.¶àÎÄ¼ş£¬¶àÍ¼Æ¬ÉÏ´«Ô¤ÀÀ£¬½ø¶ÈµÈ£¬¿ÉÒÔÓÃwebuploader£¬busboyµÈ
+22. Html ½â¾ö³¤´®Ó¢ÎÄ×ÖÄ¸ÏÔÊ¾²»ÄÜ×Ô¶¯»»ĞĞÔÚ<td>ÖĞ¼ÓÈë
+style="word-wrap:break-word;word-break:break-all;"
+»ò
+style="word-wrap:break-word;overflow:hidden;"
+26.chromeÏÂ Ò³ÃæÍË³öÊ±·¢ËÍajaxĞ´·¨£º$(window).on('beforeunload', function ()
+{
+//this will work only for Chrome
+    $.ajax({
+type:'GET',
+url:'/ajaxRequest/myClassesOfteacherclose',
+async:false
+    });
+});
+
+ÍÏ¶¯ÉÏ´« js¿â£ºDropzone.js
