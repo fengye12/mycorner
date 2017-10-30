@@ -1,4 +1,4 @@
-﻿html,
+html,
 body
 {
   font-family:'Microsoft YaHei','微软雅黑','PingFang SC','Helvetica Neue','Hiragino Sans GB','Segoe UI',sans-serif;
@@ -21,10 +21,74 @@ textarea
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  margin:0;
-  padding:0;
 }
-
+div,
+p,
+h1,
+h2,
+h3,
+h4,
+ul,
+li,
+span,
+a,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+em,
+i,
+input,
+select
+{
+  font-weight: normal;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+::-webkit-input-placeholder {
+  /* WebKit browsers */
+    color:    #b4b4b4;
+}
+:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+   color:    #b4b4b4;
+  opacity:  1;
+}
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+   color:    #b4b4b4;
+  opacity:  1;
+}
+:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+   color:    #b4b4b4;
+}
+input,select{
+  border: 1px solid #ccc;
+}
+table
+{
+  border-spacing: 0;
+  border-collapse: separate;
+}
+input,
+:focus
+{
+  outline: none;
+}
+.relative{
+  position: relative;
+}
+ul,
+li
+{
+  list-style: none;
+}
 a{
   color: #3e3e3e;
   text-decoration: none;
