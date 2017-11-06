@@ -207,6 +207,25 @@
     }
     return areaSelection;
   })();
+//   $.fn.extend({
+//     alertWhileClick:function() {
+//           $(this).click(function(){
+//                  alert($(this).val());
+//            });
+//      }
+// });
+// $("#input1").alertWhileClick(); // 页面上为：
+
+// (function( $ ){
+// $.fn.tooltip = function( options ) {
+// };
+// //等价于
+// var tooltip = {
+// function(options){
+// }
+// };
+// $.fn.extend(tooltip) = $.prototype.extend(tooltip) = $.fn.tooltip
+// })( jQuery );
   $.fn.areaSelection = function(options) {
     return this.each(function() {
       var me = $(this),

@@ -49,9 +49,49 @@
     padding-top: 11px;
     width: 100%;
   }
+  input,select { -webkit-appearance:none; appearance: none; }
+  /*#testS{*/
+    select::-ms-expand { display:none; }
+  /*}*/
+  input[type=radio]::-ms-check,
+input[type=checkbox]::-ms-check { display:none; }
+input[type=text]::-ms-clear,
+input[type=tel]::-ms-clear,
+input[type=number]::-ms-clear { display:none; }
 </style>
 <body>
+  <div>
+  <strong>  通常标签 </strong>
+   <b>替换加粗标签 </b>
+   <em> 替换  </em>
+   <i>标签使用。</i>
+   <base href="http://www.runoob.com/images/" target="_blank">
+   <a href="">通过base设置页面 的默认链接</a>
+    <select name="" id="testS">
+      <option value="">xdxd</option>
+      <option value="">xdxd</option>
+      <option value="">xdxd</option>
+      <option value="">xdxd</option>
+    </select>
+    <style>
+    .clear{
+      overflow:auto;
+    }
+    .clear .li{
+      float:left;
+    }
+    </style>
+    <div class="clear">
+      <div class="li">aaaaaa</div>
+      <div class="li">sssssssssss</div>
+      <div class="li">ddddddddd</div>
+      <div class="li">gggggggg</div>
+    </div>
+    <input type="radio">
+    <input type="checkbox">
+  </div>
 <div class="box">
+
   <ul class="list">
     <li>
       <div class="input-init">

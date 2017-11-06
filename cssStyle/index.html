@@ -1,0 +1,2533 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style media="screen">
+    /*公共套用*/
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body,
+    html {
+      width: 100%;
+      height: 100%;
+      background: #98BFF6;
+    }
+
+    #box {
+      width: 80%;
+      margin: auto;
+      padding-top: 50px;
+    }
+
+    .box {
+      display: inline-block;
+      margin: 30px;
+      vertical-align: middle;
+    }
+    /*第一种效果*/
+
+    .ball {
+      height: 24px;
+      width: 24px;
+      position: relative;
+    }
+
+    .ball .kuai {
+      width: 8px;
+      height: 8px;
+      background: #fff;
+      position: absolute;
+      opacity: 0;
+      -webkit-animation: ball 2s 0s ease infinite;
+      animation: ball 2s 0s ease infinite;
+    }
+
+    .ball .kuai:nth-child(1) {
+      top: -16px;
+      -webkit-animation-delay: -1.875s;
+      animation-delay: -1.875s;
+    }
+
+    .ball .kuai:nth-child(2) {
+      top: -16px;
+      left: 8px;
+      -webkit-animation-delay: -1.75s;
+      animation-delay: -1.75s;
+    }
+
+    .ball .kuai:nth-child(3) {
+      top: -16px;
+      left: 16px;
+      -webkit-animation-delay: -1.625s;
+      animation-delay: -1.625s;
+    }
+
+    .ball .kuai:nth-child(4) {
+      left: 24px;
+      top: -8px;
+      -webkit-animation-delay: -1.5s;
+      animation-delay: -1.5s;
+    }
+
+    .ball .kuai:nth-child(5) {
+      right: -16px;
+      -webkit-animation-delay: -1.375s;
+      animation-delay: -1.375s;
+    }
+
+    .ball .kuai:nth-child(6) {
+      top: 8px;
+      right: -16px;
+      -webkit-animation-delay: -1.25s;
+      animation-delay: -1.25s;
+    }
+
+    .ball .kuai:nth-child(7) {
+      top: 16px;
+      right: -16px;
+      -webkit-animation-delay: -1.125s;
+      animation-delay: -1.125s;
+    }
+
+    .ball .kuai:nth-child(8) {
+      top: 24px;
+      right: -8px;
+      -webkit-animation-delay: -1s;
+      animation-delay: -1s;
+    }
+
+    .ball .kuai:nth-child(9) {
+      bottom: -16px;
+      right: 0;
+      -webkit-animation-delay: -.875s;
+      animation-delay: -.875s;
+    }
+
+    .ball .kuai:nth-child(10) {
+      bottom: -16px;
+      right: 8px;
+      -webkit-animation-delay: -.75s;
+      animation-delay: -.75s;
+    }
+
+    .ball .kuai:nth-child(11) {
+      bottom: -16px;
+      -webkit-animation-delay: -.625s;
+      animation-delay: -.625s;
+    }
+
+    .ball .kuai:nth-child(12) {
+      bottom: -8px;
+      left: -8px;
+      -webkit-animation-delay: -.5s;
+      animation-delay: -.5s;
+    }
+
+    .ball .kuai:nth-child(13) {
+      left: -16px;
+      bottom: 0;
+      -webkit-animation-delay: -.375s;
+      animation-delay: -.375s;
+    }
+
+    .ball .kuai:nth-child(14) {
+      bottom: 8px;
+      left: -16px;
+      -webkit-animation-delay: -.25s;
+      animation-delay: -.25s;
+    }
+
+    .ball .kuai:nth-child(15) {
+      left: -16px;
+      -webkit-animation-delay: -.125s;
+      animation-delay: -.125s;
+    }
+
+    .ball .kuai:nth-child(16) {
+      top: -8px;
+      left: -8px;
+    }
+
+    @-webkit-keyframes ball {
+      0% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 1;
+      }
+      51% {
+        opacity: 0;
+      }
+    }
+
+    @keyframes ball {
+      0% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 1;
+      }
+      51% {
+        opacity: 0;
+      }
+    }
+    /*第二种效果*/
+
+    .atom {
+      height: 80px;
+      width: 80px;
+      position: relative;
+    }
+
+    .c_ball {
+      width: 40px;
+      height: 40px;
+      background: #AAAAAA;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translateX(-50%) translateY(-50%);
+      transform: translateX(-50%) translateY(-50%);
+      z-index: 5
+    }
+
+    .area {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      -webkit-animation: turn_atomZ 1.5s 0s ease infinite;
+      animation: turn_atomZ 1.5s 0s ease infinite;
+    }
+
+    .area::before {
+      content: '';
+      display: block;
+      height: 20px;
+      width: 20px;
+      background: #fff;
+      border-radius: 50%;
+      -webkit-animation: turn_atom 1.5s 0s ease infinite;
+      animation: turn_atom 1.5s 0s ease infinite;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .area_t {
+      -webkit-transform: rotateZ(45deg);
+      transform: rotateZ(45deg);
+      -webkit-animation-delay: -.575s;
+      animation-delay: -.575s;
+    }
+
+    .area_h {
+      -webkit-transform: rotateZ(-45deg);
+      transform: rotateZ(-45deg);
+      -webkit-animation-delay: -.95s;
+      animation-delay: -.95s;
+    }
+
+    .area_t::before {
+      -webkit-animation-delay: -.575s;
+      animation-delay: -.575s;
+    }
+
+    .area_h::before {
+      -webkit-animation-delay: -.95s;
+      animation-delay: -.95s;
+    }
+
+    @-webkit-keyframes turn_atom {
+      0% {
+        height: 25px;
+        width: 25px;
+        top: 0;
+        left: 0;
+      }
+      50% {
+        height: 20px;
+        width: 20px;
+        top: 60px;
+        left: 60px;
+      }
+      51% {
+        height: 15px;
+        width: 15px;
+        top: 60px;
+        left: 60px;
+      }
+      100% {
+        height: 20px;
+        width: 20px;
+        top: 0;
+        left: 0;
+      }
+    }
+
+    @keyframes turn_atom {
+      0% {
+        height: 25px;
+        width: 25px;
+        top: 0;
+        left: 0;
+      }
+      50% {
+        height: 20px;
+        width: 20px;
+        top: 60px;
+        left: 60px;
+      }
+      51% {
+        height: 15px;
+        width: 15px;
+        top: 60px;
+        left: 60px;
+      }
+      100% {
+        height: 20px;
+        width: 20px;
+        top: 0;
+        left: 0;
+      }
+    }
+
+    @-webkit-keyframes turn_atomZ {
+      0% {
+        z-index: 6;
+      }
+      50% {
+        z-index: 6;
+      }
+      51% {
+        z-index: 4;
+      }
+    }
+
+    @keyframes turn_atomZ {
+      0% {
+        z-index: 6;
+      }
+      50% {
+        z-index: 6;
+      }
+      51% {
+        z-index: 4;
+      }
+    }
+    /*第三种效果*/
+
+    .t_light {
+      height: 80px;
+      width: 100px;
+      position: relative;
+    }
+
+    .light {
+      height: 20px;
+      width: 20px;
+      position: absolute;
+      background: #fff;
+      border-radius: 50%;
+      opacity: 1;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      left: 10px;
+      -webkit-animation: light 1.5s 0s ease infinite;
+      animation: light 1.5s 0s ease infinite;
+    }
+
+    .light_t {
+      left: 40px;
+      -webkit-animation-delay: -.25s;
+      animation-delay: -.25s;
+    }
+
+    .light_h {
+      left: 68px;
+      -webkit-animation-delay: -.5s;
+      animation-delay: -.5s;
+    }
+
+    @-webkit-keyframes light {
+      50% {
+        opacity: 0.4;
+        height: 15px;
+        width: 15px;
+      }
+    }
+
+    @keyframes light {
+      50% {
+        opacity: 0.4;
+        height: 15px;
+        width: 15px;
+      }
+    }
+    /*第四种效果*/
+
+    .rote {
+      width: 40px;
+      height: 80px;
+      position: relative;
+    }
+
+    .r_ball {
+      width: 20px;
+      height: 20px;
+      background: #fff;
+      border-radius: 100%;
+      position: absolute;
+      top: 30px;
+      left: -100%;
+      opacity: 0.6;
+      -webkit-animation: r_ball 2s 0s ease infinite, r_ballZ 2s 0s ease infinite;
+      animation: r_ball 2s 0s ease infinite, r_ballZ 2s 0s ease infinite;
+    }
+
+    .r_ball_t {
+      -webkit-animation-delay: -.4s;
+      animation-delay: -.4s;
+    }
+
+    .r_ball_h {
+      -webkit-animation-delay: -.8s;
+      animation-delay: -.8s;
+    }
+
+    .r_ball_f {
+      -webkit-animation-delay: -1.2s;
+      animation-delay: -1.2s;
+    }
+
+    .r_ball_v {
+      -webkit-animation-delay: -1.6s;
+      animation-delay: -1.6s;
+    }
+
+    @-webkit-keyframes r_ball {
+      50% {
+        left: 100%;
+      }
+    }
+
+    @keyframes r_ball {
+      50% {
+        left: 100%;
+      }
+    }
+
+    @-webkit-keyframes r_ballZ {
+      25% {
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
+        opacity: 1;
+      }
+      50% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 0.6;
+      }
+    }
+
+    @keyframes r_ballZ {
+      25% {
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
+        opacity: 1;
+      }
+      50% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 0.6;
+      }
+    }
+    /*第五种效果*/
+
+    .jump {
+      height: 80px;
+      width: 100px;
+      position: relative;
+    }
+
+    .jump_ball {
+      width: 20px;
+      height: 20px;
+      background: #fff;
+      border-radius: 100%;
+      position: absolute;
+      top: -20px;
+      left: -5px;
+      -webkit-animation: jump .6s 0s ease infinite, jump_S .6s 0s ease infinite;
+      animation: jump .6s 0s ease infinite, jump_S .6s 0s ease infinite;
+    }
+
+    @-webkit-keyframes jump {
+      50% {
+        top: 60%;
+      }
+    }
+
+    @keyframes jump {
+      50% {
+        top: 60%;
+      }
+    }
+
+    @-webkit-keyframes jump_S {
+      5% {
+        height: 25px;
+        width: 15px;
+      }
+      54% {
+        height: 20px;
+        width: 20px;
+      }
+      55% {
+        height: 25px;
+        width: 15px;
+      }
+      98% {
+        height: 20px;
+        width: 20px;
+      }
+    }
+
+    @keyframes jump_S {
+      5% {
+        height: 25px;
+        width: 15px;
+      }
+      54% {
+        height: 20px;
+        width: 20px;
+      }
+      55% {
+        height: 25px;
+        width: 15px;
+      }
+      98% {
+        height: 20px;
+        width: 20px;
+      }
+    }
+
+    .steps {
+      height: 5px;
+      width: 30px;
+      background: #fff;
+      position: absolute;
+      right: 0%;
+      top: 0%;
+      -webkit-animation: step_mv 1.8s linear infinite;
+      animation: step_mv 1.8s linear infinite;
+    }
+
+    .steps_t {
+      -webkit-animation-delay: -.6s;
+      animation-delay: -.6s;
+    }
+
+    .steps_h {
+      -webkit-animation-delay: -1.2s;
+      animation-delay: -1.2s;
+    }
+
+    @-webkit-keyframes step_mv {
+      0% {
+        right: 0;
+        top: 0;
+        opacity: 0.6;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        right: 100%;
+        top: 100%;
+        opacity: 0.6;
+      }
+    }
+
+    @keyframes step_mv {
+      0% {
+        right: 0;
+        top: 0;
+        opacity: 0.6;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        right: 100%;
+        top: 100%;
+        opacity: 0.6;
+      }
+    }
+    /*第六种效果*/
+
+    .r_border {
+      height: 40px;
+      width: 40px;
+    }
+
+    .r_bor {
+      height: 45px;
+      width: 45px;
+      border: 4px solid #fff;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      border-top-color: transparent;
+      border-radius: 50%;
+      -webkit-animation: rotate_bor 1.8s linear infinite;
+      animation: rotate_bor 1.8s linear infinite;
+    }
+
+    @-webkit-keyframes rotate_bor {
+      100% {
+        -webkit-transform: rotateZ(360deg);
+        transform: rotateZ(360deg);
+      }
+    }
+
+    @keyframes rotate_bor {
+      100% {
+        -webkit-transform: rotateZ(360deg);
+        transform: rotateZ(360deg);
+      }
+    }
+    /*第七种效果*/
+
+    .waves {
+      height: 50px;
+      width: 50px;
+      position: relative;
+    }
+
+    .waves_b {
+      height: 50px;
+      width: 50px;
+      border: 4px solid #fff;
+      border-top-color: transparent;
+      border-bottom-color: transparent;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      -webkit-animation: rotate_bors 2s ease infinite;
+      animation: rotate_bors 2s ease infinite;
+    }
+
+    .waves_s {
+      height: 30px;
+      width: 30px;
+      border: 4px solid #fff;
+      border-top-color: transparent;
+      border-bottom-color: transparent;
+      border-radius: 50%;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      -webkit-animation: rotate_bors 1s ease infinite;
+      animation: rotate_bors 1s ease infinite;
+    }
+
+    @-webkit-keyframes rotate_bors {
+      50% {
+        -webkit-transform: rotateZ(180deg);
+        transform: rotateZ(180deg);
+      }
+      100% {
+        -webkit-transform: rotateZ(360deg);
+        transform: rotateZ(360deg);
+      }
+    }
+
+    @keyframes rotate_bors {
+      50% {
+        -webkit-transform: rotateZ(180deg);
+        transform: rotateZ(180deg);
+      }
+      100% {
+        -webkit-transform: rotateZ(360deg);
+        transform: rotateZ(360deg);
+      }
+    }
+    /*第八种效果*/
+
+    .waves_cle {
+      height: 30px;
+      width: 30px;
+      background: #fff;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translateX(-50%) translateY(-50%);
+      transform: translateX(-50%) translateY(-50%);
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      -webkit-animation: rotate_borw 1s linear infinite;
+      animation: rotate_borw 1s linear infinite;
+    }
+
+    @-webkit-keyframes rotate_borw {
+      50% {
+        width: 15px;
+        height: 15px;
+      }
+    }
+
+    @keyframes rotate_borw {
+      50% {
+        width: 15px;
+        height: 15px;
+      }
+    }
+    /*第九种效果*/
+
+    .trans_y,
+    .crash_box {
+      height: 80px;
+      width: 150px;
+      text-align: center;
+      line-height: 100px;
+      font-size: 0;
+    }
+
+    .crash_ball {
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      background: #fff;
+      border-radius: 50%;
+      -webkit-animation: margin 1s linear infinite;
+      animation: margin 1s linear infinite;
+    }
+
+    @-webkit-keyframes margin {
+      50% {
+        margin: 0 10px;
+        width: 10px;
+        height: 10px;
+      }
+    }
+
+    @keyframes margin {
+      50% {
+        margin: 0 10px;
+        width: 10px;
+        height: 10px;
+      }
+    }
+    /*第十种效果*/
+
+    .trans_y {
+      line-height: normal;
+    }
+
+    .trans_ball {
+      height: 20px;
+      width: 20px;
+      display: inline-block;
+      background: #fff;
+      border-radius: 50%;
+      margin: 0 10px;
+      opacity: 0;
+      -webkit-animation: trans 1.2s ease infinite;
+      animation: trans 1.2s ease infinite;
+    }
+
+    .trans_ball:nth-child(2) {
+      -webkit-animation-delay: .2s;
+      animation-delay: .2s;
+    }
+
+    .trans_ball:nth-child(3) {
+      -webkit-animation-delay: .4s;
+      animation-delay: .4s;
+    }
+
+    @-webkit-keyframes trans {
+      50% {
+        opacity: 1;
+        -webkit-transform: translateY(30px);
+        transform: translateY(30px);
+      }
+      70% {
+        opacity: 1;
+        -webkit-transform: translateY(30px);
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 0;
+        -webkit-transform: translateY(60px);
+        transform: translateY(60px);
+      }
+    }
+
+    @keyframes trans {
+      50% {
+        opacity: 1;
+        -webkit-transform: translateY(30px);
+        transform: translateY(30px);
+      }
+      70% {
+        opacity: 1;
+        -webkit-transform: translateY(30px);
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 0;
+        -webkit-transform: translateY(60px);
+        transform: translateY(60px);
+      }
+    }
+    /*第十一种效果*/
+
+    .flor {
+      width: 80px;
+      height: 80px;
+      position: relative;
+      -webkit-animation: flor_rote 2s 0s ease infinite;
+      animation: flor_rote 2s 0s ease infinite;
+    }
+
+    .flor_ballbox {
+      height: 80px;
+      width: 80px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .flor_ballbox:nth-child(2) {
+      -webkit-transform: rotateZ(90deg);
+      transform: rotateZ(90deg);
+    }
+
+    .flor_ballbox:nth-child(3) {
+      -webkit-transform: rotateZ(180deg);
+      transform: rotateZ(180deg);
+    }
+
+    .flor_ballbox:nth-child(4) {
+      -webkit-transform: rotateZ(270deg);
+      transform: rotateZ(270deg);
+    }
+
+    .flor_ball {
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      background: #fff;
+      opacity: 0.6;
+      position: absolute;
+      top: 0;
+      left: 0;
+      -webkit-animation: flor_move 1s 0s ease infinite;
+      animation: flor_move 1s 0s ease infinite;
+    }
+
+    @-webkit-keyframes flor_move {
+      50% {
+        top: 25px;
+        left: 25px;
+      }
+    }
+
+    @keyframes flor_move {
+      50% {
+        top: 25px;
+        left: 25px;
+      }
+    }
+
+    @-webkit-keyframes flor_rote {
+      25% {
+        -webkit-transform: rotateZ(90deg);
+        transform: rotateZ(90deg);
+      }
+      50% {
+        -webkit-transform: rotateZ(180deg);
+        transform: rotateZ(180deg);
+      }
+      75% {
+        -webkit-transform: rotateZ(270deg);
+        transform: rotateZ(270deg);
+      }
+      100% {
+        -webkit-transform: rotateZ(360deg);
+        transform: rotateZ(360deg);
+      }
+    }
+
+    @keyframes flor_rote {
+      25% {
+        -webkit-transform: rotateZ(90deg);
+        transform: rotateZ(90deg);
+      }
+      50% {
+        -webkit-transform: rotateZ(180deg);
+        transform: rotateZ(180deg);
+      }
+      75% {
+        -webkit-transform: rotateZ(270deg);
+        transform: rotateZ(270deg);
+      }
+      100% {
+        -webkit-transform: rotateZ(360deg);
+        transform: rotateZ(360deg);
+      }
+    }
+    /*第十二种效果*/
+
+    .marquee {
+      width: 80px;
+      height: 80px;
+    }
+
+    .mar_ligt {
+      height: 20px;
+      width: 20px;
+      display: inline-block;
+      border-radius: 50%;
+      position: relative;
+      margin: 1px;
+      background: #fff;
+    }
+
+    .mar_ligt:nth-child(1) {
+      -webkit-animation: mar_ligt 2s 0s ease infinite;
+      animation: mar_ligt 2s 0s ease infinite;
+    }
+
+    .mar_ligt:nth-child(2) {
+      -webkit-animation: mar_ligt 1.5s 0s ease infinite;
+      animation: mar_ligt 1.5s 0s ease infinite;
+    }
+
+    .mar_ligt:nth-child(3) {
+      -webkit-animation: mar_ligt 1.6s 0s ease infinite;
+      animation: mar_ligt 1.6s 0s ease infinite;
+    }
+
+    .mar_ligt:nth-child(4) {
+      -webkit-animation: mar_ligt 1.8s 0s ease infinite;
+      animation: mar_ligt 1.8s 0s ease infinite;
+    }
+
+    .mar_ligt:nth-child(5) {
+      -webkit-animation: mar_ligt .8s 0s ease infinite;
+      animation: mar_ligt .8s 0s ease infinite;
+    }
+
+    .mar_ligt:nth-child(6) {
+      -webkit-animation: mar_ligt 1.2s 0s ease infinite;
+      animation: mar_ligt 1.2s 0s ease infinite;
+    }
+
+    .mar_ligt:nth-child(7) {
+      -webkit-animation: mar_ligt .6s 0s ease infinite;
+      animation: mar_ligt .6s 0s ease infinite;
+    }
+
+    .mar_ligt:nth-child(8) {
+      -webkit-animation: mar_ligt 1s 0s ease infinite;
+      animation: mar_ligt 1s 0s ease infinite;
+    }
+
+    .mar_ligt:nth-child(9) {
+      -webkit-animation: mar_ligt 1.4s 0s ease infinite;
+      animation: mar_ligt 1.4s 0s ease infinite;
+    }
+
+    @-webkit-keyframes mar_ligt {
+      50% {
+        opacity: 0.4;
+      }
+    }
+
+    @keyframes mar_ligt {
+      50% {
+        opacity: 0.4;
+      }
+    }
+    /*第十三种效果*/
+
+    .mar_ligtsbox {
+      height: 20px;
+      width: 20px;
+      display: inline-block;
+      position: relative;
+      margin: 1px;
+      line-height: 20px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .mar_ligts {
+      height: 20px;
+      width: 20px;
+      display: inline-block;
+      background: #fff;
+      border-radius: 50%;
+    }
+
+    .mar_ligtso {
+      -webkit-animation: mar_ligts 2s 0s ease infinite;
+      animation: mar_ligts 2s 0s ease infinite;
+    }
+
+    .mar_ligtst {
+      -webkit-animation: mar_ligts 1.5s 0s ease infinite;
+      animation: mar_ligts 1.5s 0s ease infinite;
+    }
+
+    .mar_ligtsh {
+      -webkit-animation: mar_ligts 1.6s 0s ease infinite;
+      animation: mar_ligts 1.6s 0s ease infinite;
+    }
+
+    .mar_ligtsf {
+      -webkit-animation: mar_ligts 1.8s 0s ease infinite;
+      animation: mar_ligts 1.8s 0s ease infinite;
+    }
+
+    .mar_ligtsv {
+      -webkit-animation: mar_ligts .8s 0s ease infinite;
+      animation: mar_ligts .8s 0s ease infinite;
+    }
+
+    .mar_ligtsx {
+      -webkit-animation: mar_ligts 1.2s 0s ease infinite;
+      animation: mar_ligts 1.2s 0s ease infinite;
+    }
+
+    .mar_ligtss {
+      -webkit-animation: mar_ligts .6s 0s ease infinite;
+      animation: mar_ligts .6s 0s ease infinite;
+    }
+
+    .mar_ligtse {
+      -webkit-animation: mar_ligts 1s 0s ease infinite;
+      animation: mar_ligts 1s 0s ease infinite;
+    }
+
+    .mar_ligtsn {
+      -webkit-animation: mar_ligts 1.4s 0s ease infinite;
+      animation: mar_ligts 1.4s 0s ease infinite;
+    }
+
+    @-webkit-keyframes mar_ligts {
+      50% {
+        -webkit-transform: scale(.5);
+        transform: scale(.5);
+        opacity: 0.4;
+      }
+    }
+
+    @keyframes mar_ligts {
+      50% {
+        -webkit-transform: scale(.5);
+        transform: scale(.5);
+        opacity: 0.4;
+      }
+    }
+    /*第十四种效果*/
+
+    .pool {
+      height: 80px;
+      width: 100px;
+      line-height: 100px;
+      text-align: center;
+      font-size: 0;
+    }
+
+    .pool_ball {
+      width: 20px;
+      height: 20px;
+      background: #fff;
+      display: inline-block;
+      border-radius: 50%;
+    }
+
+    .pool_ball:first-child {
+      -webkit-animation: poolball_l 1s .5s linear infinite;
+      animation: poolball_l 1s .5s linear infinite;
+    }
+
+    .pool_ball:last-child {
+      -webkit-animation: poolball_r 1s 0s linear infinite;
+      animation: poolball_r 1s 0s linear infinite;
+    }
+
+    @-webkit-keyframes poolball_l {
+      25% {
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+      }
+      50% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes poolball_l {
+      25% {
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+      }
+      50% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+      }
+    }
+
+    @-webkit-keyframes poolball_r {
+      25% {
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+      }
+      50% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes poolball_r {
+      25% {
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+      }
+      50% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+      }
+    }
+    /*第十五种效果*/
+
+    .size_change {
+      height: 80px;
+      width: 90px;
+      text-align: center;
+    }
+
+    .size_ballbox {
+      margin: 0 3px;
+      display: inline-block;
+      height: 20px;
+      width: 20px;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .size_ball {
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      background: #fff;
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translateX(-50%) translateY(-50%);
+      transform: translateX(-50%) translateY(-50%);
+      -webkit-animation: size_change 1.2s -.8s linear infinite;
+      animation: size_change 1.2s -.8s linear infinite;
+    }
+
+    .size_ballt {
+      -webkit-animation-delay: -.6s;
+      animation-delay: -.6s;
+    }
+
+    .size_ballh {
+      -webkit-animation-delay: -.4s;
+      animation-delay: -.4s;
+    }
+
+    @-webkit-keyframes size_change {
+      20% {
+        width: 0;
+        height: 0;
+      }
+      40% {
+        width: 0;
+        height: 0;
+      }
+      50% {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    @keyframes size_change {
+      20% {
+        width: 0;
+        height: 0;
+      }
+      40% {
+        width: 0;
+        height: 0;
+      }
+      50% {
+        width: 20px;
+        height: 20px;
+      }
+    }
+    /*第十六种效果*/
+
+    .flip {
+      height: 80px;
+      width: 180px;
+      text-align: center;
+    }
+
+    .flip_ball {
+      display: inline-block;
+      margin: 0 5px;
+      height: 15px;
+      width: 15px;
+      border-radius: 50%;
+      background: #fff;
+      opacity: 0.6;
+      -webkit-animation: flip_ballP 1.2s ease infinite, flip_ballS 1.2s ease infinite;
+      animation: flip_ballP 1.2s ease infinite, flip_ballS 1.2s ease infinite;
+    }
+
+    .flip_ball:nth-child(2n) {
+      -webkit-animation-delay: -.6s;
+      animation-delay: -.6s;
+    }
+
+    @-webkit-keyframes flip_ballP {
+      50% {
+        -webkit-transform: translateY(60px);
+        transform: translateY(60px);
+      }
+    }
+
+    @keyframes flip_ballP {
+      50% {
+        -webkit-transform: translateY(60px);
+        transform: translateY(60px);
+      }
+    }
+
+    @-webkit-keyframes flip_ballS {
+      50% {
+        height: 15px;
+        width: 15px;
+        opacity: 0.6;
+      }
+      75% {
+        height: 20px;
+        width: 20px;
+        opacity: 1;
+      }
+    }
+
+    @keyframes flip_ballS {
+      50% {
+        height: 15px;
+        width: 15px;
+        opacity: 0.6;
+      }
+      75% {
+        height: 20px;
+        width: 20px;
+        opacity: 1;
+      }
+    }
+    /*第十七种效果*/
+
+    .leap {
+      height: 80px;
+      width: 100px;
+      text-align: center;
+    }
+
+    .leap_ball {
+      display: inline-block;
+      margin: 0 5px;
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      background: #fff;
+      -webkit-animation: leap_ball 1s ease infinite;
+      animation: leap_ball 1s ease infinite;
+    }
+
+    .leap_ball:nth-child(2) {
+      -webkit-animation-delay: -.2s;
+      animation-delay: -.2s;
+    }
+
+    .leap_ball:nth-child(3) {
+      -webkit-animation-delay: -.4s;
+      animation-delay: -.4s;
+    }
+
+    @-webkit-keyframes leap_ball {
+      50% {
+        -webkit-transform: translateY(60px);
+        transform: translateY(60px);
+      }
+    }
+
+    @keyframes leap_ball {
+      50% {
+        -webkit-transform: translateY(60px);
+        transform: translateY(60px);
+      }
+    }
+    /*第十八种效果*/
+
+    .wind {
+      width: 100px;
+      height: 100px;
+      position: relative;
+    }
+
+    .wind_ballbox {
+      height: 100px;
+      width: 100px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .wind_ballbox:nth-child(2n+1) {
+      -webkit-animation: wind_ball 1s ease infinite;
+      animation: wind_ball 1s ease infinite;
+    }
+
+    .wind_ball {
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      background: #fff;
+      position: absolute;
+    }
+
+    .wind_ballo {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+    }
+
+    .wind_ballt {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translateY(-50%) translateX(-50%);
+      transform: translateY(-50%) translateX(-50%);
+    }
+
+    .wind_ballh {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+    }
+
+    @-webkit-keyframes wind_ball {
+      50% {
+        -webkit-transform: rotateZ(180deg);
+        transform: rotateZ(180deg);
+      }
+      100% {
+        -webkit-transform: rotateZ(360deg);
+        transform: rotateZ(360deg);
+      }
+    }
+
+    @keyframes wind_ball {
+      50% {
+        -webkit-transform: rotateZ(180deg);
+        transform: rotateZ(180deg);
+      }
+      100% {
+        -webkit-transform: rotateZ(360deg);
+        transform: rotateZ(360deg);
+      }
+    }
+    /*第十九种效果*/
+
+    .cool {
+      height: 80px;
+      width: 100px;
+      position: relative;
+    }
+
+    .cool_ball {
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      background: #fff;
+      position: absolute;
+      top: 25%;
+      right: 0;
+      -webkit-animation: cool_ballP 2s linear infinite, cool_ballS 2s linear infinite;
+      animation: cool_ballP 2s linear infinite, cool_ballS 2s linear infinite;
+    }
+
+    .cool_ball:nth-child(2) {
+      -webkit-animation-delay: -.4s;
+      animation-delay: -.4s;
+    }
+
+    .cool_ball:nth-child(3) {
+      -webkit-animation-delay: -.8s;
+      animation-delay: -.8s;
+    }
+
+    .cool_ball:nth-child(4) {
+      -webkit-animation-delay: -1.2s;
+      animation-delay: -1.2s;
+    }
+
+    .cool_ball:nth-child(5) {
+      -webkit-animation-delay: -1.6s;
+      animation-delay: -1.6s;
+    }
+
+    @-webkit-keyframes cool_ballP {
+      80% {
+        right: 75%;
+      }
+    }
+
+    @keyframes cool_ballP {
+      80% {
+        right: 75%;
+      }
+    }
+
+    @-webkit-keyframes cool_ballS {
+      100% {
+        width: 20px;
+        height: 20px;
+      }
+      80% {
+        top: 25%;
+        width: 20px;
+        height: 20px;
+      }
+      81% {
+        top: 0;
+        width: 25px;
+        height: 15px;
+      }
+      99% {
+        top: 0;
+        width: 25px;
+        height: 15px;
+      }
+    }
+
+    @keyframes cool_ballS {
+      80% {
+        top: 25%;
+        width: 20px;
+        height: 20px;
+      }
+      81% {
+        top: 0;
+        width: 25px;
+        height: 15px;
+      }
+      99% {
+        top: 0;
+        width: 25px;
+        height: 15px;
+      }
+      100% {
+        width: 20px;
+        height: 20px;
+      }
+    }
+    /*第二十种效果*/
+
+    .load {
+      height: 80px;
+      width: 80px;
+      position: relative;
+    }
+
+    .load_ball {
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      background: #fff;
+      position: absolute;
+      -webkit-transform: translateX(-50%) translateY(-50%);
+      transform: translateX(-50%) translateY(-50%);
+      -webkit-animation: load_ball 1.6s linear infinite;
+      animation: load_ball 1.6s linear infinite;
+    }
+
+    .load_ball:nth-child(1) {
+      top: 0;
+      left: 50%;
+    }
+
+    .load_ball:nth-child(2) {
+      top: 15%;
+      left: 15%;
+      -webkit-animation-delay: -.2s;
+      animation-delay: -.2s;
+    }
+
+    .load_ball:nth-child(3) {
+      top: 50%;
+      left: 0;
+      -webkit-animation-delay: -.4s;
+      animation-delay: -.4s;
+    }
+
+    .load_ball:nth-child(4) {
+      top: 85%;
+      left: 15%;
+      -webkit-animation-delay: -.6s;
+      animation-delay: -.6s;
+    }
+
+    .load_ball:nth-child(5) {
+      top: 100%;
+      left: 50%;
+      -webkit-animation-delay: -.8s;
+      animation-delay: -.8s;
+    }
+
+    .load_ball:nth-child(6) {
+      top: 85%;
+      left: 85%;
+      -webkit-animation-delay: -1s;
+      animation-delay: -1s;
+    }
+
+    .load_ball:nth-child(7) {
+      top: 50%;
+      left: 100%;
+      -webkit-animation-delay: -1.2s;
+      animation-delay: -1.2s;
+    }
+
+    .load_ball:nth-child(8) {
+      top: 15%;
+      left: 85%;
+      -webkit-animation-delay: -1.4s;
+      animation-delay: -1.4s;
+    }
+
+    @-webkit-keyframes load_ball {
+      50% {
+        height: 0;
+        width: 0;
+      }
+      80% {
+        height: 0;
+        width: 0;
+      }
+    }
+
+    @keyframes load_ball {
+      50% {
+        height: 0;
+        width: 0;
+      }
+      80% {
+        height: 0;
+        width: 0;
+      }
+    }
+    /*第二十一种效果*/
+
+    .triangle {
+      height: 80px;
+      width: 80px;
+      position: relative;
+    }
+
+    .triangle_ball {
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+      background: #fff;
+      opacity: 1;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      -webkit-transform: translateX(-50%) translateY(-50%);
+      transform: translateX(-50%) translateY(-50%);
+      -webkit-animation: triangle_ball 1.8s ease infinite;
+      animation: triangle_ball 1.8s ease infinite;
+    }
+
+    .triangle_ball:nth-child(1) {
+      -webkit-animation-delay: -.6s;
+      animation-delay: -.6s;
+    }
+
+    .triangle_ball:nth-child(2) {
+      -webkit-animation-delay: -1.2s;
+      animation-delay: -1.2s;
+    }
+
+    @-webkit-keyframes triangle_ball {
+      16% {
+        opacity: .6;
+      }
+      33% {
+        left: 100%;
+        top: 100%;
+        opacity: 1;
+      }
+      50% {
+        opacity: .6;
+      }
+      66% {
+        left: 0;
+        top: 100%;
+        opacity: 1;
+      }
+      83% {
+        opacity: .6;
+      }
+      99% {
+        top: 0;
+        left: 50%;
+        opacity: 1;
+      }
+    }
+
+    @keyframes triangle_ball {
+      16% {
+        opacity: .6;
+      }
+      33% {
+        left: 100%;
+        top: 100%;
+        opacity: 1;
+      }
+      50% {
+        opacity: .6;
+      }
+      66% {
+        left: 0;
+        top: 100%;
+        opacity: 1;
+      }
+      83% {
+        opacity: .6;
+      }
+      99% {
+        top: 0;
+        left: 50%;
+        opacity: 1;
+      }
+    }
+    /*第二十二种效果*/
+
+    .gear {
+      height: 80px;
+      width: 80px;
+      text-align: center;
+      line-height: 100px;
+    }
+
+    .gear_ball {
+      height: 60px;
+      width: 60px;
+      border-radius: 50%;
+      display: inline-block;
+      border: 4px #fff solid;
+      position: relative;
+      -webkit-animation: gear_ball 4s linear infinite;
+      animation: gear_ball 4s linear infinite;
+    }
+
+    .gear_ball:after {
+      content: '';
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      top: -8px;
+      left: -8px;
+      border: 8px #fff dashed;
+    }
+
+    @-webkit-keyframes gear_ball {
+      100% {
+        -webkit-transform: rotateZ(360deg);
+        transform: rotateZ(360deg);
+      }
+    }
+
+    @keyframes gear_ball {
+      100% {
+        -webkit-transform: rotateZ(360deg);
+        transform: rotateZ(360deg);
+      }
+    }
+    /*第二十三种效果*/
+
+    .party {
+      height: 80px;
+      width: 80px;
+      position: relative;
+      top: -15px;
+      left: -15px;
+    }
+
+    .party_ball {
+      width: 30px;
+      height: 30px;
+      background: #fff;
+      position: absolute;
+      top: 0;
+      left: 0;
+      -webkit-animation: party_ball 2s ease infinite;
+      animation: party_ball 2s ease infinite;
+    }
+
+    .party_ball:nth-child(2) {
+      -webkit-animation-delay: -1s;
+      animation-delay: -1s;
+    }
+
+    @-webkit-keyframes party_ball {
+      25% {
+        -webkit-transform: scale(.5) rotateZ(90deg);
+        transform: scale(.5) rotateZ(90deg);
+        top: 0;
+        left: 100%;
+      }
+      50% {
+        -webkit-transform: scale(1) rotateZ(180deg);
+        transform: scale(1) rotateZ(180deg);
+        top: 100%;
+        left: 100%;
+      }
+      75% {
+        -webkit-transform: scale(.5) rotateZ(270deg);
+        transform: scale(.5) rotateZ(270deg);
+        top: 100%;
+        left: 0;
+      }
+      100% {
+        -webkit-transform: scale(1) rotateZ(360deg);
+        transform: scale(1) rotateZ(360deg);
+        top: 0;
+        left: 0;
+      }
+    }
+
+    @keyframes party_ball {
+      25% {
+        -webkit-transform: scale(.5) rotateZ(90deg);
+        transform: scale(.5) rotateZ(90deg);
+        top: 0;
+        left: 100%;
+      }
+      50% {
+        -webkit-transform: scale(1) rotateZ(180deg);
+        transform: scale(1) rotateZ(180deg);
+        top: 100%;
+        left: 100%;
+      }
+      75% {
+        -webkit-transform: scale(.5) rotateZ(270deg);
+        transform: scale(.5) rotateZ(270deg);
+        top: 100%;
+        left: 0;
+      }
+      100% {
+        -webkit-transform: scale(1) rotateZ(360deg);
+        transform: scale(1) rotateZ(360deg);
+        top: 0;
+        left: 0;
+      }
+    }
+    /*第二十四种效果*/
+
+    .fire {
+      height: 80px;
+      width: 80px;
+      position: relative;
+    }
+
+    .fire_ball {
+      height: 0;
+      width: 0;
+      background: #fff;
+      position: absolute;
+      left: 50%;
+      top: 100%;
+      -webkit-transform: translateX(-50%) translateY(-50%) rotateZ(45deg);
+      transform: translateX(-50%) translateY(-50%) rotateZ(45deg);
+      -webkit-animation: fire_ball 1.5s linear infinite;
+      animation: fire_ball 1.5s linear infinite;
+    }
+
+    .fire_ball:nth-child(2) {
+      -webkit-animation-delay: -.5s;
+      animation-delay: -.5s;
+    }
+
+    .fire_ball:nth-child(3) {
+      -webkit-animation-delay: -1s;
+      animation-delay: -1s;
+    }
+
+    @-webkit-keyframes fire_ball {
+      50% {
+        height: 30px;
+        width: 30px;
+        top: 50%;
+      }
+      100% {
+        height: 0;
+        width: 0;
+        top: 0;
+      }
+    }
+
+    @keyframes fire_ball {
+      50% {
+        height: 30px;
+        width: 30px;
+        top: 50%;
+      }
+      100% {
+        height: 0;
+        width: 0;
+        top: 0;
+      }
+    }
+    /*第二十五种效果*/
+
+    .pacman {
+      height: 80px;
+      width: 100px;
+      position: relative;
+    }
+
+    .pac_head {
+      position: absolute;
+      left: 5%;
+      top: 50%;
+      border: 25px solid #fff;
+      border-right-color: transparent;
+      border-radius: 50%;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+    }
+
+    .pac_head:nth-child(1) {
+      -webkit-animation: pac_heado .6s linear infinite;
+      animation: pac_heado .6s linear infinite;
+    }
+
+    .pac_head:nth-child(2) {
+      -webkit-animation: pac_headt .6s linear infinite;
+      animation: pac_headt .6s linear infinite;
+    }
+
+    .pac_ball {
+      height: 10px;
+      width: 10px;
+      background: #fff;
+      border-radius: 50%;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      opacity: .6;
+      -webkit-animation: pac_ball 1.8s linear infinite;
+      animation: pac_ball 1.8s linear infinite;
+    }
+
+    .pac_ball:nth-child(4) {
+      -webkit-animation-delay: -.6s;
+      animation-delay: -.6s;
+    }
+
+    .pac_ball:nth-child(5) {
+      -webkit-animation-delay: -1.2s;
+      animation-delay: -1.2s;
+    }
+
+    @-webkit-keyframes pac_heado {
+      50% {
+        -webkit-transform: translateY(-50%) rotateZ(60deg);
+        transform: translateY(-50%) rotateZ(60deg);
+      }
+      100% {
+        -webkit-transform: translateY(-50%) rotateZ(60deg);
+        transform: translateY(-50%) rotateZ(60deg);
+      }
+    }
+
+    @keyframes pac_heado {
+      50% {
+        -webkit-transform: translateY(-50%) rotateZ(60deg);
+        transform: translateY(-50%) rotateZ(60deg);
+      }
+      100% {
+        -webkit-transform: translateY(-50%) rotateZ(60deg);
+        transform: translateY(-50%) rotateZ(60deg);
+      }
+    }
+
+    @-webkit-keyframes pac_headt {
+      50% {
+        -webkit-transform: translateY(-50%) rotateZ(-60deg);
+        transform: translateY(-50%) rotateZ(-60deg);
+      }
+      100% {
+        -webkit-transform: translateY(-50%) rotateZ(-60deg);
+        transform: translateY(-50%) rotateZ(-60deg);
+      }
+    }
+
+    @keyframes pac_headt {
+      50% {
+        -webkit-transform: translateY(-50%) rotateZ(-60deg);
+        transform: translateY(-50%) rotateZ(-60deg);
+      }
+      100% {
+        -webkit-transform: translateY(-50%) rotateZ(-60deg);
+        transform: translateY(-50%) rotateZ(-60deg);
+      }
+    }
+
+    @-webkit-keyframes pac_ball {
+      100% {
+        right: 55%;
+        opacity: 1;
+      }
+    }
+
+    @keyframes pac_ball {
+      100% {
+        right: 55%;
+        opacity: 1;
+      }
+    }
+    /*第二十六种效果*/
+
+    .beat {
+      height: 80px;
+      width: 80px;
+      text-align: center;
+    }
+
+    .beat_ball {
+      display: inline-block;
+      height: 40px;
+      width: 40px;
+      background: #fff;
+      border-radius: 10%;
+      animation: beat_ball 1s linear infinite;
+    }
+    .beat_shadow{
+      display: inline-block;
+      height: 5px;
+      width: 40px;
+      background: #333;
+      border-radius: 50%;
+      box-shadow: 0 0 2px 2px #333;
+      animation: beat_shadow 1s linear infinite;
+    }
+    @keyframes beat_shadow {
+      50%{
+        transform: scale(1.25,0.8);
+      }
+    }
+    @keyframes beat_ball {
+      25% {
+        transform: translateY(25%) rotate(22.5deg);
+        border-bottom-right-radius: 10%;
+      }
+      50% {
+        border-bottom-right-radius: 100%;
+        transform: translateY(50%) scale(1, 0.8) rotate(45deg)
+      }
+      75% {
+        transform: translateY(25%) rotate(67.5deg)
+      }
+      100% {
+        transform: translateY(0) rotate(90deg)
+      }
+    }
+    /*第二十七种效果*/
+    .locker{
+      height: 80px;
+      width: 80px;
+      text-align: center;
+    }
+    .locker_ball{
+      height: 40px;
+      width: 40px;
+      line-height: 80px;
+      border: 4px solid #fff;
+      position: relative;
+      animation: locker_ball 2s ease infinite;
+    }
+    .locker_ball:after{
+      content: '';
+      height: 40px;
+      width: 40px;
+      background: #fff;
+      position: absolute;
+      top: 0;
+      left: 0;
+      animation: locker_ballh 2s ease infinite;
+    }
+    @keyframes locker_ball {
+      25%{
+        transform: rotateZ(180deg);
+      }
+      50%{
+        transform: rotateZ(180deg);
+      }
+      75%{
+        transform: rotateZ(360deg);
+      }
+      100%{
+        transform: rotateZ(360deg);
+      }
+    }
+    @keyframes locker_ballh {
+      25%{
+        height: 40px;
+      }
+      50%{
+        height: 0;
+      }
+      75%{
+        height: 0;
+      }
+      100%{
+        height: 40px;
+      }
+    }
+    /*第二十八种效果*/
+    .clock{
+      height: 80px;
+      width: 80px;
+      position: relative;
+    }
+    .clock_circle{
+      height: 80px;
+      width: 80px;
+      border: 4px solid #fff;
+      border-radius: 50%;
+    }
+    .clock_hour{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 4px;
+      height: 20px;
+      background: #fff;
+      transform-origin: top center;
+      animation: clock 1s linear infinite;
+    }
+    .clock_min{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 4px;
+      height: 30px;
+      background: #fff;
+      transform-origin: top center;
+      animation: clock 36s linear infinite;
+    }
+    @keyframes clock {
+      100%{
+        transform: rotateZ(360deg);
+      }
+    }
+    /*****29*****/
+body{ margin: 50px; }
+.title{ padding: 15px 0; }
+.div1 .box{ width: 200px; height: 50px; border: 1px solid #ccc; position: relative; }
+/* .div1 .box:hover{ color:#367dff; border-color: #367dff; } */
+.div1 .box:before{ bottom: 0; right: 0; content: ''; display: block; position: absolute; box-sizing: border-box; border: 1px solid transparent; width: 0; height: 0; -webkit-transition: border-color 0s ease-in 0.4s,width 0.2s ease-in 0.2s,height 0.2s ease-in; transition: border-color 0s ease-in 0.4s,width 0.2s ease-in 0.2s,height 0.2s ease-in; }
+.div1 .box:after{ top: 0; left: 0; -webkit-transition: border-color 0s ease-in 0.8s,width 0.2s ease-in 0.6s,height 0.2s ease-in 0.4s; transition: border-color 0s ease-in 0.8s,width 0.2s ease-in 0.6s,height 0.2s ease-in 0.4s; box-sizing: border-box; border: 1px solid transparent; width: 0; height: 0; content: ''; display: block; position: absolute; }
+.div1 .box:hover:before,.div1 .box:hover:after{ content: ''; display: block; position: absolute; box-sizing: border-box; position: absolute; border: 1px solid transparent; height: 100%; width: 100%; }
+.div1 .box:hover:before{ bottom: 0; right: 0; border-bottom-color: #367dff; border-left-color: #367dff; -webkit-transition: border-color 0s ease-out 0.4s,width 0.2s ease-out 0.4s,height 0.2s ease-out 0.6s; transition: border-color 0s ease-out 0.4s,width 0.2s ease-out 0.4s,height 0.2s ease-out 0.6s; }
+.div1 .box:hover:after{ left: 0; top: 0; border-top-color: #367dff; border-right-color: #367dff; -webkit-transition: border-color 0s ease-out 0.4s,width 0.2s ease-out 0.4s,height 0.2s ease-out 0.6s; transition: border-color 0s ease-out 0.4s,width 0.2s ease-out 0.4s,height 0.2s ease-out 0.6s; }
+/*****29*****/
+
+/*******30******/
+div.logo { width: 100px; height: 100px; box-sizing: border-box; position: relative; background-color: white; }
+  div.logo > div { position: absolute; }
+  div.logo div.red { border-right: 4px solid black; top: 0; bottom: 0; left: 0; width: 27%; background-color: #EA5664; }
+
+div.logo { width: 100px; height: 100px; box-sizing: border-box; position: relative; background-color: white; }
+  div.logo::before, div.logo::after { z-index: 1; box-sizing: border-box; content: ''; position: absolute; border: 4px solid transparent; width: 100%; height: 100%; }
+  div.logo::before { top: 0; left: 0; border-top-color: black; border-right-color: black; }
+  div.logo::after { bottom: 0; right: 0; border-bottom-color: red; border-left-color: red; }
+
+div.logo::before, div.logo::after { /* ... */
+  width: 0; height: 0; animation-timing-function: linear; }
+div.logo::before { /* ... */
+  animation: border-before 1.5s infinite; animation-direction: alternate; }
+div.logo::after { /* ... */
+  animation: border-after 1.5s infinite; animation-direction: alternate; }
+
+@keyframes border-before {
+  0% {
+    width: 0;
+    height: 0;
+    border-top-color: black;
+    border-right-color: transparent; }
+  24.99% {
+    border-right-color: transparent; }
+  25% {
+    height: 0;
+    width: 100%;
+    border-top-color: black;
+    border-right-color: black; }
+  50%,
+  100% {
+    width: 100%;
+    height: 100%;
+    border-top-color: black;
+    border-right-color: black; } }
+@keyframes border-after {
+  0%,
+    49.99% {
+    width: 0;
+    height: 0;
+    border-left-color: transparent;
+    border-bottom-color: transparent; }
+  50% {
+    width: 0;
+    height: 0;
+    border-left-color: transparent;
+    border-bottom-color: red; }
+  74.99% {
+    border-left-color: transparent;
+    border-bottom-color: red; }
+  75% {
+    height: 0;
+    width: 100%;
+    border-left-color: red;
+    border-bottom-color: red; }
+  100% {
+    width: 100%;
+    height: 100%;
+    border-left-color: red;
+    border-bottom-color: red; } }
+div.logo div.red {
+  /* ... */
+  width: 0;
+  animation: red 1.5s infinite;
+  animation-direction: alternate; }
+
+@keyframes red {
+  0%,
+  50% {
+    width: 0;
+    opacity: 0; }
+  50.01% {
+    opacity: 1; }
+  65%,
+  100% {
+    opacity: 1;
+    width: 27%; } }
+div.logo div.orange {
+  /* ... */
+  width: 73%;
+  height: 0;
+  border-top: 4px solid black;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background: orange;
+  animation: orange 1.5s infinite;
+  animation-direction: alternate; }
+
+@keyframes orange {
+  0% {
+    width: 73%;
+    opacity: 0; }
+  65% {
+    width: 73%;
+    opacity: 0; }
+  65.01% {
+    opacity: 1; }
+  80%,
+  100% {
+    opacity: 1;
+    height: 27px; } }
+div.logo div.white {
+  /* ... */
+  width: 0;
+  border-left: 4px solid black;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: white;
+  animation: white 1.5s infinite;
+  animation-direction: alternate; }
+
+@keyframes white {
+  0%,
+  80% {
+    width: 0;
+    opacity: 0; }
+  80.01% {
+    opacity: 1; }
+  90%,
+  100% {
+    opacity: 1;
+    width: 27%; } }
+/*******30******/
+  </style>
+</head>
+
+<body>
+  <div id="box">
+    <!-- 第一种效果 -->
+    <div class="box">
+      <div class="ball">
+        <div class="kuai"></div>
+        <div class="kuai"></div>
+        <div class="kuai"></div>
+        <div class="kuai"></div>
+        <div class="kuai"></div>
+        <div class="kuai"></div>
+        <div class="kuai"></div>
+        <div class="kuai"></div>
+        <div class="kuai"></div>
+        <div class="kuai"></div>
+        <div class="kuai"></div>
+        <div class="kuai"></div>
+        <div class="kuai"></div>
+        <div class="kuai"></div>
+        <div class="kuai"></div>
+        <div class="kuai"></div>
+      </div>
+    </div>
+    <!-- 第二种效果 -->
+    <div class="box">
+      <div class="atom">
+        <div class="c_ball"></div>
+        <div class="area area_o"></div>
+        <div class="area area_t"></div>
+        <div class="area area_h"></div>
+      </div>
+    </div>
+    <!-- 第三种效果 -->
+    <div class="box">
+      <div class="t_light">
+        <div class="light light_o"></div>
+        <div class="light light_t"></div>
+        <div class="light light_h"></div>
+      </div>
+    </div>
+    <!-- 第四种效果 -->
+    <div class="box">
+      <div class="rote">
+        <div class="r_ball r_ball_o"></div>
+        <div class="r_ball r_ball_t"></div>
+        <div class="r_ball r_ball_h"></div>
+        <div class="r_ball r_ball_f"></div>
+        <div class="r_ball r_ball_v"></div>
+      </div>
+    </div>
+    <!-- 第五种效果 -->
+    <div class="box">
+      <div class="jump">
+        <div class="jump_ball"></div>
+        <div class="steps"></div>
+        <div class="steps steps_t"></div>
+        <div class="steps steps_h"></div>
+      </div>
+    </div>
+    <!-- 第六种效果 -->
+    <div class="box">
+      <div class="r_border">
+        <div class="r_bor"></div>
+      </div>
+    </div>
+    <!-- 第七种效果 -->
+    <div class="box">
+      <div class="waves">
+        <div class="waves_b"></div>
+        <div class="waves_s"></div>
+      </div>
+    </div>
+    <!-- 第八种效果 -->
+    <div class="box">
+      <div class="waves">
+        <div class="waves_b"></div>
+        <div class="waves_cle"></div>
+      </div>
+    </div>
+    <!-- 第九种效果 -->
+    <div class="box">
+      <div class="crash_box">
+        <div class="crash_ball"></div>
+        <div class="crash_ball"></div>
+        <div class="crash_ball"></div>
+        <div class="crash_ball"></div>
+        <div class="crash_ball"></div>
+      </div>
+    </div>
+    <!-- 第十种效果 -->
+    <div class="box">
+      <div class="trans_y">
+        <div class="trans_ball"></div>
+        <div class="trans_ball"></div>
+        <div class="trans_ball"></div>
+      </div>
+    </div>
+    <!-- 第十一种效果 -->
+    <div class="box">
+      <div class="flor">
+        <div class="flor_ballbox">
+          <div class="flor_ball"></div>
+        </div>
+        <div class="flor_ballbox">
+          <div class="flor_ball"></div>
+        </div>
+        <div class="flor_ballbox">
+          <div class="flor_ball"></div>
+        </div>
+        <div class="flor_ballbox">
+          <div class="flor_ball"></div>
+        </div>
+      </div>
+    </div>
+    <!-- 第十二种效果 -->
+    <div class="box">
+      <div class="marquee">
+        <div class="mar_ligt"></div>
+        <div class="mar_ligt"></div>
+        <div class="mar_ligt"></div>
+        <div class="mar_ligt"></div>
+        <div class="mar_ligt"></div>
+        <div class="mar_ligt"></div>
+        <div class="mar_ligt"></div>
+        <div class="mar_ligt"></div>
+        <div class="mar_ligt"></div>
+      </div>
+    </div>
+    <!-- 第十三种效果 -->
+    <div class="box">
+      <div class="marquee">
+        <div class="mar_ligtsbox">
+          <div class="mar_ligtso mar_ligts"></div>
+        </div>
+        <div class="mar_ligtsbox">
+          <div class="mar_ligtst mar_ligts"></div>
+        </div>
+        <div class="mar_ligtsbox">
+          <div class="mar_ligtsh mar_ligts"></div>
+        </div>
+        <div class="mar_ligtsbox">
+          <div class="mar_ligtsf mar_ligts"></div>
+        </div>
+        <div class="mar_ligtsbox">
+          <div class="mar_ligtsv mar_ligts"></div>
+        </div>
+        <div class="mar_ligtsbox">
+          <div class="mar_ligtsx mar_ligts"></div>
+        </div>
+        <div class="mar_ligtsbox">
+          <div class="mar_ligtss mar_ligts"></div>
+        </div>
+        <div class="mar_ligtsbox">
+          <div class="mar_ligtse mar_ligts"></div>
+        </div>
+        <div class="mar_ligtsbox">
+          <div class="mar_ligtsn mar_ligts"></div>
+        </div>
+      </div>
+    </div>
+    <!-- 第十四种效果 -->
+    <div class="box">
+      <div class="pool">
+        <div class="pool_ball"></div>
+        <div class="pool_ball"></div>
+        <div class="pool_ball"></div>
+        <div class="pool_ball"></div>
+      </div>
+    </div>
+    <!-- 第十五种效果 -->
+    <div class="box">
+      <div class="size_change">
+        <div class="size_ballbox">
+          <div class="size_ball"></div>
+        </div>
+        <div class="size_ballbox">
+          <div class="size_ball size_ballt"></div>
+        </div>
+        <div class="size_ballbox">
+          <div class="size_ball size_ballh"></div>
+        </div>
+      </div>
+    </div>
+    <!-- 第十六种效果 -->
+    <div class="box">
+      <div class="flip">
+        <div class="flip_ball"></div>
+        <div class="flip_ball"></div>
+        <div class="flip_ball"></div>
+        <div class="flip_ball"></div>
+        <div class="flip_ball"></div>
+      </div>
+    </div>
+    <!-- 第十七种效果 -->
+    <div class="box">
+      <div class="leap">
+        <div class="leap_ball"></div>
+        <div class="leap_ball"></div>
+        <div class="leap_ball"></div>
+      </div>
+    </div>
+    <!-- 第十八种效果 -->
+    <div class="box">
+      <div class="wind">
+        <div class="wind_ballbox">
+          <div class="wind_ballo wind_ball"></div>
+        </div>
+        <div class="wind_ballbox">
+          <div class="wind_ballt wind_ball"></div>
+        </div>
+        <div class="wind_ballbox">
+          <div class="wind_ballh wind_ball"></div>
+        </div>
+      </div>
+    </div>
+    <!-- 第十九种效果 -->
+    <div class="box">
+      <div class="cool">
+        <div class="cool_ball"></div>
+        <div class="cool_ball"></div>
+        <div class="cool_ball"></div>
+        <div class="cool_ball"></div>
+        <div class="cool_ball"></div>
+      </div>
+    </div>
+    <!-- 第二十种效果 -->
+    <div class="box">
+      <div class="load">
+        <div class="load_ball"></div>
+        <div class="load_ball"></div>
+        <div class="load_ball"></div>
+        <div class="load_ball"></div>
+        <div class="load_ball"></div>
+        <div class="load_ball"></div>
+        <div class="load_ball"></div>
+        <div class="load_ball"></div>
+      </div>
+    </div>
+    <!-- 第二十一种效果 -->
+    <div class="box">
+      <div class="triangle">
+        <div class="triangle_ball"></div>
+        <div class="triangle_ball"></div>
+        <div class="triangle_ball"></div>
+      </div>
+    </div>
+    <!-- 第二十二种效果 -->
+    <div class="box">
+      <div class="gear">
+        <div class="gear_ball"></div>
+      </div>
+    </div>
+    <!-- 第二十三种效果 -->
+    <div class="box">
+      <div class="party">
+        <div class="party_ball"></div>
+        <div class="party_ball"></div>
+      </div>
+    </div>
+    <!-- 第二十四种效果 -->
+    <div class="box">
+      <div class="fire">
+        <div class="fire_ball"></div>
+        <div class="fire_ball"></div>
+        <div class="fire_ball"></div>
+      </div>
+    </div>
+    <!-- 第二十五种效果 -->
+    <div class="box">
+      <div class="pacman">
+        <div class="pac_head"></div>
+        <div class="pac_head"></div>
+        <div class="pac_ball"></div>
+        <div class="pac_ball"></div>
+        <div class="pac_ball"></div>
+      </div>
+    </div>
+    <!-- 第二十六种效果 -->
+    <div class="box">
+      <div class="beat">
+        <div class="beat_ball"></div>
+        <div class="beat_shadow"></div>
+      </div>
+    </div>
+    <!-- 第二十七种效果 -->
+    <div class="box">
+      <div class="locker">
+        <div class="locker_ball"></div>
+      </div>
+    </div>
+    <!-- 第二十八种效果 -->
+    <div class="box">
+      <div class="clock">
+        <div class="clock_circle"></div>
+        <div class="clock_hour"></div>
+        <div class="clock_min"></div>
+      </div>
+    </div>
+    <!-- 第二十九种效果 -->
+    <p class="title">1、鼠标移入</p>
+    <div class="div1">
+       <div class="box">
+
+       </div>
+    </div>
+    <!-- 第三十种效果 -->
+    <p class="title">2、加载动画</p>
+    <div class="loader">
+         <div class="logo">
+           <div class="white"></div>
+           <div class="orange"></div>
+           <div class="red"></div>
+         </div>
+        </div>
+  </div>
+
+
+
+</body></html>
